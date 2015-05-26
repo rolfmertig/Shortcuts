@@ -1,0 +1,266 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8372,        257]
+NotebookOptionsPosition[      6926,        202]
+NotebookOutlinePosition[      7543,        227]
+CellTagsIndexPosition[      7459,        222]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"NotebookDirectory", "[", "]"}]], "Input"],
+
+Cell[BoxData["\<\"C:\\\\repositorygit\\\\shortcutsrepo\\\\Shortcuts\\\\\"\>"],\
+ "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<Shortcuts`\>\"", "]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "UninstallShortcuts"}]], "Input"],
+
+Cell[BoxData[
+ StyleBox["\<\"UninstallShortcuts[] deletes the file KeyEventTranslations.tr \
+and joker.m in $UserBaseDirecty/SystemFiles/FrontEnd/TextResources/...\"\>", 
+  "MSG"]], "Print", "PrintUsage",
+ CellTags->"Info3641633120-1155560"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "InstallShortcuts"}]], "Input"],
+
+Cell[BoxData[
+ StyleBox["\<\"InstallShortcuts[] installs additional shortcuts to \
+$UserBaseDirectory/SystemFiles/FrontEnd/TextResource/... .\"\>", 
+  "MSG"]], "Print", "PrintUsage",
+ CellTags->"Info3641633120-1155560"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UninstallShortcuts", "[", "]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"Deleted C:\\\\Users\\\\Rolf \
+Mertig\\\\AppData\\\\Roaming\\\\Mathematica\\\\SystemFiles\\\\FrontEnd\\\\\
+TextResources\\\\Windows\\\\KeyEventTranslations.tr\"\>"], "Print"],
+
+Cell[BoxData["\<\"Deleted C:\\\\Users\\\\Rolf \
+Mertig\\\\AppData\\\\Roaming\\\\Mathematica\\\\SystemFiles\\\\FrontEnd\\\\\
+TextResources\\\\Windows\\\\joker.m\"\>"], "Print"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"Null", ",", "Null"}], "}"}]], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"InstallShortcuts", "[", "]"}]], "Input"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"This code generated the files\"\>"},
+    {
+     ButtonBox["\<\"$UserBaseDirectory\\\\SystemFiles\\\\FrontEnd\\\\\
+TextResources\\\\Windows\\\\KeyEventTranslations.tr\"\>",
+      Appearance->Automatic,
+      ButtonFunction:>CreateDocument[{
+         TextCell[
+          Import[
+          "C:\\Users\\Rolf Mertig\\AppData\\Roaming\\Mathematica\\SystemFiles\
+\\FrontEnd\\TextResources\\Windows\\KeyEventTranslations.tr", "Text"]]}],
+      Evaluator->Automatic,
+      Method->"Preemptive"]},
+    {"\<\"and\"\>"},
+    {
+     ButtonBox["\<\"$UserBaseDirectory\\\\SystemFiles\\\\FrontEnd\\\\\
+TextResources\\\\Windows\\\\joker.m\"\>",
+      Appearance->Automatic,
+      ButtonFunction:>NotebookOpen[
+       "C:\\Users\\Rolf \
+Mertig\\AppData\\Roaming\\Mathematica\\SystemFiles\\FrontEnd\\TextResources\\\
+Windows\\joker.m"],
+      Evaluator->Automatic,
+      Method->"Preemptive"]}
+   },
+   DefaultBaseStyle->"Column",
+   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Column"]], "Text",
+ GeneratedCell->True,
+ CellAutoOverwrite->True,
+ ShowStringCharacters->False],
+
+Cell["\<\
+After restarting the FrontEnd you can use the following extra keyboard \
+shortcuts: \
+\>", "Text",
+ GeneratedCell->True,
+ CellAutoOverwrite->True,
+ FontWeight->Bold],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"Ctrl Shift \[UpArrow] \"\>", "\<\"Select all cells from the \
+beginning of the notebook until the cursor position \"\>"},
+    {"\<\"Ctrl Shift \[DownArrow] \"\>", "\<\"Select all cells from the \
+position of the mouse until the end of the notebook \"\>"},
+    {"\<\"Ctrl Shift PageUp \"\>", "\<\"Evaluate all cells from the beginning \
+of the notebook until the position of the mouse \"\>"},
+    {"\<\"Ctrl Shift X \"\>", "\<\"Delete all generated cells, like Output, \
+Message and Print cells, also in MessagesNotebook[] \"\>"},
+    {"\<\"Ctrl Q \"\>", "\<\"Quit and restart Kernel \"\>"},
+    {"\<\"Ctrl R\"\>", "\<\"Quit and restart the FrontEnd; all Untitled \
+notebooks are closed and others saved. Reopening the selected notebook if it \
+is saved \"\>"},
+    {"\<\"Ctrl ` \"\>", "\<\"Evaluate Notebook\"\>"},
+    {"\<\"Ctrl H \"\>", "\<\"Evaluate Notebook\"\>"},
+    {"\<\"Ctrl Tab \"\>", "\<\"Delete all output and evaluate all cells from \
+the beginning of the ntoebook until the cursor position \"\>"},
+    {"\<\"Ctrl Shift Tab \"\>", "\<\"Delete all output, restart the kernel \
+and evaluate all cells from the beginning of the ntoebook until the cursor \
+position \"\>"},
+    {"\<\"Ctrl Shift ,\"\>", "\<\"Copy/Evaluate/Paste the selected cell \
+subexpression into a new notebook \"\>"},
+    {"\<\"Ctrl Shift X \"\>", "\<\"Delete all generated cells, like Output, \
+Message and Print cells \"\>"},
+    {"\<\"Cmd Alt B \"\>", "\<\"Move the cursor from anywhere inside a cell \
+to the cell bracket \"\>"},
+    {"\<\"Cmd Alt M \"\>", "\<\"Minimize all Mathematica notebooks \"\>"},
+    {"\<\"Cmd Alt U \"\>", "\<\"Cut the selected cell and paste it before the \
+preceding cell \"\>"},
+    {"\<\"Cmd Alt D \"\>", "\<\"Cut the selected cell and paste it after the \
+following cell \"\>"},
+    {"\<\"Ctrl Shift Delete \"\>", "\<\"Close all Untitled-*  notebooks \
+without confirmation \"\>"},
+    {"\<\"F4 \"\>", "\<\"Insert [[]]\"\>"},
+    {"\<\"F6 \"\>", "\<\"Apply SetOptions[SelectedNotebook[], WindowMargins \
+-> 42]\"\>"},
+    {"\<\"Ctrl T \"\>", "\<\"Evaluate the file joker.m from \
+$UserBaseDirectory\\\\SystemFiles\\\\FrontEnd\\\\TextResources\\\\Windows\\\\\
+\"\>"},
+    {"\<\"Ctrl Shift J \"\>", "\<\"Open joker.m from \
+$UserBaseDirectory\\\\SystemFiles\\\\FrontEnd\\\\TextResources\\\\Windows\\\\\
+\"\>"},
+    {
+     FrameBox[
+      StyleBox["\<\"The following three shortcuts work only on english \
+keyboards: \"\>", "Text",
+       StripOnInput->False],
+      FrameMargins->10,
+      FrameStyle->None,
+      StripOnInput->False], "\[SpanFromLeft]"},
+    {"\<\"Ctrl [ \"\>", "\<\"Insert [[\"\>"},
+    {"\<\"Ctrl ] \"\>", "\<\"Insert ]]\"\>"},
+    {"\<\"Ctrl Alt ] \"\>", "\<\"Insert [[]]\"\>"}
+   },
+   AutoDelete->False,
+   FrameStyle->GrayLevel[0.85],
+   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Text",
+ GeneratedCell->True,
+ CellAutoOverwrite->True,
+ ShowStringCharacters->False,
+ FontSize->14],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$UserBaseDirectory", "\[IndentingNewLine]"}]], "Input"],
+
+Cell[BoxData["\<\"C:\\\\Users\\\\Rolf \
+Mertig\\\\AppData\\\\Roaming\\\\Mathematica\"\>"], "Output"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Quit", "[", "]"}]], "Input"]
+},
+Editable->True,
+WindowSize->{1398, 870},
+WindowMargins->{{Automatic, 85}, {Automatic, 31}},
+Magnification:>0.9 Inherited,
+FrontEndVersion->"10.1 for Microsoft Windows (64-bit) (March 23, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "Info3641633120-1155560"->{
+  Cell[917, 37, 241, 4, 36, "Print",
+   CellTags->"Info3641633120-1155560"],
+  Cell[1257, 49, 219, 4, 36, "Print",
+   CellTags->"Info3641633120-1155560"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"Info3641633120-1155560", 7280, 214}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 65, 1, 26, "Input"],
+Cell[648, 25, 90, 1, 27, "Output"]
+}, Open  ]],
+Cell[753, 29, 75, 1, 26, "Input"],
+Cell[CellGroupData[{
+Cell[853, 34, 61, 1, 26, "Input"],
+Cell[917, 37, 241, 4, 36, "Print",
+ CellTags->"Info3641633120-1155560"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1195, 46, 59, 1, 29, "Input"],
+Cell[1257, 49, 219, 4, 36, "Print",
+ CellTags->"Info3641633120-1155560"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1513, 58, 66, 1, 29, "Input"],
+Cell[CellGroupData[{
+Cell[1604, 63, 191, 2, 21, "Print"],
+Cell[1798, 67, 175, 2, 21, "Print"]
+}, Open  ]],
+Cell[1988, 72, 79, 2, 28, "Output"]
+}, Open  ]],
+Cell[2082, 77, 64, 1, 29, "Input"],
+Cell[2149, 80, 1175, 32, 95, "Text"],
+Cell[3327, 114, 175, 6, 28, "Text"],
+Cell[3505, 122, 3114, 64, 452, "Text"],
+Cell[CellGroupData[{
+Cell[6644, 190, 79, 1, 50, "Input"],
+Cell[6726, 193, 100, 1, 28, "Output"]
+}, Open  ]],
+Cell[6841, 197, 26, 0, 29, "Input"],
+Cell[6870, 199, 52, 1, 29, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
