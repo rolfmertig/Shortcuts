@@ -22,8 +22,16 @@ Shortcut["DeleteOutputAndMessages"] :=
       NotebookDelete @ Cells[ CellStyle -> "Print"];
       NotebookDelete @ Cells @ MessagesNotebook[];
     );
-    
-    
+
+
+Shortcut["DeleteAllCellsButInputAndCode"] :=
+    ( "Info: Delete all cells but Input and Code (including Print cells) in the selected notebook and contents in the Messages notebook ";
+    FrontEndTokenExecute @ "DeleteGeneratedCells";
+    NotebookDelete @ Cells[ CellStyle -> (Alternatives@@Complement[ Union@Flatten@Experimental`CellStyleNames[], {"Input", "Code"}])];
+    NotebookDelete @ Cells @ MessagesNotebook[];
+    );
+
+
 Shortcut["RestartFrontEnd"] :=
     ( "Info: restart the FrontEnd including closing all Untitled notebooks and potentially repoen the already saved notebook from 
              where this shortcut is executed";
