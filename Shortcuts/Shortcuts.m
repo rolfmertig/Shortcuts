@@ -71,6 +71,9 @@ UninstallShortcuts[] :=
       {"KeyEventTranslations.tr", "joker.m"}
     ];
 
+
+(* ::Subsection:: *)
+(* Region Title *)
 InstallShortcuts[] :=
     If[$VersionNumber < 9,
       Print["This code works only in Wolfram Mathematica 9 and higher."],
@@ -388,14 +391,25 @@ Item[KeyEvent[\"j\", Modifiers -> {Control, Shift}],
                 ] /@ ImportString[mykeytext, "Lines", CharacterEncoding :> $CharacterEncoding];
             Export[mykeyeventtrans, mykeytext, "Text", CharacterEncoding :> $CharacterEncoding];
 
-            CellPrint[ExpressionCell[Column[{ "This code generated the files",
+            CellPrint[ExpressionCell[Column[{ "Two files have been generated:",
               ( Button[StringReplace[#, $UserBaseDirectory -> "$UserBaseDirectory"],
                 CreateDocument[{ TextCell[ Import[#, "Text"]]}]
               ]&@ mykeyeventtrans
               ),
               "and",
               ( Button[StringReplace[#, $UserBaseDirectory -> "$UserBaseDirectory"], NotebookOpen[#]]& @ myjokerfilename)}], "Text", ShowStringCharacters -> False]];
-            CellPrint[TextCell["After restarting the FrontEnd you can use the following extra keyboard shortcuts: ", "Text", FontWeight -> Bold]];
+            CellPrint[TextCell["After restarting the FrontEnd once the following extra keyboard shortcuts can be used: ", "Text", FontWeight -> Bold]];
+            CellPrint[Cell["?Shortcuts","Input"]];
+            thisnb = EvaluationNotebook[];
+            CellPrint[ExpressionCell[Information["Shortcuts", LongForm -> True],"Output"]];
+            With[{nb = thisnb},
+            CreateWindow@DialogNotebook[{
+            	           TextCell["Restart the FrontEnd now? All Untitled notebooks will be closed automatically.", FontSize -> 20],
+                            DefaultButton[DialogReturn[Shortcut["RestartFrontEnd", nb]], ImageSize -> {50 GoldenRatio, 50}],
+                            CancelButton[ImageSize->{50 GoldenRatio, 50}] 
+                            }]
+            ]
+            	(*
             With[{myjokerdir2 = StringReplace[myjokerdir, $UserBaseDirectory -> "$UserBaseDirectory"]},
               Switch[ $OperatingSystem,
                 "Windows",
@@ -407,7 +421,7 @@ Item[KeyEvent[\"j\", Modifiers -> {Control, Shift}],
                       { "Ctrl Shift PageUp ", "Evaluate all cells from the beginning of the notebook until the position of the mouse "},
                       { "Ctrl Shift X ", "Delete all generated cells, like Output, Message and Print cells, also in MessagesNotebook[] "},
                       { "Ctrl Q ", "Quit and restart Kernel "},
-                      { "Ctrl R", "Quit and restart the FrontEnd; all Untitled notebooks are closed and others saved. Reopening the selected notebook if it is saved "},
+                      { "Ctrl R", "Quit and restart the FrontEnd; all Untitled notebooks are closed and others saved. Save and reopen the selected notebook if possible."},
                       { "Ctrl ` ", "Evaluate Notebook"},
                       { "Ctrl H ", "Evaluate Notebook"},
                       { "Ctrl Tab ", "Delete all output and evaluate all cells from the beginning of the ntoebook until the cursor position "},
@@ -486,6 +500,7 @@ Item[KeyEvent[\"j\", Modifiers -> {Control, Shift}],
                     ]]
               ]
             ]
+              *)
           ]
         ]
       ]

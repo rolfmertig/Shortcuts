@@ -1,6 +1,60 @@
 (* Wolfram Language package *)
+Shortcut::usage = "Shortcut[name] contains the kernel definition for the shortcut name. For a list of shortcuts type ?Shortcuts";
 
-Shortcut::usage = "Shortcut[name] contains the kernel definition for the shortcut name."
+Shortcuts::usage = ToString[Style["In the following table the " <>
+                  Switch[$OperatingSystem,
+                  	     "Windows",
+                  	     "\[CommandKey] key is meant to with the Windows key next to the \[ControlKey] key. \n\n",
+                  	     _, 
+                  	     ""
+                  ], "Text", FontSize -> 18]] <>
+Switch[
+	$OperatingSystem,
+	"Windows",                   
+(* Windows *)	
+ StringReplace[#, {"Ctrl" -> "\[ControlKey]", "Cmd" -> "\[CommandKey]", "Alt" -> "\[AltKey]", "Shift" -> "\[ShiftKey]", "Tab" -> "\[TabKey]"}]&@
+ ToString[#, StandardForm] &@
+  With[{os = 
+     Switch[$OperatingSystem, "MacOSX", "Macintosh", "Windows", 
+      "Windows", "Unix", "X"]},
+   With[{
+     myjokerdir2 = FileNameJoin[{$UserBaseDirectory, "SystemFiles", "FrontEnd", 
+        "TextResources", os}]},
+    Grid[{
+    	  {"Ctrl Shift \[UpArrow] ",   "Select all cells from the beginning of the notebook until the  cursor position "}, 
+    	  {"Ctrl Shift \[DownArrow] ", "Select all cells from the position of the mouse until the end of the notebook "}, 
+    	  {"Ctrl Shift PageUp ", "Evaluate all cells from the beginning of the notebook until the position of the mouse "}, 
+    	  {"Ctrl Shift X ", "Delete all generated cells, like Output, Message and Print cells, also in MessagesNotebook[] "}, 
+    	  {"Ctrl Alt X ", "Delete all non-Input and non-Code cells "}, 
+    	  {"Ctrl Q ", "Quit and restart Kernel "}, 
+    	  {"Ctrl R", "Quit and restart the FrontEnd; all Untitled notebooks are closed and others saved. Reopening the selected notebook if it is saved "}, 
+    	  {"Ctrl ` ", "Evaluate Notebook"}, 
+    	  {"Ctrl H ", "Evaluate Notebook"}, 
+    	  {"Ctrl Tab ", "Delete all output and evaluate all cells from the beginning  of the notebook until the cursor position "}, 
+    	  {"Ctrl Shift Tab ", "Delete all output, restart the kernel and evaluate all cells from the beginning of the notebook until the cursor position "}, 
+          {"Ctrl Shift ,", "Copy/Evaluate/Paste the selected cell subexpression into a new notebook "}, 
+          {"Ctrl Shift X ", "Delete all generated cells, like Output, Message and Print cells "}, 
+          {"Cmd Alt B ", "Move the cursor from anywhere inside a cell to the cell bracket "}, 
+          {"Cmd Alt M ", "Minimize all Mathematica notebooks "}, 
+          {"Cmd Alt U ", "Cut the selected cell and paste it before the preceding cell "}, 
+          {"Cmd Alt D ", "Cut the selected cell and paste it after the following cell "}, 
+          {"Ctrl Shift Delete ", "Close all Untitled-*  notebooks without confirmation "}, 
+          {"F4 ", "Insert [[]]"}, 
+          {"F6 ", "Apply SetOptions[SelectedNotebook[], WindowMargins -> 42]"}, 
+          {"Ctrl T ", "Evaluate the file joker.m from " <> myjokerdir2}, 
+          {"Ctrl Shift J ", "Open joker.m from " <> myjokerdir2}, 
+          {Framed[ Style["The following three shortcuts work only on english  keyboards: ", "Text"], FrameStyle -> None, FrameMargins -> 10], SpanFromLeft}, 
+          {"Ctrl [ "(*]*), "Insert [["}, {(*[*)"Ctrl ] ", "Insert ]]"}, 
+          {(*[*)"Ctrl Alt ] ", "Insert [[]]"}}, Alignment -> {Left}, Dividers -> All, 
+          BaseStyle -> {FontSize -> 18},
+          FrameStyle -> LightGray]]
+   ]
+     ,
+(* ************************************************************ *)     
+(* Linux *)
+"Unix",
+""
+];
 
 Begin["`Private`"]
 
@@ -32,21 +86,21 @@ Shortcut["DeleteAllCellsButInputAndCode"] :=
     );
 
 
-Shortcut["RestartFrontEnd"] :=
+Shortcut["RestartFrontEnd", enb_:EvaluationNotebook[]] :=
     ( "Info: restart the FrontEnd including closing all Untitled notebooks and potentially repoen the already saved notebook from 
              where this shortcut is executed";
     Block[{reopenfilename = "", StartTime, ToFileTime, Id, mproc},
     (* the restarting is done throu the OS. On MacOSX and Linux there needs to be a grace time *)
 	With[{wait = "0.5" (* seconds *)}, (* this is heuristically determined! You may have to change this on you computer! *)
-		If[ ("FileName" /. NotebookInformation[EvaluationNotebook[]]) === "FileName"
+		If[ ("FileName" /. NotebookInformation[enb]) === "FileName"
 			,
 			reopenfilename = "";
     	    If[$OperatingSystem === "Unix",
      		(* since othwerwise on Linux restarting does not work ... , do: *)
-			NotebookSave[EvaluationNotebook[], FileNameJoin[{$TemporaryDirectory, "shortcuttmp.nb"}]]
+			NotebookSave[enb, FileNameJoin[{$TemporaryDirectory, "shortcuttmp.nb"}]]
     	    ]
 			,
-			reopenfilename = "\"" <> ToFileName["FileName" /. NotebookInformation[EvaluationNotebook[]]] <> "\""
+			reopenfilename = "\"" <> ToFileName["FileName" /. NotebookInformation[enb]] <> "\""
 		];
 	(* close all Untitled notebooks : *)
 	Map[NotebookClose, Select[Notebooks[], ReplaceAll["FileName",NotebookInformation[#]] === "FileName"&]];
