@@ -10,35 +10,225 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      1427,         58]
-NotebookOptionsPosition[       967,         38]
-NotebookOutlinePosition[      1358,         55]
-CellTagsIndexPosition[      1315,         52]
+NotebookDataLength[     13502,        290]
+NotebookOptionsPosition[     11781,        228]
+NotebookOutlinePosition[     12632,        259]
+CellTagsIndexPosition[     12506,        253]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+
+Cell[CellGroupData[{
 Cell[BoxData[
  RowBox[{"NotebookDirectory", "[", "]"}]], "Input"],
 
+Cell[BoxData["\<\"C:\\\\repositorygit\\\\Shortcuts2\\\\\"\>"], "Output"]
+}, Open  ]],
+
 Cell[BoxData[
  RowBox[{"Needs", "[", "\"\<Shortcuts`\>\"", "]"}]], "Input"],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"?", "UninstallShortcuts"}]], "Input"],
 
 Cell[BoxData[
+ StyleBox["\<\"UninstallShortcuts[] deletes the file KeyEventTranslations.tr \
+and joker.m in $UserBaseDirecty/SystemFiles/FrontEnd/TextResources/...\"\>", 
+  "MSG"]], "Print", "PrintUsage",
+ CellTags->"Info3641757713-5667396"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
  RowBox[{"?", "InstallShortcuts"}]], "Input"],
+
+Cell[BoxData[
+ StyleBox["\<\"InstallShortcuts[] installs additional shortcuts to \
+$UserBaseDirectory/SystemFiles/FrontEnd/TextResource/... .\"\>", 
+  "MSG"]], "Print", "PrintUsage",
+ CellTags->"Info3641757713-5667396"]
+}, Open  ]],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"UninstallShortcuts", "[", "]"}]], "Input"],
 
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"Deleted C:\\\\Users\\\\Rolf \
+Mertig\\\\AppData\\\\Roaming\\\\Mathematica\\\\SystemFiles\\\\FrontEnd\\\\\
+TextResources\\\\Windows\\\\KeyEventTranslations.tr\"\>"], "Print"],
+
+Cell[BoxData["\<\"Deleted C:\\\\Users\\\\Rolf \
+Mertig\\\\AppData\\\\Roaming\\\\Mathematica\\\\SystemFiles\\\\FrontEnd\\\\\
+TextResources\\\\Windows\\\\joker.m\"\>"], "Print"]
+}, Open  ]],
+
 Cell[BoxData[
- RowBox[{"InstallShortcuts", "[", "]"}]], "Input"]
+ RowBox[{"{", 
+  RowBox[{"Null", ",", "Null"}], "}"}]], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"InstallShortcuts", "[", "]"}]], "Input"],
+
+Cell["?Shortcuts", "Input",
+ GeneratedCell->True,
+ CellAutoOverwrite->True],
+
+Cell[CellGroupData[{
+
+Cell["?Shortcuts", "Input",
+ GeneratedCell->True,
+ CellAutoOverwrite->True],
+
+Cell[BoxData[
+ StyleBox["\<\"In the following table the \[CommandKey] key is meant to with \
+the Windows key next to the \[ControlKey] key. \
+\\n\\n\!\(\*TagBox[GridBox[{{\\\"\\\\\\\"\[ControlKey] \[ShiftKey] \[UpArrow] \
+\\\\\\\"\\\", \\\"\\\\\\\"Select all cells from the beginning of the notebook \
+until the  cursor position.\\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] \
+\[ShiftKey] \[DownArrow] \\\\\\\"\\\", \\\"\\\\\\\"Select all cells from the \
+position of the mouse until the end of the notebook.\\\\\\\"\\\"}, \
+{\\\"\\\\\\\"\[ControlKey] \[ShiftKey] PageUp \\\\\\\"\\\", \
+\\\"\\\\\\\"Evaluate all cells from the beginning of the notebook until the \
+position of the mouse.\\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] \[ShiftKey] X \
+\\\\\\\"\\\", \\\"\\\\\\\"Delete all generated cells, like Output, Message \
+and Print cells, also in MessagesNotebook[].\\\\\\\"\\\"}, {\\\"\\\\\\\"\
+\[ControlKey] \[AltKey] X \\\\\\\"\\\", \\\"\\\\\\\"Delete all non-Input and \
+non-Code cells \\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] Q \\\\\\\"\\\", \\\"\
+\\\\\\\"Quit and restart Kernel \\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] R\\\
+\\\\\"\\\", \\\"\\\\\\\"Quit and restart the FrontEnd; all Untitled notebooks \
+are closed and others saved. Reopening the selected notebook if it is saved \
+\\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] ` \\\\\\\"\\\", \
+\\\"\\\\\\\"Evaluate Notebook\\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] H \\\\\
+\\\"\\\", \\\"\\\\\\\"Evaluate Notebook\\\\\\\"\\\"}, {\\\"\\\\\\\"\
+\[ControlKey] \[TabKey] \\\\\\\"\\\", \\\"\\\\\\\"Delete all output and \
+evaluate all cells from the beginning  of the notebook until the cursor \
+position \\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] \[ShiftKey] \[TabKey] \\\\\
+\\\"\\\", \\\"\\\\\\\"Delete all output, restart the kernel and evaluate all \
+cells from the beginning of the notebook until the cursor position \\\\\\\"\\\
+\"}, {\\\"\\\\\\\"\[ControlKey] \[ShiftKey] ,\\\\\\\"\\\", \
+\\\"\\\\\\\"Copy/Evaluate/Paste the selected cell subexpression into a new \
+notebook \\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] \[ShiftKey] X \
+\\\\\\\"\\\", \\\"\\\\\\\"Delete all generated cells, like Output, Message \
+and Print cells \\\\\\\"\\\"}, {\\\"\\\\\\\"\[CommandKey] \[AltKey] B \
+\\\\\\\"\\\", \\\"\\\\\\\"Move the cursor from anywhere inside a cell to the \
+cell bracket \\\\\\\"\\\"}, {\\\"\\\\\\\"\[CommandKey] \[AltKey] M \\\\\\\"\\\
+\", \\\"\\\\\\\"Minimize all Mathematica notebooks \\\\\\\"\\\"}, {\\\"\\\\\\\
+\"\[CommandKey] \[AltKey] U \\\\\\\"\\\", \\\"\\\\\\\"Cut the selected cell \
+and paste it before the preceding cell \\\\\\\"\\\"}, {\\\"\\\\\\\"\
+\[CommandKey] \[AltKey] D \\\\\\\"\\\", \\\"\\\\\\\"Cut the selected cell and \
+paste it after the following cell \\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] \
+\[ShiftKey] Delete \\\\\\\"\\\", \\\"\\\\\\\"Close all Untitled-*  notebooks \
+without confirmation \\\\\\\"\\\"}, {\\\"\\\\\\\"F4 \\\\\\\"\\\", \
+\\\"\\\\\\\"Insert [[]]\\\\\\\"\\\"}, {\\\"\\\\\\\"F6 \\\\\\\"\\\", \
+\\\"\\\\\\\"Stack Windows\\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] T \\\\\\\"\
+\\\", \\\"\\\\\\\"Evaluate the file joker.m from \
+C:\\\\\\\\\\\\\\\\Users\\\\\\\\\\\\\\\\Rolf Mertig\\\\\\\\\\\\\\\\AppData\\\\\
+\\\\\\\\\\\\Roaming\\\\\\\\\\\\\\\\Mathematica\\\\\\\\\\\\\\\\SystemFiles\\\\\
+\\\\\\\\\\\\FrontEnd\\\\\\\\\\\\\\\\TextResources\\\\\\\\\\\\\\\\Windows\\\\\\\
+\"\\\"}, {\\\"\\\\\\\"\[ControlKey] \[ShiftKey] J \\\\\\\"\\\", \
+\\\"\\\\\\\"Open joker.m from C:\\\\\\\\\\\\\\\\Users\\\\\\\\\\\\\\\\Rolf \
+Mertig\\\\\\\\\\\\\\\\AppData\\\\\\\\\\\\\\\\Roaming\\\\\\\\\\\\\\\\\
+Mathematica\\\\\\\\\\\\\\\\SystemFiles\\\\\\\\\\\\\\\\FrontEnd\\\\\\\\\\\\\\\\\
+TextResources\\\\\\\\\\\\\\\\Windows\\\\\\\"\\\"}, \
+{FrameBox[StyleBox[\\\"\\\\\\\"The following three shortcuts work only on \
+english  keyboards: \\\\\\\"\\\", \\\"Text\\\", Rule[StripOnInput, False]], \
+Rule[FrameStyle, None], Rule[FrameMargins, 10], Rule[StripOnInput, False]], \
+\\\"\[SpanFromLeft]\\\"}, {\\\"\\\\\\\"\[ControlKey] [ \\\\\\\"\\\", \\\"\\\\\
+\\\"Insert [[\\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] ] \\\\\\\"\\\", \\\"\\\
+\\\\\"Insert ]]\\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] \[AltKey] ] \\\\\\\"\
+\\\", \\\"\\\\\\\"Insert [[]]\\\\\\\"\\\"}}, GridBoxAlignment -> {\\\"Columns\
+\\\" -> {{Left}}}, AutoDelete -> False, GridBoxDividers -> {\\\"Columns\\\" \
+-> {{True}}, \\\"Rows\\\" -> {{True}}}, GridBoxItemSize -> {\\\"Columns\\\" \
+-> {{Automatic}}, \\\"Rows\\\" -> {{Automatic}}}, BaseStyle -> {FontSize -> \
+18}, FrameStyle -> GrayLevel[0.85]], \\\"Grid\\\"]\)\"\>", "MSG"]], "Print", \
+"PrintUsage",
+ CellTags->"Info3641757714-5667396"],
+
+Cell[BoxData[""], "Output"],
+
+Cell[BoxData[
+ TemplateBox[{FrontEndObject[
+    LinkObject["t3eqd_shm", 3, 1]],30,
+   "FrontEndObject[LinkObject[\"t3eqd_shm\", 3, 1]]","30","30"},
+  "NotebookObjectUnsaved"]], "Output"],
+
+Cell[BoxData[
+ StyleBox["\<\"In the following table the \[CommandKey] key is meant to with \
+the Windows key next to the \[ControlKey] key. \
+\\n\\n\!\(\*TagBox[GridBox[{{\\\"\\\\\\\"\[ControlKey] \[ShiftKey] \[UpArrow] \
+\\\\\\\"\\\", \\\"\\\\\\\"Select all cells from the beginning of the notebook \
+until the  cursor position.\\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] \
+\[ShiftKey] \[DownArrow] \\\\\\\"\\\", \\\"\\\\\\\"Select all cells from the \
+position of the mouse until the end of the notebook.\\\\\\\"\\\"}, \
+{\\\"\\\\\\\"\[ControlKey] \[ShiftKey] PageUp \\\\\\\"\\\", \
+\\\"\\\\\\\"Evaluate all cells from the beginning of the notebook until the \
+position of the mouse.\\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] \[ShiftKey] X \
+\\\\\\\"\\\", \\\"\\\\\\\"Delete all generated cells, like Output, Message \
+and Print cells, also in MessagesNotebook[].\\\\\\\"\\\"}, {\\\"\\\\\\\"\
+\[ControlKey] \[AltKey] X \\\\\\\"\\\", \\\"\\\\\\\"Delete all non-Input and \
+non-Code cells \\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] Q \\\\\\\"\\\", \\\"\
+\\\\\\\"Quit and restart Kernel \\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] R\\\
+\\\\\"\\\", \\\"\\\\\\\"Quit and restart the FrontEnd; all Untitled notebooks \
+are closed and others saved. Reopening the selected notebook if it is saved \
+\\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] ` \\\\\\\"\\\", \
+\\\"\\\\\\\"Evaluate Notebook\\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] H \\\\\
+\\\"\\\", \\\"\\\\\\\"Evaluate Notebook\\\\\\\"\\\"}, {\\\"\\\\\\\"\
+\[ControlKey] \[TabKey] \\\\\\\"\\\", \\\"\\\\\\\"Delete all output and \
+evaluate all cells from the beginning  of the notebook until the cursor \
+position \\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] \[ShiftKey] \[TabKey] \\\\\
+\\\"\\\", \\\"\\\\\\\"Delete all output, restart the kernel and evaluate all \
+cells from the beginning of the notebook until the cursor position \\\\\\\"\\\
+\"}, {\\\"\\\\\\\"\[ControlKey] \[ShiftKey] ,\\\\\\\"\\\", \
+\\\"\\\\\\\"Copy/Evaluate/Paste the selected cell subexpression into a new \
+notebook \\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] \[ShiftKey] X \
+\\\\\\\"\\\", \\\"\\\\\\\"Delete all generated cells, like Output, Message \
+and Print cells \\\\\\\"\\\"}, {\\\"\\\\\\\"\[CommandKey] \[AltKey] B \
+\\\\\\\"\\\", \\\"\\\\\\\"Move the cursor from anywhere inside a cell to the \
+cell bracket \\\\\\\"\\\"}, {\\\"\\\\\\\"\[CommandKey] \[AltKey] M \\\\\\\"\\\
+\", \\\"\\\\\\\"Minimize all Mathematica notebooks \\\\\\\"\\\"}, {\\\"\\\\\\\
+\"\[CommandKey] \[AltKey] U \\\\\\\"\\\", \\\"\\\\\\\"Cut the selected cell \
+and paste it before the preceding cell \\\\\\\"\\\"}, {\\\"\\\\\\\"\
+\[CommandKey] \[AltKey] D \\\\\\\"\\\", \\\"\\\\\\\"Cut the selected cell and \
+paste it after the following cell \\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] \
+\[ShiftKey] Delete \\\\\\\"\\\", \\\"\\\\\\\"Close all Untitled-*  notebooks \
+without confirmation \\\\\\\"\\\"}, {\\\"\\\\\\\"F4 \\\\\\\"\\\", \
+\\\"\\\\\\\"Insert [[]]\\\\\\\"\\\"}, {\\\"\\\\\\\"F6 \\\\\\\"\\\", \
+\\\"\\\\\\\"Stack Windows\\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] T \\\\\\\"\
+\\\", \\\"\\\\\\\"Evaluate the file joker.m from \
+C:\\\\\\\\\\\\\\\\Users\\\\\\\\\\\\\\\\Rolf Mertig\\\\\\\\\\\\\\\\AppData\\\\\
+\\\\\\\\\\\\Roaming\\\\\\\\\\\\\\\\Mathematica\\\\\\\\\\\\\\\\SystemFiles\\\\\
+\\\\\\\\\\\\FrontEnd\\\\\\\\\\\\\\\\TextResources\\\\\\\\\\\\\\\\Windows\\\\\\\
+\"\\\"}, {\\\"\\\\\\\"\[ControlKey] \[ShiftKey] J \\\\\\\"\\\", \
+\\\"\\\\\\\"Open joker.m from C:\\\\\\\\\\\\\\\\Users\\\\\\\\\\\\\\\\Rolf \
+Mertig\\\\\\\\\\\\\\\\AppData\\\\\\\\\\\\\\\\Roaming\\\\\\\\\\\\\\\\\
+Mathematica\\\\\\\\\\\\\\\\SystemFiles\\\\\\\\\\\\\\\\FrontEnd\\\\\\\\\\\\\\\\\
+TextResources\\\\\\\\\\\\\\\\Windows\\\\\\\"\\\"}, \
+{FrameBox[StyleBox[\\\"\\\\\\\"The following three shortcuts work only on \
+english  keyboards: \\\\\\\"\\\", \\\"Text\\\", Rule[StripOnInput, False]], \
+Rule[FrameStyle, None], Rule[FrameMargins, 10], Rule[StripOnInput, False]], \
+\\\"\[SpanFromLeft]\\\"}, {\\\"\\\\\\\"\[ControlKey] [ \\\\\\\"\\\", \\\"\\\\\
+\\\"Insert [[\\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] ] \\\\\\\"\\\", \\\"\\\
+\\\\\"Insert ]]\\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] \[AltKey] ] \\\\\\\"\
+\\\", \\\"\\\\\\\"Insert [[]]\\\\\\\"\\\"}}, GridBoxAlignment -> {\\\"Columns\
+\\\" -> {{Left}}}, AutoDelete -> False, GridBoxDividers -> {\\\"Columns\\\" \
+-> {{True}}, \\\"Rows\\\" -> {{True}}}, GridBoxItemSize -> {\\\"Columns\\\" \
+-> {{Automatic}}, \\\"Rows\\\" -> {{Automatic}}}, BaseStyle -> {FontSize -> \
+18}, FrameStyle -> GrayLevel[0.85]], \\\"Grid\\\"]\)\"\>", "MSG"]], "Print", \
+"PrintUsage",
+ CellTags->"Info3641757714-5667396"]
+}, Open  ]]
 },
 Editable->True,
-WindowSize->{1398, 870},
-WindowMargins->{{197, Automatic}, {18, Automatic}},
+WindowSize->{775, 872},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 Magnification:>1.4 Inherited,
 FrontEndVersion->"10.1 for Microsoft Windows (64-bit) (March 23, 2015)",
 StyleDefinitions->"Default.nb"
@@ -47,19 +237,61 @@ StyleDefinitions->"Default.nb"
 
 (* Internal cache information *)
 (*CellTagsOutline
-CellTagsIndex->{}
+CellTagsIndex->{
+ "Info3641757713-5667396"->{
+  Cell[899, 36, 241, 4, 83, "Print",
+   CellTags->"Info3641757713-5667396"],
+  Cell[1239, 48, 219, 4, 83, "Print",
+   CellTags->"Info3641757713-5667396"]},
+ "Info3641757714-5667396"->{
+  Cell[2309, 89, 4617, 63, 2946, "Print",
+   CellTags->"Info3641757714-5667396"],
+  Cell[7148, 162, 4617, 63, 2946, "Print",
+   CellTags->"Info3641757714-5667396"]}
+ }
 *)
 (*CellTagsIndex
-CellTagsIndex->{}
+CellTagsIndex->{
+ {"Info3641757713-5667396", 12132, 240},
+ {"Info3641757714-5667396", 12317, 245}
+ }
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 65, 1, 42, "Input"],
-Cell[626, 23, 75, 1, 42, "Input"],
-Cell[704, 26, 61, 1, 42, "Input"],
-Cell[768, 29, 59, 1, 42, "Input"],
-Cell[830, 32, 66, 1, 42, "Input"],
-Cell[899, 35, 64, 1, 42, "Input"]
+Cell[CellGroupData[{
+Cell[580, 22, 65, 1, 42, "Input"],
+Cell[648, 25, 72, 0, 41, "Output"]
+}, Open  ]],
+Cell[735, 28, 75, 1, 42, "Input"],
+Cell[CellGroupData[{
+Cell[835, 33, 61, 1, 42, "Input"],
+Cell[899, 36, 241, 4, 83, "Print",
+ CellTags->"Info3641757713-5667396"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1177, 45, 59, 1, 42, "Input"],
+Cell[1239, 48, 219, 4, 83, "Print",
+ CellTags->"Info3641757713-5667396"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1495, 57, 66, 1, 42, "Input"],
+Cell[CellGroupData[{
+Cell[1586, 62, 191, 2, 82, "Print"],
+Cell[1780, 66, 175, 2, 82, "Print"]
+}, Open  ]],
+Cell[1970, 71, 79, 2, 41, "Output"]
+}, Open  ]],
+Cell[2064, 76, 64, 1, 42, "Input"],
+Cell[2131, 79, 75, 2, 42, "Input"],
+Cell[CellGroupData[{
+Cell[2231, 85, 75, 2, 42, "Input"],
+Cell[2309, 89, 4617, 63, 2946, "Print",
+ CellTags->"Info3641757714-5667396"],
+Cell[6929, 154, 27, 0, 41, "Output"],
+Cell[6959, 156, 186, 4, 66, "Output"],
+Cell[7148, 162, 4617, 63, 2946, "Print",
+ CellTags->"Info3641757714-5667396"]
+}, Open  ]]
 }
 ]
 *)

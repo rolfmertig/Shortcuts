@@ -40,7 +40,7 @@ Switch[
           {"Cmd Alt D ", "Cut the selected cell and paste it after the following cell "}, 
           {"Ctrl Shift Delete ", "Close all Untitled-*  notebooks without confirmation "}, 
           {"F4 ", "Insert [[]]"}, 
-          {"F6 ", "Apply SetOptions[SelectedNotebook[], WindowMargins -> 42]"}, 
+          {"F6 ", "Stack Windows"}, 
           {"Ctrl T ", "Evaluate the file joker.m from " <> myjokerdir2}, 
           {"Ctrl Shift J ", "Open joker.m from " <> myjokerdir2}, 
           {Framed[ Style["The following three shortcuts work only on english  keyboards: ", "Text"], FrameStyle -> None, FrameMargins -> 10], SpanFromLeft}, 
@@ -334,6 +334,10 @@ Shortcut["TestRun2"] := (
 	SelectionEvaluate[EvaluationNotebook[]]; (* evaluate all selected *)
 );
 
+Shortcut["F6"] := (
+	"Info: stack windows ";
+	FrontEndTokenExecute@"StackWindows"
+);
 
 
 End[];

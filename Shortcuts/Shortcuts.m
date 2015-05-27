@@ -37,7 +37,7 @@ Get @ FileNameJoin[{DirectoryName[$InputFileName], "ShortcutCode.m"}];
 
 
 (* ::Subsubtitle:: *)
-(*Author: Rolf Mertig, http://www.gluonvision.com *)
+(*Author: Rolf Mertig, GluonVision GmbH, http://www.gluonvision.com *)
 
 
 (* ::Text:: *)
@@ -79,7 +79,7 @@ InstallShortcuts[] :=
       Print["This code works only in Wolfram Mathematica 9 and higher."],
 
 
-      If[True,
+      If[False, (* change to True just for debugging *)
         SetOptions[$FrontEnd, NotebookSecurityOptions -> {"TrustByDefault" -> True, "UntrustedPath" -> {}}]
         ,
         CreateWindow[DialogNotebook[{TextCell["
@@ -277,7 +277,10 @@ Item[KeyEvent[\"F4\"],
 
 (* on Linux and  Windows: set WindowMargins -> 42 on the selected notebook *)
 Item[KeyEvent[\"F6\"],
-     FrontEndExecute[{FrontEnd`SetOptions[FrontEnd`SelectedNotebook[], Rule[WindowMargins, 42]]}]
+     KernelExecute[
+      Needs[\"Shortcuts`\"]; Shortcuts`Shortcut[\"F6\"] 
+     ]
+         , MenuEvaluator -> Automatic
 ],
 
 (* the 'live' configurable joker keyboard shortcut: *)
