@@ -1,60 +1,6 @@
 (* Wolfram Language package *)
 Shortcut::usage = "Shortcut[name] contains the kernel definition for the shortcut name. For a list of shortcuts type ?Shortcuts";
 
-Shortcuts::usage = ToString[Style["In the following table the " <>
-                  Switch[$OperatingSystem,
-                  	     "Windows",
-                  	     "\[CommandKey] key is meant to with the Windows key next to the \[ControlKey] key. \n\n",
-                  	     _, 
-                  	     ""
-                  ], "Text", FontSize -> 18]] <>
-Switch[
-	$OperatingSystem,
-	"Windows",                   
-(* Windows *)	
- StringReplace[#, {"Ctrl" -> "\[ControlKey]", "Cmd" -> "\[CommandKey]", "Alt" -> "\[AltKey]", "Shift" -> "\[ShiftKey]", "Tab" -> "\[TabKey]"}]&@
- ToString[#, StandardForm] &@
-  With[{os = 
-     Switch[$OperatingSystem, "MacOSX", "Macintosh", "Windows", 
-      "Windows", "Unix", "X"]},
-   With[{
-     myjokerdir2 = FileNameJoin[{$UserBaseDirectory, "SystemFiles", "FrontEnd", 
-        "TextResources", os}]},
-    Grid[{
-    	  {"Ctrl Shift \[UpArrow] ",   "Select all cells from the beginning of the notebook until the  cursor position."}, 
-    	  {"Ctrl Shift \[DownArrow] ", "Select all cells from the position of the mouse until the end of the notebook."}, 
-    	  {"Ctrl Shift PageUp ", "Evaluate all cells from the beginning of the notebook until the position of the mouse."}, 
-    	  {"Ctrl Shift X ", "Delete all generated cells, like Output, Message and Print cells, also in MessagesNotebook[]."}, 
-    	  {"Ctrl Alt X ", "Delete all non-Input and non-Code cells "}, 
-    	  {"Ctrl Q ", "Quit and restart Kernel "}, 
-    	  {"Ctrl R", "Quit and restart the FrontEnd; all Untitled notebooks are closed and others saved. Reopening the selected notebook if it is saved "}, 
-    	  {"Ctrl ` ", "Evaluate Notebook"}, 
-    	  {"Ctrl H ", "Evaluate Notebook"}, 
-    	  {"Ctrl Tab ", "Delete all output and evaluate all cells from the beginning  of the notebook until the cursor position "}, 
-    	  {"Ctrl Shift Tab ", "Delete all output, restart the kernel and evaluate all cells from the beginning of the notebook until the cursor position "}, 
-          {"Ctrl Shift ,", "Copy/Evaluate/Paste the selected cell subexpression into a new notebook "}, 
-          {"Ctrl Shift X ", "Delete all generated cells, like Output, Message and Print cells "}, 
-          {"Cmd Alt B ", "Move the cursor from anywhere inside a cell to the cell bracket "}, 
-          {"Cmd Alt M ", "Minimize all Mathematica notebooks "}, 
-          {"Cmd Alt U ", "Cut the selected cell and paste it before the preceding cell "}, 
-          {"Cmd Alt D ", "Cut the selected cell and paste it after the following cell "}, 
-          {"Ctrl Shift Delete ", "Close all Untitled-*  notebooks without confirmation "}, 
-          {"F4 ", "Insert [[]]"}, 
-          {"F6 ", "Stack Windows"}, 
-          {"Ctrl T ", "Evaluate the file joker.m from " <> myjokerdir2}, 
-          {"Ctrl Shift J ", "Open joker.m from " <> myjokerdir2}, 
-          {Framed[ Style["The following three shortcuts work only on english  keyboards: ", "Text"], FrameStyle -> None, FrameMargins -> 10], SpanFromLeft}, 
-          {"Ctrl [ "(*]*), "Insert [["}, {(*[*)"Ctrl ] ", "Insert ]]"}, 
-          {(*[*)"Ctrl Alt ] ", "Insert [[]]"}}, Alignment -> {Left}, Dividers -> All, 
-          BaseStyle -> {FontSize -> 18},
-          FrameStyle -> LightGray]]
-   ]
-     ,
-(* ************************************************************ *)     
-(* Linux *)
-"Unix",
-""
-];
 
 Begin["`Private`"]
 
@@ -84,6 +30,49 @@ Shortcut["DeleteAllCellsButInputAndCode"] :=
     NotebookDelete @ Cells[ CellStyle -> (Alternatives@@Complement[ Union@Flatten@Experimental`CellStyleNames[], {"Input", "Code"}])];
     NotebookDelete @ Cells @ MessagesNotebook[];
     );
+
+Shortcut["QuitFrontEnd", enb_:EvaluationNotebook[]] :=
+    ( "Info: quit the FrontEnd including closing all Untitled notebooks";
+    Block[{StartTime, ToFileTime, Id, mproc},
+    (* the restarting is done throu the OS. On MacOSX and Linux there needs to be a grace time *)
+		If[ ("FileName" /. NotebookInformation[enb]) === "FileName" ,
+    	    If[$OperatingSystem === "Unix",
+     			(* since othwerwise on Linux restarting does not work ... , do: *)
+				NotebookSave[enb, FileNameJoin[{$TemporaryDirectory, "shortcuttmp.nb"}]]
+    	    ]
+		];
+	(* close all Untitled notebooks : *)
+	Map[NotebookClose, Select[Notebooks[], ReplaceAll["FileName",NotebookInformation[#]] === "FileName"&]];
+	(* save all left notebooks except the Messages one: *)
+	Map[NotebookSave,  Select[Notebooks[],Replace["WindowTitle",NotebookInformation[#]]=!="Messages"&]];
+	(* kill the newest FrontEnd operating system depently: *)
+	Switch[ $OperatingSystem ,
+	"Windows"
+    	,    (* use NETLink to get a list of PID's and take the last one to be killed *)
+		Needs["NETLink`"]; Symbol["NETLink`NETNew"]["System.Diagnostics.Process"];
+		mproc = Select[System`Diagnostics`Process`GetProcessesByName["Mathematica"], Quiet[#@StartTime]=!=$Failed &];
+		ReadList["!taskkill /PID " <> 
+			ToString[(Last@SortBy[mproc, 
+			(* if there are processes by other users we might get Access Denied, so we skip them: *)	
+			#@StartTime @ ToFileTime[]&] ) @ Id ] <> " /f  " ,String
+		];
+    	,
+	"Unix"
+	    , 
+		Run["kill -9 " <> ToString[ Last[ Sort[ ReadList[ StringToStream[RunProcess[{"pidof", "Mathematica"}, "StandardOutput"]],Number]]] ] <>
+        	";  rm -f /tmp/shortcuttmp.nb ;"
+    	]
+		,
+	"MacOSX"
+		,
+		Run["kill -9 " <> 
+          (* take the newest pid , without using awk : *)
+          ToString[ Last[Import["!ps axc | grep Mathematica", "Table"][[All, 1]]] ] 
+		]
+(*Switch*)
+	]
+] (* Block*)
+);
 
 
 Shortcut["RestartFrontEnd", enb_:EvaluationNotebook[]] :=
@@ -169,7 +158,7 @@ Shortcut["RestartKernel"] :=
 (* So this is a slight rewrite of Kuba's answer here: http://mathematica.stackexchange.com/a/55073/29
    However, it is not the same, which becomes apparent when evaluatin a larger notebook 
 
-Shortcut["EvalFromTop"] :=  Module[{i, enb = EvaluationNotebook[]},
+Shortcut["EvaluateFromTop"] :=  Module[{i, enb = EvaluationNotebook[]},
   (* allow the cursor to be in between cells :*)
   If[CurrentValue[enb, "CellCount"] === 0, SelectionMove[enb, Previous, Cell, AutoScroll -> False]; ];
   (* Only go on if we are not at the top of the notebook: *)
@@ -188,7 +177,10 @@ Shortcut["EvalFromTop"] :=  Module[{i, enb = EvaluationNotebook[]},
 *)
  
  
-Shortcut["EvalFromTop"] :=  ( Shortcut["SelectToTop"]; SelectionEvaluate[EvaluationNotebook[]] );
+Shortcuts`Shortcut["EvaluateFromTop"] :=  ( 
+Shortcut["SelectToTop"]; 
+SelectionEvaluate[SelectedNotebook[]]
+	);
   
 (* Notice that from http://mathematica.stackexchange.com/a/55073/29
    I could not find a way to actually just select all cells,
@@ -318,6 +310,7 @@ Shortcut["DoIt"] := (
 
 
 Shortcut["TestRun1"] := (
+	"Info: delete all output, select input cells from the top until the cursor and evaluate the selected cells";
 	NotebookDelete @ Cells[ CellStyle -> ("Output"|"Print"|"Message")]; (* usually this makes sense *)
 	NotebookDelete @ Cells @ MessagesNotebook[]; (* and this too *)
 	Shortcut["SelectToTop"];   (* select all cells from the cursor up to the beginning *)
@@ -326,18 +319,53 @@ Shortcut["TestRun1"] := (
 
 
 
-Shortcut["TestRun2"] := (
-	NotebookDelete @ Cells[ CellStyle -> ("Output"|"Print"|"Message")]; (* usually this makes sense *)
-	NotebookDelete @ Cells @ MessagesNotebook[]; (* and this too *)
-	Shortcut["SelectToTop"];   (* select all cells from the cursor up to the beginning *)
-	Shortcut["RestartKernel"]; (* restart the kernel *)
-	SelectionEvaluate[EvaluationNotebook[]]; (* evaluate all selected *)
-);
+Shortcut["TestRun2"] :=
+    (
+    "Info: delete all output, select input cells from the top until the cursor, restart the kernel and evaluate the selected cells";
+    NotebookDelete @ Cells[ CellStyle -> ("Output"|"Print"|"Message")]; (* usually this makes sense *)
+    NotebookDelete @ Cells @ MessagesNotebook[]; (* and this too *)
+    Shortcut["SelectToTop"];   (* select all cells from the cursor up to the beginning *)
+    Shortcut["RestartKernel"]; (* restart the kernel *)
+    SelectionEvaluate[EvaluationNotebook[]]; (* evaluate all selected *)
+    );
 
-Shortcut["F6"] := (
-	"Info: stack windows ";
-	FrontEndTokenExecute@"StackWindows"
-);
+Shortcut["F6"] :=
+    (
+    "Info: stack windows ";
+    FrontEndTokenExecute@"StackWindows"
+    );
 
+Shortcut["RunJoker"] :=
+    (
+    "Info: execute joker.m, a user configurable file";
+    (If[ FileExistsQ[#1],
+         Get[#1]
+     ] &)[
+     FileNameJoin[{$UserBaseDirectory, "SystemFiles", "FrontEnd", "TextResources", Switch[$OperatingSystem,
+    "MacOSX", "Macintosh",
+    "Windows", "Windows",
+    "Unix", "X"], "joker.m"}]]
+    );
 
+Shortcut["OpenJoker"] :=
+    (
+    "Info: open joker.m, a user configurable file";
+    (If[ FileExistsQ[#1],
+         NotebookOpen[#1]
+     ] & )[FileNameJoin[{$UserBaseDirectory, "SystemFiles", "FrontEnd", "TextResources", 
+    Switch[$OperatingSystem, "MacOSX", "Macintosh", "Windows", "Windows", "Unix", "X"], "joker.m"}]]
+    );
+    
+Shortcut["EvaluateSelected"] :=
+    (
+    "Info: evaluate selected expression in a new notebook";
+    CreateDocument[(If[ MatchQ[#1, _String] || MatchQ[#1, _RowBox],
+                        {Cell[BoxData[#1], "Input"], 
+                        ExpressionCell[ToExpression[#1], "Output"]},
+                        Cell[TextData["Please select an expression inside a cell."], "Text"]
+                    ] & )[
+    Replace[NotebookRead[SelectedNotebook[]], {} -> Null]], WindowSize -> {Medium, FitAll}, 
+    WindowMargins -> {{Automatic, 2}, {Automatic, 2}}, Magnification -> 1.5]
+    );
+    
 End[];

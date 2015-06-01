@@ -8,25 +8,170 @@ This
 (* load the MathematicaPackageInstall function from github *)
 
 
-
 (* install the Shortcuts` package from github into $UserBaseDirectory/Applications *)
 MathematicaPackageInstall`MathematicaPackageInstall["Shortcuts`"];
 
-Needs["Shortcuts`"];                     (* load it and open the example notebook *)
-
-Shortcuts`InstallShortcuts[]
+Needs["Shortcuts`"];                     
 
 *)
 
 BeginPackage["Shortcuts`"]
+
+Shortcuts::usage = "Shortcuts[] gives a list of extra keyboard shortcuts which were defined by InstallShortcuts[]."
 
 InstallShortcuts::usage = "InstallShortcuts[] installs additional shortcuts to $UserBaseDirectory/SystemFiles/FrontEnd/TextResource/... ."
 
 UninstallShortcuts::usage = "UninstallShortcuts[] deletes the file KeyEventTranslations.tr and joker.m in $UserBaseDirecty/SystemFiles/FrontEnd/TextResources/..."
 
 
-
 Get @ FileNameJoin[{DirectoryName[$InputFileName], "ShortcutCode.m"}];
+
+Begin["`Private`"];
+
+
+(* becuase Shortcuts[] is operating system dependent we need DynamicBox in the help notebooks ... *)
+Shortcuts[] := DynamicModule[ {keyStyle, toKeyStyle},
+Dynamic[
+Style[
+  With[{os = Switch[$OperatingSystem, "MacOSX", "Macintosh", "Windows", "Windows", "Unix", "X"]},
+   With[{ myjokerdir2 = StringReplace[ FileNameJoin[{$UserBaseDirectory, "SystemFiles", "FrontEnd", 
+          "TextResources", os}], $UserBaseDirectory -> "$UserBaseDirectory"]
+        },
+ Column[{       
+	"In the following table the " <>
+                   Switch[$OperatingSystem,
+							"Windows", 
+							keyStyle["Win"] <> 
+                     	     " key is meant to be the Windows key next to the "<>
+						    keyStyle["Alt"] <> "key.\n",
+							"Unix", 
+							keyStyle["Mod1"] <> 
+                     	     " key is usually the Windows key and the "<>
+							keyStyle["Mod2"] <> 
+							" key is usually the " <> keyStyle["Alt"] <> " key",
+							 _ , 
+                  	     ""
+                    ] 
+                    ,
+Switch[
+	$OperatingSystem,
+	
+	"Windows",                   
+	
+(* Windows *)	
+ StringReplace[#, "Cmd" -> "Win"]& @ ToString[#, StandardForm]& @ Grid[ toKeyStyle /@ {
+(*keyevent[26]*) {"Ctrl F1", "Open the Shortcuts tutorial with a list of all extra keyboard shortcuts."}, 
+(*keyevent[1] *) {"Ctrl Tab", "Delete all output and evaluate all cells from the top to the insertion point."}, 
+(*keyevent[2] *) {"Ctrl Shift Tab", "Delete all output, restart the kernel and evaluate all cells from the top to the insertion point."}, 
+(*keyevent[12]*) {"Ctrl Shift \[UpArrow]", "Evaluate all cells from the beginning of the notebook until the insertion point."}, 
+(*keyevent[15]*) {"Ctrl ;",   "Select all cells from the beginning of the notebook until the insertion point."}, 
+(*keyevent[16]*) {"Ctrl Shift \[DownArrow]", "Select all cells from the insertion point until the end of the notebook."}, 
+(*keyevent[7] *) {"Ctrl Shift X", "Delete all generated cells, like Output, Message and Print cells, also in MessagesNotebook[]."}, 
+(*keyevent[8] *) {"Ctrl Alt X", "Delete all non-Input and non-Code cells."}, 
+(*keyevent[11]*) {"Ctrl Q", "Quit and restart the Kernel."}, 
+(*keyevent[9] *) {"Ctrl R", "Quit and restart the FrontEnd; all Untitled notebooks are closed and others saved. Reopening the selected notebook if it is saved."}, 
+(*keyevent[13]*) {"Ctrl H", "Evaluate Notebook."}, 
+(*keyevent[25]*) {"Ctrl Shift ,", "Copy, paste and evaluate the selected expression from the inside of a cell into a new notebook."}, 
+(*keyevent[6] *) {"Cmd Alt B", "Select current cell. The insertion point can be anywhere inside the cell."}, 
+(*keyevent[3] *) {"Cmd Alt M", "Minimize all Mathematica notebooks."}, 
+(*keyevent[4] *) {"Cmd Alt U", "Cut the selected cell and paste it before the preceding cell."}, 
+(*keyevent[5] *) {"Cmd Alt D", "Cut the selected cell and paste it after the following cell."}, 
+(*keyevent[10]*) {"Cmd Alt Delete", "Quit the FrontEnd, saving named notebooks first."},
+(*keyevent[17]*) {"Ctrl Shift Delete", "Close all Untitled-*  notebooks without confirmation."}, 
+(*keyevent[21]*) {"F4", "Insert \[LeftDoubleBracket]\[RightDoubleBracket]"}, 
+(*keyevent[12]*) {"F6", "Stack Windows."}, 
+(*keyevent[12]*) {"Ctrl T", "Evaluate the file joker.m from " <> myjokerdir2}, 
+(*keyevent[12]*) {"Ctrl Shift J", "Open joker.m from " <> myjokerdir2}, 
+(*keyevent[12]*) {Framed[ Style["The following four shortcuts work only on english keyboard layouts:", "Text"], FrameStyle -> None, FrameMargins -> 10], SpanFromLeft}, 
+(*keyevent[14]*) {"Ctrl `", "Evaluate Notebook."}, 
+(*keyevent[12]*) {"Ctrl ["(*]*), "Insert [["}, {(*[*)"Ctrl ] ", "Insert ]]"}, 
+(*keyevent[12]*) {(*[*)"Ctrl Alt ]", "Insert [[]]"}}, 
+Alignment -> {Left}, Dividers -> All, FrameStyle -> LightGray
+]
+     ,
+(* ******************************** *********************************************************** *)     
+(* Linux *)
+"Unix"
+,
+ StringReplace[#, {"Cmd" -> "Mod1", "Alt" -> "Mod2"}]& @ ToString[#, StandardForm]& @ Grid[ toKeyStyle /@ {
+(*keyevent[26]*) {"Ctrl F1", "Open the Shortcuts tutorial with a list of all extra keyboard shortcuts."}, 
+(*keyevent[1] *) {"Ctrl Tab", "Delete all output and evaluate all cells from the top to the insertion point."}, 
+(*keyevent[2] *) {"Ctrl Shift Tab", "Delete all output, restart the kernel and evaluate all cells from the top to the insertion point."}, 
+(*keyevent[12]*) {"Ctrl Shift \[UpArrow]", "Evaluate all cells from the beginning of the notebook until the insertion point."}, 
+(*keyevent[15]*) {"Ctrl ;",   "Select all cells from the beginning of the notebook until the insertion point."}, 
+(*keyevent[16]*) {"Ctrl Shift \[DownArrow]", "Select all cells from the insertion point until the end of the notebook."}, 
+(*keyevent[7] *) {"Ctrl Shift X", "Delete all generated cells, like Output, Message and Print cells, also in MessagesNotebook[]."}, 
+(*keyevent[8] *) {"Ctrl Alt X", "Delete all non-Input and non-Code cells."}, 
+(*keyevent[11]*) {"Ctrl Shift Q", "Quit and restart the Kernel."}, 
+(*keyevent[9] *) {"Ctrl R", "Quit and restart the FrontEnd; all Untitled notebooks are closed and others saved. Reopening the selected notebook if it is saved."}, 
+(*keyevent[13]*) {"Ctrl H", "Evaluate Notebook."}, 
+(*keyevent[25]*) {"Cmd Alt C", "Copy, paste and evaluate the selected expression from the inside of a cell into a new notebook."}, 
+(*keyevent[6] *) {"Cmd Alt B", "Select current cell. The insertion point can be anywhere inside the cell."}, 
+(*keyevent[3] *) {"Cmd Alt M", "Minimize all Mathematica notebooks."}, 
+(*keyevent[4] *) {"Cmd Alt U", "Cut the selected cell and paste it before the preceding cell."}, 
+(*keyevent[5] *) {"Cmd Alt D", "Cut the selected cell and paste it after the following cell."}, 
+(*keyevent[10]*) {"Cmd Alt Delete", "Quit the FrontEnd, saving named notebooks first."},
+(*keyevent[17]*) {"Ctrl Shift Delete", "Close all Untitled-*  notebooks without confirmation."}, 
+(*keyevent[21]*) {"F4", "Insert \[LeftDoubleBracket]\[RightDoubleBracket]"}, 
+(*keyevent[12]*) {"F6", "Stack Windows."}, 
+(*keyevent[12]*) {"Ctrl T", "Evaluate the file joker.m from " <> myjokerdir2}, 
+(*keyevent[12]*) {"Ctrl Shift J", "Open joker.m from " <> myjokerdir2}, 
+(*keyevent[12]*) {Framed[ Style["The following four shortcuts work only on english keyboard layouts:", "Text"], FrameStyle -> None, FrameMargins -> 10], SpanFromLeft}, 
+(*keyevent[14]*) {"Ctrl `", "Evaluate Notebook."}, 
+(*keyevent[12]*) {"Ctrl ["(*]*), "Insert [["}, {(*[*)"Ctrl ] ", "Insert ]]"}, 
+(*keyevent[12]*) {(*[*)"Ctrl Alt ]", "Insert [[]]"}}, 
+Alignment -> {Left}, Dividers -> All, FrameStyle -> LightGray
+]
+,
+"MacOSX"
+,
+ StringReplace[#, {"Cmd" -> "Mod1", "Alt" -> "Opt"}]& @ ToString[#, StandardForm]& @ Grid[ toKeyStyle /@ {
+(*keyevent[26]*) {"Ctrl F1", "Open the Shortcuts tutorial with a list of all extra keyboard shortcuts."}, 
+(*keyevent[1] *) {"Ctrl Tab", "Delete all output and evaluate all cells from the top to the insertion point."}, 
+(*keyevent[2] *) {"Ctrl Shift Tab", "Delete all output, restart the kernel and evaluate all cells from the top to the insertion point."}, 
+(*keyevent[12]*) {"Ctrl Shift \[UpArrow]", "Evaluate all cells from the beginning of the notebook until the insertion point."}, 
+(*keyevent[15]*) {"Ctrl ;",   "Select all cells from the beginning of the notebook until the insertion point."}, 
+(*keyevent[16]*) {"Ctrl Shift \[DownArrow]", "Select all cells from the insertion point until the end of the notebook."}, 
+(*keyevent[7] *) {"Ctrl Shift X", "Delete all generated cells, like Output, Message and Print cells, also in MessagesNotebook[]."}, 
+(*keyevent[8] *) {"Ctrl Alt X", "Delete all non-Input and non-Code cells."}, 
+(*keyevent[11]*) {"Ctrl Q", "Quit and restart the Kernel."}, 
+(*keyevent[9] *) {"Ctrl R", "Quit and restart the FrontEnd; all Untitled notebooks are closed and others saved. Reopening the selected notebook if it is saved."}, 
+(*keyevent[13]*) {"Ctrl H", "Evaluate Notebook."}, 
+(*keyevent[25]*) {"Ctrl Shift ,", "Copy, paste and evaluate the selected expression from the inside of a cell into a new notebook."}, 
+(*keyevent[6] *) {"Cmd Alt B", "Select current cell. The insertion point can be anywhere inside the cell."}, 
+(*keyevent[3] *) {"Cmd Alt M", "Minimize all Mathematica notebooks."}, 
+(*keyevent[4] *) {"Cmd Alt U", "Cut the selected cell and paste it before the preceding cell."}, 
+(*keyevent[5] *) {"Cmd Alt D", "Cut the selected cell and paste it after the following cell."}, 
+(*keyevent[10]*) {"Cmd Alt Delete", "Quit the FrontEnd, saving named notebooks first."},
+(*keyevent[17]*) {"Ctrl Shift Delete", "Close all Untitled-*  notebooks without confirmation."}, 
+(*keyevent[21]*) {"F4", "Insert \[LeftDoubleBracket]\[RightDoubleBracket]"}, 
+(*keyevent[12]*) {"F6", "Stack Windows."}, 
+(*keyevent[12]*) {"Ctrl T", "Evaluate the file joker.m from " <> myjokerdir2}, 
+(*keyevent[12]*) {"Ctrl Shift J", "Open joker.m from " <> myjokerdir2}, 
+(*keyevent[12]*) {Framed[ Style["The following four shortcuts work only on english keyboard layouts:", "Text"], FrameStyle -> None, FrameMargins -> 10], SpanFromLeft}, 
+(*keyevent[14]*) {"Ctrl `", "Evaluate Notebook."}, 
+(*keyevent[12]*) {"Ctrl ["(*]*), "Insert [["}, {(*[*)"Ctrl ] ", "Insert ]]"}, 
+(*keyevent[12]*) {(*[*)"Ctrl Alt ]", "Insert [[]]"}}, 
+Alignment -> {Left}, Dividers -> All, FrameStyle -> LightGray
+]
+
+]}]
+] (* With *)
+] (* With *)
+,"Text"]
+] (* Dynamic *)
+,
+Initialization :> (keyStyle[s_] :=
+                       ToString[ Framed[ Style[s, FontFamily -> "Verdana", FontColor -> GrayLevel[0.36]], 
+                       ImageMargins -> {{2, 2}, {2, 2}}, FrameStyle -> GrayLevel[0.8], Background -> GrayLevel[0.965] ], StandardForm
+                       ];
+                   toKeyStyle[s_] :=
+                       ( s /. {keyshort_String, desc_String} :> {Row @
+                       Riffle[ keyStyle /@ StringSplit[keyshort] , "+"],
+                       desc } );
+                      )
+] (* DynamicModule *);
+
 
 
 (* Implementation of the package *)
@@ -80,10 +225,10 @@ InstallShortcuts[] :=
 
 
       If[False, (* change to True just for debugging *)
-        SetOptions[$FrontEnd, NotebookSecurityOptions -> {"TrustByDefault" -> True, "UntrustedPath" -> {}}]
+        SetOptions[$FrontEnd, "NotebookSecurityOptions" -> {"TrustByDefault" -> True, "UntrustedPath" -> {}}]
         ,
-        CreateWindow[DialogNotebook[{TextCell["
-     The extra keyboard shortcuts to be installed call the Kernel and \
+        DialogInput[{TextCell[
+"The extra keyboard shortcuts to be installed call the Kernel and \
 therefore can prompt the \"Enable Dynamic\" button. This can be \
 circumvented by accepting the following change to your Mathematica \
 setup:
@@ -96,245 +241,267 @@ evaluated, potentially asking for another
      {\"TrustByDefault\" -> True, \"UntrustedPath\" -> {}}]
      ", "Text", Background -> White],
           Row[{Spacer[142],
-            DefaultButton[
-              DialogReturn[
-                SetOptions[$FrontEnd,
-                  NotebookSecurityOptions -> {"TrustByDefault" -> True,
-                    "UntrustedPath" -> {}}]
-              ],
+	            DefaultButton[
+	              DialogReturn[
+	                SetOptions[$FrontEnd,
+	                  "NotebookSecurityOptions" -> {"TrustByDefault" -> True,
+	                    "UntrustedPath" -> {}}]
+	              ],
               ImageSize -> {42 GoldenRatio, 42}],
             Spacer[42],
-            CancelButton[ImageSize -> {42 GoldenRatio, 42}]}]},
+            CancelButton[ImageSize -> {42 GoldenRatio, 42}],
+            Spacer[10]
+            }
+            ]},
           WindowFloating -> True, WindowTitle -> "Security change",
-          Background -> LightBlue]]
+          Background -> LightBlue]
       ];
 
 
-      Block[ {mykeyevents},
-        mykeyevents =
-            "
+Block[ {mykeyevents, keyevent},
+	
+keyevent["TestRun1"] = keyevent[1] = 
+"
 (* Test Run 1: delete all output, do not restart the kernel and evaluate all cells above  *)
-Item[KeyEvent[\"Tab\", Modifiers -> {Control}],
-     KernelExecute[ Needs[\"Shortcuts`\"];
-                    Shortcuts`Shortcut[\"TestRun1\"]
-     ], MenuEvaluator -> Automatic
-],
-" <>
-                "
+	Item[	KeyEvent[\"Tab\", Modifiers -> {Control}], KernelExecute[ Needs[\"Shortcuts`\"]; Shortcuts`Shortcut[\"TestRun1\"] ], MenuEvaluator -> Automatic
+	], 
+";
+
+keyevent["TestRun2"] = keyevent[2] = 
+"
 (* Test Run 2: delete all output, restart the kernel and evaluate all cells above  *)
-Item[KeyEvent[\"Tab\", Modifiers -> {Control, Shift}],
-     KernelExecute[ Needs[\"Shortcuts`\"];
-                    Shortcuts`Shortcut[\"TestRun2\"]
-     ], MenuEvaluator -> Automatic
-],
-" <>
+	Item[	KeyEvent[\"Tab\", Modifiers -> {Control, Shift}],
+			KernelExecute[ Needs[\"Shortcuts`\"]; Shortcuts`Shortcut[\"TestRun2\"] ], MenuEvaluator -> Automatic
+    ],
+";
 
-                "
+keyevent["Minimize"] = keyevent[3] = 
+"
 (* Minimize all windows *)
-Item[KeyEvent[\"m\", Modifiers -> {Command,Option}],
-     KernelExecute[ Needs[\"Shortcuts`\"];
-                    Shortcuts`Shortcut[\"Minimize\"]
-     ], MenuEvaluator -> Automatic
-],
-" <>
-                "
-(* move cell(s) up *)
-Item[KeyEvent[\"u\", Modifiers -> {Command,Option}],
-     KernelExecute[ Needs[\"Shortcuts`\"];
-                    Shortcuts`Shortcut[\"MoveCellsUp\"]
-     ], MenuEvaluator -> Automatic
-],
-" <>
-                "
-(* move cell(s) down *)
-Item[KeyEvent[\"d\", Modifiers -> {Command,Option}],
-     KernelExecute[ Needs[\"Shortcuts`\"];
-                    Shortcuts`Shortcut[\"MoveCellsDown\"]
-     ], MenuEvaluator -> Automatic
-],
-" <>
-                "
-(* from inside a cell select the cell bracket *)
-Item[KeyEvent[\"b\", Modifiers -> {Command, Option}],
-     KernelExecute[ Needs[\"Shortcuts`\"]; Shortcuts`Shortcut[\"SelectCellBracket\"] ], MenuEvaluator -> Automatic
-],
-" <>
-                "
-(* Delete output: Ctrl Shift x, is a shortcut for  Delete All Output and for NotebookDelete[Cells[MessagesNotebook[]]] *)
-Item[KeyEvent[\"x\", Modifiers -> {" <> If[$OperatingSystem === "MacOSX", "Command" , "Control" ] <> ", Shift}],
-     KernelExecute[ Needs[\"Shortcuts`\"];
-     				  Shortcuts`Shortcut[\"DeleteOutputAndMessages\"] ], MenuEvaluator -> Automatic
-],
-" <>
-                "
-(* Delete all cells but Input and Code: Ctrl Alt x, is a shortcut for  Delete All Output and all non-Input and non-Code cells and
-           for NotebookDelete[Cells[MessagesNotebook[]]]
-   Suggested by Mooniac
-           *)
-Item[KeyEvent[\"x\", Modifiers -> {" <> If[$OperatingSystem === "MacOSX", "Command" , "Control" ] <> ", Command}],
-     KernelExecute[ Needs[\"Shortcuts`\"];
-     				  Shortcuts`Shortcut[\"DeleteAllCellsButInputAndCode\"] ], MenuEvaluator -> Automatic
-],
+	Item[	KeyEvent[\"m\", Modifiers -> {Command, Option}],
+			KernelExecute[ Needs[\"Shortcuts`\"]; Shortcuts`Shortcut[\"Minimize\"] ], MenuEvaluator -> Automatic
+	],
+"; 
 
-" <>
-                "
+keyevent["MoveCellsUp"] = keyevent[4] = 
+"
+(* move cell(s) up *)
+	Item[	KeyEvent[\"u\", Modifiers -> {Command, Option}],
+			KernelExecute[ Needs[\"Shortcuts`\"]; Shortcuts`Shortcut[\"MoveCellsUp\"] ], MenuEvaluator -> Automatic
+	],
+" ;
+
+keyevent["MoveCellsDown"] = keyevent[5] = 
+"
+(* move cell(s) down *)
+	Item[	KeyEvent[\"d\", Modifiers -> {Command,Option}],
+			KernelExecute[ Needs[\"Shortcuts`\"]; Shortcuts`Shortcut[\"MoveCellsDown\"] ], MenuEvaluator -> Automatic
+	],
+";
+keyevent["SelectCellBracket"] = keyevent[6] = 
+"
+(* from inside a cell select the cell bracket *)
+	Item[	KeyEvent[\"b\", Modifiers -> {Command, Option}],
+			KernelExecute[ Needs[\"Shortcuts`\"]; Shortcuts`Shortcut[\"SelectCellBracket\"] ], MenuEvaluator -> Automatic
+	],
+";
+
+keyevent["DeleteOutputAndMEssages"] = keyevent[7] = 
+"
+(* Delete output: Ctrl Shift x, is a shortcut for  Delete All Output and for NotebookDelete[Cells[MessagesNotebook[]]] *)
+	Item[	KeyEvent[\"x\", Modifiers -> " <> 
+            			    Switch[$OperatingSystem, "MacOSX",  "{Command, Shift}", 
+            			    	                     "Windows", "{Control, Shift}",
+            			    	                     "Unix",    "{Control, Command}"
+            			    ] <> 
+            			    	  "],
+			KernelExecute[ Needs[\"Shortcuts`\"]; Shortcuts`Shortcut[\"DeleteOutputAndMessages\"] ], MenuEvaluator -> Automatic
+	],
+";
+
+keyevent["DeleteAllCellsButInputAndCode"] = keyevent[8] = 
+"
+(* Delete all cells but Input and Code: Ctrl Alt x, is a shortcut for  Delete All Output and all non-Input and non-Code cells and
+   for NotebookDelete[Cells[MessagesNotebook[]]]
+   Suggested by Mooniac
+*)
+	Item[	KeyEvent[\"x\", Modifiers -> {" <> If[$OperatingSystem === "MacOSX", "Command" , "Control" ] <> ", Command}],
+			KernelExecute[ Needs[\"Shortcuts`\"]; Shortcuts`Shortcut[\"DeleteAllCellsButInputAndCode\"] ], MenuEvaluator -> Automatic
+	],
+";
+
+
+keyevent["RestartFrontEnd"] = keyevent[9] = 
+"
 (* Restart that Mathematica FrontEnd which was started last *)
 Item[KeyEvent[\"r\", Modifiers -> {Control}],
      KernelExecute[ Needs[\"Shortcuts`\"]; Shortcuts`Shortcut[\"RestartFrontEnd\"] ], MenuEvaluator -> Automatic
 ],
-" <>
-                "
-(* Quit and restart the Kernel; using this by Kuba: *)
-(* http://mathematica.stackexchange.com/questions/82803/quit-the-kernel-and-start-new-session-automatically *)
-Item[KeyEvent[\"q\", Modifiers -> "
-                <>
-                If[$OperatingSystem === "Unix",
-                  "{Control, Shift}",
-                  "{Control}"
-                ] <>
-                "],
-     KernelExecute[ Needs[\"Shortcuts`\"]; Shortcuts`Shortcut[\"RestartKernel\"] ], MenuEvaluator -> Automatic
-],
- " <>
-                "
-(* Select all Input and Code cells upwards from where the mouse is and evaluate those cells. *)
-Item[KeyEvent[\"" <> If[$OperatingSystem === "Unix", ",", "PageUp"] <>
-                "\", Modifiers -> {" <>
-                Switch[$OperatingSystem, "MacOSX", "Command, Shift", "Windows", "Control, Shift", "Unix", "Command, Option" ] <>
+" ;
 
-                "}],
-         KernelExecute[Needs[\"Shortcuts`\"]; Shortcuts`Shortcut[\"EvalFromTop\"]], MenuEvaluator -> Automatic
- ],
+keyevent["QuitFrontEnd"] = keyevent[10] = 
+	If[$OperatingSystem === "MacOSX",  
+	   "",
+       "
+       (* Quit the last Mathematica FrontEnd *)
+       Item[KeyEvent[\"Delete\", Modifiers -> {Command, Option}],
+            KernelExecute[ Needs[\"Shortcuts`\"]; Shortcuts`Shortcut[\"QuitFrontEnd\"] ], MenuEvaluator -> Automatic
+       ],"
+	];
 
-(* Evaluate Notebook *)
-" <>
-                "Item[KeyEvent[\"h\", Modifiers -> {Control}],\"EvaluateNotebook\"
-],
 
-(* Evaluate Notebook *)
-" <>
-                "Item[KeyEvent[\"`\", Modifiers -> {Control}],\"EvaluateNotebook\"
-],
-" <>
-                "
-(* Select all cells upwards from where the mouse is *)
-Item[KeyEvent[\"Up\", Modifiers -> {" <>
-                If[$OperatingSystem === "MacOSX", "Command" , "Control" ] <>
-                ", Shift}],
-         KernelExecute[ Needs[\"Shortcuts`\"]; Shortcuts`Shortcut[\"SelectToTop\"] ]
-         , MenuEvaluator -> Automatic
- ],
-" <>
-                "
-(* Select all cells downwards from where the mouse is *)
+keyevent["RestartKernel"] = keyevent[11] = 
+	"(* Quit and restart the Kernel; using this by Kuba: *)
+	 (* http://mathematica.stackexchange.com/questions/82803/quit-the-kernel-and-start-new-session-automatically *)
+	 Item[KeyEvent[\"q\",  Modifiers -> " <> 
+						  If[ $OperatingSystem === "Unix",
+                              "{Control, Shift}",
+                              "{Control}"
+                          ] <>
+        "],     
+           KernelExecute[ Needs[\"Shortcuts`\"]; Shortcuts`Shortcut[\"RestartKernel\"] ], MenuEvaluator -> Automatic
+     ],";
 
-Item[KeyEvent[\"Down\", Modifiers -> {" <>
-                If[$OperatingSystem === "MacOSX", "Command" , "Control" ] <>
+keyevent["EvaluateFromTop"] = keyevent[12] = 
+	"
+	(* Select all Input and Code cells upwards from where the mouse is and evaluate those cells. *)
+	Item[KeyEvent[\"Up\", Modifiers -> {" <>
+					If[$OperatingSystem === "MacOSX", "Command" , "Control" ] <> ", Shift}
+         ],
+         KernelExecute[Needs[\"Shortcuts`\"]; Shortcuts`Shortcut[\"EvaluateFromTop\"]], MenuEvaluator -> Automatic
+     ],";
+
+keyevent["EvaluateNotebook"] = keyevent[13] = 
+	"
+	(* Evaluate Notebook *)
+	Item[KeyEvent[\"h\", Modifiers -> {Control}],\"EvaluateNotebook\"
+	],";
+
+keyevent["EvaluateNotebook2"] = keyevent[14] = 
+    "
+	(* Evaluate Notebook *)
+    Item[KeyEvent[\"`\", Modifiers -> {Control}],\"EvaluateNotebook\"
+	],";
+
+keyevent["SelectToTop"] = keyevent[15] = 
+	"
+	(* Select all cells upwards from where the mouse is *)
+	Item[KeyEvent[\";\", Modifiers -> {" <>
+					If[$OperatingSystem === "MacOSX", "Command" , "Control" ] <> "}
+         ],
+         KernelExecute[ Needs[\"Shortcuts`\"]; Shortcuts`Shortcut[\"SelectToTop\"] ] , MenuEvaluator -> Automatic
+	],";
+	
+keyevent["SelectToBottom"] = keyevent[16] = 
+	"
+	(* Select all cells downwards from where the mouse is *)
+	Item[KeyEvent[\"Down\", Modifiers -> {" <>
+					If[$OperatingSystem === "MacOSX", "Command" , "Control" ] <>
                 ", Shift}],
          KernelExecute[ Needs[\"Shortcuts`\"]; Shortcuts`Shortcut[\"SelectToBottom\"] ]
          , MenuEvaluator -> Automatic
- ],
-" <>
-                "
-(* Close all Untitled* Notebooks *)
+	],";
 
-Item[KeyEvent[\"Delete\", Modifiers -> {Control, Shift}],
+keyevent["CloseUntitledNotebooks"] = keyevent[17] = 
+	"
+	(* Close all Untitled* Notebooks *)
+	Item[KeyEvent[\"Delete\", Modifiers -> {Control, Shift}],
          KernelExecute[ Needs[\"Shortcuts`\"]; Shortcuts`Shortcut[\"CloseUntitledNotebooks\"] ]
          , MenuEvaluator -> Automatic
- ],
-" <>
-                "
-(* by rm-rf: http://mathematica.stackexchange.com/questions/5212/automating-esc-esc-formatting/5215#5215*)
-Item[KeyEvent[\"[\"(*]*), Modifiers -> {Control}],
-        FrontEndExecute[{
-            FrontEnd`NotebookWrite[FrontEnd`InputNotebook[],
-                \" " <> "\\" <> "[LeftDoubleBracket]\", After]
-        }]
-],
-Item[KeyEvent[(*[*)\"]\", Modifiers -> {Control}],
-        FrontEndExecute[{
-            FrontEnd`NotebookWrite[FrontEnd`InputNotebook[],
-                \" " <> "\\" <> "[RightDoubleBracket]\", After]
-        }]
-],
-Item[KeyEvent[(*[*)\"]\", Modifiers -> {Control, Command}],
+	],";
+
+keyevent["[["] = keyevent[18] = 
+	"
+	(* by rm-rf: http://mathematica.stackexchange.com/questions/5212/automating-esc-esc-formatting/5215#5215*)
+	Item[KeyEvent[\"[\"(*]*), Modifiers -> {Control}],
+        FrontEndExecute[
+            FrontEnd`NotebookWrite[FrontEnd`InputNotebook[], \" " <> "\\" <> "[LeftDoubleBracket]\", After]
+        ]
+	],";
+
+keyevent["]]"] = keyevent[19] = 
+	"
+	Item[KeyEvent[(*[*)\"]\", Modifiers -> {Control}],
+        FrontEndExecute[
+            FrontEnd`NotebookWrite[FrontEnd`InputNotebook[], \" " <> "\\" <> "[RightDoubleBracket]\", After] 
+        ]
+	],";
+
+keyevent["[[]]"] = keyevent[20] = 
+	"
+	Item[KeyEvent[(*[*)\"]\", Modifiers -> {Control, Command}],
         FrontEndExecute[{
             FrontEnd`NotebookWrite[FrontEnd`InputNotebook[],
                \"" <> "\\" <> "[LeftDoubleBracket]\", After],
             FrontEnd`NotebookWrite[FrontEnd`InputNotebook[],
                \"" <> "\\" <> "[RightDoubleBracket]\", Before]
         }]
-],
-(* for german keyboards, for Yves  *)
-Item[KeyEvent[\"F4\"],
+	],";
+
+keyevent["F4"] = keyevent[21] = 
+	"
+	(* for german keyboards, for Yves  *)
+	Item[KeyEvent[\"F4\"],
         FrontEndExecute[{
-            FrontEnd`NotebookWrite[FrontEnd`InputNotebook[],
-               \"" <> "\\" <> "[LeftDoubleBracket]\", After],
-            FrontEnd`NotebookWrite[FrontEnd`InputNotebook[],
-                \"" <> "\\" <> "[RightDoubleBracket]\", Before]
+            FrontEnd`NotebookWrite[FrontEnd`InputNotebook[], \"" <> "\\" <> "[LeftDoubleBracket]\", After],
+            FrontEnd`NotebookWrite[FrontEnd`InputNotebook[], \"" <> "\\" <> "[RightDoubleBracket]\", Before]
         }]
-],
+	],";
 
-(* on Linux and  Windows: set WindowMargins -> 42 on the selected notebook *)
-Item[KeyEvent[\"F6\"],
-     KernelExecute[
-      Needs[\"Shortcuts`\"]; Shortcuts`Shortcut[\"F6\"] 
-     ]
-         , MenuEvaluator -> Automatic
-],
+keyevent["F6"] = keyevent[22] = 
+	"
+	(* on Linux and  Windows: set WindowMargins -> 42 on the selected notebook *)
+	Item[KeyEvent[\"F6\"],
+		KernelExecute[ Needs[\"Shortcuts`\"]; Shortcuts`Shortcut[\"F6\"] ] , MenuEvaluator -> Automatic
+	],";
 
-(* the 'live' configurable joker keyboard shortcut: *)
-Item[KeyEvent[\"" <> If[$OperatingSystem === "MacOSX", "d", "t"] <> "\", Modifiers -> {Control}],
-        KernelExecute[{
-          Function[
-          If[ FileExistsQ[ Slot[1] ],
-              Get[ Slot[1] ]
-          ]][ FileNameJoin[{$UserBaseDirectory, \"SystemFiles\", \"FrontEnd\", \"TextResources\",
-                            Switch[$OperatingSystem, \"MacOSX\", \"Macintosh\", \"Windows\", \"Windows\", \"Unix\", \"X\"],
-                            \"joker.m\"}] ]
-        }],
-  MenuEvaluator -> Automatic
-],
+keyevent["RunJoker"] = keyevent[23] = 
+	"
+	(* run 'live' configurable joker keyboard shortcut: *)
+	Item[KeyEvent[\"" <> If[$OperatingSystem === "MacOSX", "d", "t"] <> "\", Modifiers -> {Control}],
+        KernelExecute[ Needs[\"Shortcuts`\"]; Shortcuts`Shortcut[\"RunJoker\"] ], MenuEvaluator -> Automatic 
+	],";
 
-(* edit 'live' configurable joker keyboard shortcut: *)
-Item[KeyEvent[\"j\", Modifiers -> {Control, Shift}],
-        KernelExecute[{
-          Function[
-          If[ FileExistsQ[ Slot[1] ],
-              NotebookOpen[ Slot[1] ]
-          ]][ FileNameJoin[{$UserBaseDirectory, \"SystemFiles\", \"FrontEnd\", \"TextResources\",
-                            Switch[$OperatingSystem, \"MacOSX\", \"Macintosh\", \"Windows\", \"Windows\", \"Unix\", \"X\"],
-                            \"joker.m\"}] ]
-        }],
-  MenuEvaluator -> Automatic
-],
+keyevent["OpenJoker"] = keyevent[24] = 
+	"
+	(* edit 'live' configurable joker keyboard shortcut: *)
+	Item[KeyEvent[\"j\", Modifiers -> {Control, Shift}],
+        KernelExecute[ Needs[\"Shortcuts`\"]; Shortcuts`Shortcut[\"OpenJoker\"] ], MenuEvaluator -> Automatic
+	],";
+	
 
-" <>
-                "
-(* inspired by Kuba: http://mathematica.stackexchange.com/questions/32340/evaluating-selected-expression-using-keyboard-shortcut/32341#32341*)
- Item[KeyEvent[\"" <> Switch[$OperatingSystem, "Windows", ",", "MacOSX", "PageDown", "Unix", "c"] <>
-                "\", Modifiers -> {" <>
-                Switch[$OperatingSystem, "MacOSX", "Command", "Windows", "Control, Shift", "Unix", "Command, Option"] <>
+keyevent["EvaluateSelected"] = keyevent[25] = 
+	"
+	(* evaluate selected expression in a new notebook *)               
+	(* inspired by Kuba: http://mathematica.stackexchange.com/questions/32340/evaluating-selected-expression-using-keyboard-shortcut/32341#32341 *)
+	Item[KeyEvent[\"" <> Switch[
+ 	                         $OperatingSystem, 
+ 	                         "Windows", ",", 
+ 	                         "MacOSX", "PageDown", 
+ 	                         "Unix", "c"
+ 	                  	] <> "\", Modifiers -> {" <> 
+ 	                  	Switch[$OperatingSystem, 
+ 	                  			"MacOSX", "Command", 
+ 	                  			"Windows", "Control, Shift", 
+ 	                  			"Unix", "Command, Option"
+ 	                  	] <>
                 "}
       ],
-      KernelExecute[
-          CreateDocument[
-             Function[
-             If[ Or[ MatchQ[Slot[1], _String],  MatchQ[ Slot[1], _RowBox] ],
-             {
-             Cell[ BoxData[Slot[1]],\"Input\"],
-             ExpressionCell[ToExpression[Slot[1]],\"Output\"]
-             },
-             Cell[TextData[\"Please select an expression inside a cell.\"], \"Text\"]
-             ]
-             ][Replace[NotebookRead[FrontEnd`SelectedNotebook[]  ], {} -> Null]],
-             WindowSize->{Medium, FitAll}, WindowMargins -> {{Automatic,2},{Automatic,2}}, Magnification->1.5
-     ]
-    ], MenuEvaluator -> Automatic
- ],
+      KernelExecute[ Needs[\"Shortcuts`\"]; Shortcuts`Shortcut[\"EvaluateSelected\"] ], MenuEvaluator -> Automatic 
+      ],";
+      
+      
+keyevent["ShowShortcutsTutorial"] = keyevent[26] = 
+	"
+	(* open the guid page of shortcuts *)
+	stem[KeyEvent[\"F1\", Modifiers -> {Control}],
+        KernelExecute[ Needs[\"Shortcuts`\"]; NotebookOpen@\"paclet:Shortcuts/tutorial/ShortcutsTutorialLinearSystems\" ], MenuEvaluator -> Automatic
+	],";
 
-" ;
 
+mykeyevents = StringJoin @@ Array[keyevent, 26];
+(* *************************************************************************************************** *)
+(* myjokerfilename: a keyboard shortcut configurable shortcut *)
         With[ {os = Switch[$OperatingSystem, "MacOSX", "Macintosh", "Windows", "Windows", "Unix", "X"]},
           Quiet@CreateDirectory@FileNameJoin[{$UserBaseDirectory, "SystemFiles", "FrontEnd", "TextResources", os}];
           Module[{
@@ -372,16 +539,20 @@ Item[KeyEvent[\"j\", Modifiers -> {Control, Shift}],
 ",
               "Text", CharacterEncoding :> $CharacterEncoding
             ];
+            
+ (* ********************************************************************************************************* *)           
 
-            (* start with the default one : *)
-            CopyFile[FileNameJoin[{$InstallationDirectory, "SystemFiles", "FrontEnd", "TextResources",
-              os, "KeyEventTranslations.tr"}], mykeyeventtrans];
+(* extend the default KeyEventTranslations.tr from $InstallationDirectory : *)
+            CopyFile[FileNameJoin[{$InstallationDirectory, "SystemFiles", "FrontEnd", "TextResources", os, "KeyEventTranslations.tr"}
+            	     ], 
+            	     mykeyeventtrans
+            ];
 
             keytext = Import[mykeyeventtrans, "Text"];
             (* and add our extra keyevents: *)
             mykeytext = StringReplace[keytext, "EventTranslations[{"(*]*) :> StringJoin["EventTranslations[{\n "(*]*), mykeyevents, "\n "]];
+            
             (* make sure things work in Mathematica 9 and 10 :*)
-
             mykeytext =
                 Composition[# <> "\n" &,
                   Function[StringReplace[#, "Item[KeyEvent[\"" ~~ it_ ~~ "\", Modifiers" ~~ ( mo__ /; StringLength[mo] < 30) ~~ "\"Redo\"]" (*]*) :>
@@ -403,14 +574,13 @@ Item[KeyEvent[\"j\", Modifiers -> {Control, Shift}],
               ( Button[StringReplace[#, $UserBaseDirectory -> "$UserBaseDirectory"], NotebookOpen[#]]& @ myjokerfilename)}], "Text", ShowStringCharacters -> False]];
             CellPrint[TextCell["After restarting the FrontEnd once the following extra keyboard shortcuts can be used: ", "Text", FontWeight -> Bold]];
             CellPrint[Cell["?Shortcuts","Input"]];
-            thisnb = EvaluationNotebook[];
             CellPrint[ExpressionCell[Information["Shortcuts", LongForm -> True],"Output"]];
-            With[{nb = thisnb},
-            CreateWindow@DialogNotebook[{
+            With[{nb = EvaluationNotebook[]},
+            DialogInput[{
             	           TextCell["Restart the FrontEnd now? All Untitled notebooks will be closed automatically.", FontSize -> 20],
-                            DefaultButton[DialogReturn[Shortcut["RestartFrontEnd", nb]], ImageSize -> {50 GoldenRatio, 50}],
-                            CancelButton[ImageSize->{50 GoldenRatio, 50}] 
-                            }]
+                           Row[{DefaultButton[DialogReturn[Shortcut["RestartFrontEnd", nb]], ImageSize -> {50 GoldenRatio, 50}],
+                                CancelButton[ImageSize->{50 GoldenRatio, 50}] }]
+                        }]
             ]
             	(*
             With[{myjokerdir2 = StringReplace[myjokerdir, $UserBaseDirectory -> "$UserBaseDirectory"]},
@@ -509,10 +679,5 @@ Item[KeyEvent[\"j\", Modifiers -> {Control, Shift}],
       ]
     ];
 
-
-
-
-
-
+End[];
 EndPackage[]
-

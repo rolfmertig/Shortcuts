@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     13502,        290]
-NotebookOptionsPosition[     11781,        228]
-NotebookOutlinePosition[     12632,        259]
-CellTagsIndexPosition[     12506,        253]
+NotebookDataLength[    114977,       2536]
+NotebookOptionsPosition[    112044,       2438]
+NotebookOutlinePosition[    113320,       2479]
+CellTagsIndexPosition[    113147,       2472]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -26,48 +26,1103 @@ Cell[BoxData[
 Cell[BoxData["\<\"C:\\\\repositorygit\\\\Shortcuts2\\\\\"\>"], "Output"]
 }, Open  ]],
 
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindFile", "[", "\"\<Shortcuts`\>\"", "]"}]], "Input"],
+
+Cell[BoxData["\<\"C:\\\\repositorygit\\\\Shortcuts2\\\\Shortcuts\\\\Shortcuts.\
+m\"\>"], "Output"]
+}, Open  ]],
+
 Cell[BoxData[
  RowBox[{"Needs", "[", "\"\<Shortcuts`\>\"", "]"}]], "Input"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"?", "UninstallShortcuts"}]], "Input"],
+ RowBox[{"Shortcuts", "[", "]"}]], "Input"],
+
+Cell[BoxData[
+ DynamicModuleBox[{Shortcuts`Private`keyStyle$$, 
+  Shortcuts`Private`toKeyStyle$$}, 
+  DynamicBox[ToBoxes[
+    Style[
+     With[{
+      Shortcuts`Private`os$ = 
+       Switch[$OperatingSystem, "MacOSX", "Macintosh", "Windows", "Windows", 
+         "Unix", "X"]}, 
+      With[{Shortcuts`Private`myjokerdir2$ = StringReplace[
+          
+          FileNameJoin[{$UserBaseDirectory, "SystemFiles", "FrontEnd", 
+            "TextResources", Shortcuts`Private`os$}], $UserBaseDirectory -> 
+          "$UserBaseDirectory"]}, 
+       Column[{
+         StringJoin["In the following table the ", 
+          Switch[$OperatingSystem, "Windows", 
+           StringJoin[
+            Shortcuts`Private`keyStyle$$["Win"], 
+            " key is meant to be the Windows key next to the ", 
+            Shortcuts`Private`keyStyle$$["Alt"], "key.\n"], "Unix", 
+           StringJoin[
+            Shortcuts`Private`keyStyle$$["Mod1"], 
+            " key is usually the Windows key and the ", 
+            Shortcuts`Private`keyStyle$$["Mod2"], " key is usually the ", 
+            Shortcuts`Private`keyStyle$$["Alt"], " key"], 
+           Blank[], ""]], 
+         Switch[$OperatingSystem, "Windows", 
+          ((StringReplace[#, "Cmd" -> "Win"]& )[
+           ToString[#, StandardForm]]& )[
+           Grid[
+            Map[
+            Shortcuts`Private`toKeyStyle$$, {{
+              "Ctrl F1", 
+               "Open the Shortcuts tutorial with a list of all extra keyboard \
+shortcuts."}, {
+              "Ctrl Tab", 
+               "Delete all output and evaluate all cells from the top to the \
+insertion point."}, {
+              "Ctrl Shift Tab", 
+               "Delete all output, restart the kernel and evaluate all cells \
+from the top to the insertion point."}, {
+              "Ctrl Shift \[UpArrow]", 
+               "Evaluate all cells from the beginning of the notebook until \
+the insertion point."}, {
+              "Ctrl ;", 
+               "Select all cells from the beginning of the notebook until the \
+insertion point."}, {
+              "Ctrl Shift \[DownArrow]", 
+               "Select all cells from the insertion point until the end of \
+the notebook."}, {
+              "Ctrl Shift X", 
+               "Delete all generated cells, like Output, Message and Print \
+cells, also in MessagesNotebook[]."}, {
+              "Ctrl Alt X", "Delete all non-Input and non-Code cells."}, {
+              "Ctrl Q", "Quit and restart the Kernel."}, {
+              "Ctrl R", 
+               "Quit and restart the FrontEnd; all Untitled notebooks are \
+closed and others saved. Reopening the selected notebook if it is saved."}, {
+              "Ctrl H", "Evaluate Notebook."}, {
+              "Ctrl Shift ,", 
+               "Copy, paste and evaluate the selected expression from the \
+inside of a cell into a new notebook."}, {
+              "Cmd Alt B", 
+               "Select current cell. The insertion point can be anywhere \
+inside the cell."}, {"Cmd Alt M", "Minimize all Mathematica notebooks."}, {
+              "Cmd Alt U", 
+               "Cut the selected cell and paste it before the preceding \
+cell."}, {"Cmd Alt D", 
+               "Cut the selected cell and paste it after the following \
+cell."}, {"Cmd Alt Delete", 
+               "Quit the FrontEnd, saving named notebooks first."}, {
+              "Ctrl Shift Delete", 
+               "Close all Untitled-*  notebooks without confirmation."}, {
+              "F4", "Insert \[LeftDoubleBracket]\[RightDoubleBracket]"}, {
+              "F6", "Stack Windows."}, {"Ctrl T", 
+               StringJoin[
+               "Evaluate the file joker.m from ", 
+                Shortcuts`Private`myjokerdir2$]}, {"Ctrl Shift J", 
+               StringJoin[
+               "Open joker.m from ", Shortcuts`Private`myjokerdir2$]}, {
+               Framed[
+                Style[
+                "The following four shortcuts work only on english keyboard \
+layouts:", "Text"], FrameStyle -> None, FrameMargins -> 10], SpanFromLeft}, {
+              "Ctrl `", "Evaluate Notebook."}, {"Ctrl [", "Insert [["}, {
+              "Ctrl ] ", "Insert ]]"}, {"Ctrl Alt ]", "Insert [[]]"}}], 
+            Alignment -> {Left}, Dividers -> All, FrameStyle -> LightGray]], 
+          "Unix", 
+          ((StringReplace[#, {"Cmd" -> "Mod1", "Alt" -> "Mod2"}]& )[
+           ToString[#, StandardForm]]& )[
+           Grid[
+            Map[
+            Shortcuts`Private`toKeyStyle$$, {{
+              "Ctrl F1", 
+               "Open the Shortcuts tutorial with a list of all extra keyboard \
+shortcuts."}, {"Ctrl Tab", 
+               "Delete all output and evaluate all cells from the top to the \
+insertion point."}, {
+              "Ctrl Shift Tab", 
+               "Delete all output, restart the kernel and evaluate all cells \
+from the top to the insertion point."}, {
+              "Ctrl Shift \[UpArrow]", 
+               "Evaluate all cells from the beginning of the notebook until \
+the insertion point."}, {
+              "Ctrl ;", 
+               "Select all cells from the beginning of the notebook until the \
+insertion point."}, {
+              "Ctrl Shift \[DownArrow]", 
+               "Select all cells from the insertion point until the end of \
+the notebook."}, {
+              "Ctrl Shift X", 
+               "Delete all generated cells, like Output, Message and Print \
+cells, also in MessagesNotebook[]."}, {
+              "Ctrl Alt X", "Delete all non-Input and non-Code cells."}, {
+              "Ctrl Shift Q", "Quit and restart the Kernel."}, {
+              "Ctrl R", 
+               "Quit and restart the FrontEnd; all Untitled notebooks are \
+closed and others saved. Reopening the selected notebook if it is saved."}, {
+              "Ctrl H", "Evaluate Notebook."}, {
+              "Cmd Alt C", 
+               "Copy, paste and evaluate the selected expression from the \
+inside of a cell into a new notebook."}, {
+              "Cmd Alt B", 
+               "Select current cell. The insertion point can be anywhere \
+inside the cell."}, {"Cmd Alt M", "Minimize all Mathematica notebooks."}, {
+              "Cmd Alt U", 
+               "Cut the selected cell and paste it before the preceding \
+cell."}, {"Cmd Alt D", 
+               "Cut the selected cell and paste it after the following \
+cell."}, {"Cmd Alt Delete", 
+               "Quit the FrontEnd, saving named notebooks first."}, {
+              "Ctrl Shift Delete", 
+               "Close all Untitled-*  notebooks without confirmation."}, {
+              "F4", "Insert \[LeftDoubleBracket]\[RightDoubleBracket]"}, {
+              "F6", "Stack Windows."}, {"Ctrl T", 
+               StringJoin[
+               "Evaluate the file joker.m from ", 
+                Shortcuts`Private`myjokerdir2$]}, {"Ctrl Shift J", 
+               StringJoin[
+               "Open joker.m from ", Shortcuts`Private`myjokerdir2$]}, {
+               Framed[
+                Style[
+                "The following four shortcuts work only on english keyboard \
+layouts:", "Text"], FrameStyle -> None, FrameMargins -> 10], SpanFromLeft}, {
+              "Ctrl `", "Evaluate Notebook."}, {"Ctrl [", "Insert [["}, {
+              "Ctrl ] ", "Insert ]]"}, {"Ctrl Alt ]", "Insert [[]]"}}], 
+            Alignment -> {Left}, Dividers -> All, FrameStyle -> LightGray]], 
+          "MacOSX", 
+          ((StringReplace[#, {"Cmd" -> "Mod1", "Alt" -> "Opt"}]& )[
+           ToString[#, StandardForm]]& )[
+           Grid[
+            Map[
+            Shortcuts`Private`toKeyStyle$$, {{
+              "Ctrl F1", 
+               "Open the Shortcuts tutorial with a list of all extra keyboard \
+shortcuts."}, {
+              "Ctrl Tab", 
+               "Delete all output and evaluate all cells from the top to the \
+insertion point."}, {
+              "Ctrl Shift Tab", 
+               "Delete all output, restart the kernel and evaluate all cells \
+from the top to the insertion point."}, {
+              "Ctrl Shift \[UpArrow]", 
+               "Evaluate all cells from the beginning of the notebook until \
+the insertion point."}, {
+              "Ctrl ;", 
+               "Select all cells from the beginning of the notebook until the \
+insertion point."}, {
+              "Ctrl Shift \[DownArrow]", 
+               "Select all cells from the insertion point until the end of \
+the notebook."}, {
+              "Ctrl Shift X", 
+               "Delete all generated cells, like Output, Message and Print \
+cells, also in MessagesNotebook[]."}, {
+              "Ctrl Alt X", "Delete all non-Input and non-Code cells."}, {
+              "Ctrl Q", "Quit and restart the Kernel."}, {
+              "Ctrl R", 
+               "Quit and restart the FrontEnd; all Untitled notebooks are \
+closed and others saved. Reopening the selected notebook if it is saved."}, {
+              "Ctrl H", "Evaluate Notebook."}, {
+              "Ctrl Shift ,", 
+               "Copy, paste and evaluate the selected expression from the \
+inside of a cell into a new notebook."}, {
+              "Cmd Alt B", 
+               "Select current cell. The insertion point can be anywhere \
+inside the cell."}, {"Cmd Alt M", "Minimize all Mathematica notebooks."}, {
+              "Cmd Alt U", 
+               "Cut the selected cell and paste it before the preceding \
+cell."}, {"Cmd Alt D", 
+               "Cut the selected cell and paste it after the following \
+cell."}, {"Cmd Alt Delete", 
+               "Quit the FrontEnd, saving named notebooks first."}, {
+              "Ctrl Shift Delete", 
+               "Close all Untitled-*  notebooks without confirmation."}, {
+              "F4", "Insert \[LeftDoubleBracket]\[RightDoubleBracket]"}, {
+              "F6", "Stack Windows."}, {"Ctrl T", 
+               StringJoin[
+               "Evaluate the file joker.m from ", 
+                Shortcuts`Private`myjokerdir2$]}, {"Ctrl Shift J", 
+               StringJoin[
+               "Open joker.m from ", Shortcuts`Private`myjokerdir2$]}, {
+               Framed[
+                Style[
+                "The following four shortcuts work only on english keyboard \
+layouts:", "Text"], FrameStyle -> None, FrameMargins -> 10], SpanFromLeft}, {
+              "Ctrl `", "Evaluate Notebook."}, {"Ctrl [", "Insert [["}, {
+              "Ctrl ] ", "Insert ]]"}, {"Ctrl Alt ]", "Insert [[]]"}}], 
+            Alignment -> {Left}, Dividers -> All, FrameStyle -> 
+            LightGray]]]}]]], "Text"], StandardForm],
+   ImageSizeCache->{1030., {585.5, 593.5}}],
+  DynamicModuleValues:>{{
+    DownValues[Shortcuts`Private`keyStyle$$] = {HoldPattern[
+         Shortcuts`Private`keyStyle$$[
+          Pattern[Shortcuts`Private`s, 
+           Blank[]]]] :> ToString[
+         Framed[
+          Style[
+          Shortcuts`Private`s, FontFamily -> "Verdana", FontColor -> 
+           GrayLevel[0.36]], ImageMargins -> {{2, 2}, {2, 2}}, FrameStyle -> 
+          GrayLevel[0.8], Background -> GrayLevel[0.965]], StandardForm]}}, {
+    DownValues[Shortcuts`Private`toKeyStyle$$] = {HoldPattern[
+         Shortcuts`Private`toKeyStyle$$[
+          Pattern[Shortcuts`Private`s$, 
+           Blank[]]]] :> ReplaceAll[Shortcuts`Private`s$, {
+           Pattern[Shortcuts`Private`keyshort$, 
+            Blank[String]], 
+           Pattern[Shortcuts`Private`desc$, 
+            Blank[String]]} :> {
+           Row[
+            Riffle[
+             Map[Shortcuts`Private`keyStyle$$, 
+              StringSplit[Shortcuts`Private`keyshort$]], "+"]], 
+           Shortcuts`Private`desc$}]}}},
+  Initialization:>(Shortcuts`Private`keyStyle$$[
+      Pattern[Shortcuts`Private`s, 
+       Blank[]]] := ToString[
+      Framed[
+       Style[
+       Shortcuts`Private`s, FontFamily -> "Verdana", FontColor -> 
+        GrayLevel[0.36]], ImageMargins -> {{2, 2}, {2, 2}}, FrameStyle -> 
+       GrayLevel[0.8], Background -> GrayLevel[0.965]], StandardForm]; 
+   Shortcuts`Private`toKeyStyle$$[
+      Pattern[Shortcuts`Private`s$, 
+       Blank[]]] := ReplaceAll[Shortcuts`Private`s$, {
+        Pattern[Shortcuts`Private`keyshort$, 
+         Blank[String]], 
+        Pattern[Shortcuts`Private`desc$, 
+         Blank[String]]} :> {
+        Row[
+         Riffle[
+          Map[Shortcuts`Private`keyStyle$$, 
+           StringSplit[Shortcuts`Private`keyshort$]], "+"]], 
+        Shortcuts`Private`desc$}]; Null)]], "Output"]
+}, Open  ]],
+
+Cell[BoxData[" "], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"??", "UninstallShortcuts"}]], "Input"],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[
  StyleBox["\<\"UninstallShortcuts[] deletes the file KeyEventTranslations.tr \
 and joker.m in $UserBaseDirecty/SystemFiles/FrontEnd/TextResources/...\"\>", 
   "MSG"]], "Print", "PrintUsage",
- CellTags->"Info3641757713-5667396"]
+ CellTags->"Info3642153925-2551823"],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{
+         RowBox[{"UninstallShortcuts", "[", "]"}], ":=", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{"FileExistsQ", "[", "#1", "]"}], ",", 
+              RowBox[{
+               RowBox[{"DeleteFile", "[", "#1", "]"}], ";", 
+               RowBox[{"If", "[", 
+                RowBox[{
+                 RowBox[{"!", 
+                  RowBox[{"FileExistsQ", "[", "#1", "]"}]}], ",", 
+                 RowBox[{"Print", "[", 
+                  RowBox[{"\<\"Deleted \"\>", "<>", "#1"}], "]"}], ",", 
+                 RowBox[{"Print", "[", 
+                  RowBox[{"\<\"Could not delete \"\>", "<>", "#1"}], "]"}]}], 
+                "]"}]}]}], "]"}], "&"}], ")"}], "/@", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"FileNameJoin", "[", 
+              RowBox[{"{", 
+               RowBox[{
+               "$UserBaseDirectory", ",", "\<\"SystemFiles\"\>", 
+                ",", "\<\"FrontEnd\"\>", ",", "\<\"TextResources\"\>", ",", 
+                RowBox[{"Switch", "[", 
+                 RowBox[{
+                 "$OperatingSystem", ",", 
+                  "\[IndentingNewLine]", "\<\"MacOSX\"\>", 
+                  ",", "\<\"Macintosh\"\>", ",", 
+                  "\[IndentingNewLine]", "\<\"Windows\"\>", 
+                  ",", "\<\"Windows\"\>", ",", 
+                  "\[IndentingNewLine]", "\<\"Unix\"\>", ",", "\<\"X\"\>"}], 
+                 "]"}], ",", "#1"}], "}"}], "]"}], "&"}], ")"}], "/@", 
+           RowBox[{"{", 
+            
+            RowBox[{"\<\"KeyEventTranslations.tr\"\>", 
+             ",", "\<\"joker.m\"\>"}], "}"}]}]}]}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[Shortcuts`UninstallShortcuts],
+  Editable->False]], "Print",
+ CellTags->"Info3642153925-2551823"]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"?", "InstallShortcuts"}]], "Input"],
+ RowBox[{"??", "InstallShortcuts"}]], "Input"],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[
  StyleBox["\<\"InstallShortcuts[] installs additional shortcuts to \
 $UserBaseDirectory/SystemFiles/FrontEnd/TextResource/... .\"\>", 
   "MSG"]], "Print", "PrintUsage",
- CellTags->"Info3641757713-5667396"]
+ CellTags->"Info3642153925-2551823"],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{
+         RowBox[{"InstallShortcuts", "[", "]"}], ":=", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"$VersionNumber", "<", "9"}], ",", 
+           RowBox[{
+           "Print", 
+            "[", "\<\"This code works only in Wolfram Mathematica 9 and \
+higher.\"\>", "]"}], ",", 
+           RowBox[{
+            RowBox[{"If", "[", 
+             RowBox[{"False", ",", 
+              RowBox[{"SetOptions", "[", 
+               RowBox[{"$FrontEnd", ",", 
+                RowBox[{"\<\"NotebookSecurityOptions\"\>", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"\<\"TrustByDefault\"\>", "\[Rule]", "True"}], ",", 
+                   RowBox[{"\<\"UntrustedPath\"\>", "\[Rule]", 
+                    RowBox[{"{", "}"}]}]}], "}"}]}]}], "]"}], ",", 
+              RowBox[{"DialogInput", "[", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"TextCell", "[", 
+                   
+                   RowBox[{"\<\"The extra keyboard shortcuts to be installed \
+call the Kernel and therefore can prompt the \\\"Enable Dynamic\\\" button. \
+This can be circumvented by accepting the following change to your \
+Mathematica setup:\\n\\n     Do you agree to permanently trust all\\n     \
+notebook evaluations? If you click OK, the followoing will be evaluated, \
+potentially asking for another\\n     decision.\\n      SetOptions[$FrontEnd, \
+NotebookSecurityOptions ->\\n     {\\\"TrustByDefault\\\" -> True, \
+\\\"UntrustedPath\\\" -> {}}]\\n     \"\>", ",", "\<\"Text\"\>", ",", 
+                    RowBox[{"Background", "\[Rule]", "White"}]}], "]"}], ",", 
+                  RowBox[{"Row", "[", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"Spacer", "[", "142", "]"}], ",", 
+                    RowBox[{"DefaultButton", "[", 
+                    RowBox[{
+                    RowBox[{"DialogReturn", "[", 
+                    RowBox[{"SetOptions", "[", 
+                    RowBox[{"$FrontEnd", ",", 
+                    RowBox[{"\<\"NotebookSecurityOptions\"\>", "\[Rule]", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\<\"TrustByDefault\"\>", "\[Rule]", "True"}], 
+                    ",", 
+                    RowBox[{"\<\"UntrustedPath\"\>", "\[Rule]", 
+                    RowBox[{"{", "}"}]}]}], "}"}]}]}], "]"}], "]"}], ",", 
+                    RowBox[{"ImageSize", "\[Rule]", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"42", " ", "GoldenRatio"}], ",", "42"}], 
+                    "}"}]}]}], "]"}], ",", 
+                    RowBox[{"Spacer", "[", "42", "]"}], ",", 
+                    RowBox[{"CancelButton", "[", 
+                    RowBox[{"ImageSize", "\[Rule]", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"42", " ", "GoldenRatio"}], ",", "42"}], "}"}]}], 
+                    "]"}], ",", 
+                    RowBox[{"Spacer", "[", "10", "]"}]}], "}"}], "]"}]}], 
+                 "}"}], ",", 
+                RowBox[{"WindowFloating", "\[Rule]", "True"}], ",", 
+                RowBox[{"WindowTitle", "\[Rule]", "\<\"Security change\"\>"}],
+                 ",", 
+                RowBox[{"Background", "\[Rule]", "LightBlue"}]}], "]"}]}], 
+             "]"}], ";", 
+            RowBox[{"Block", "[", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{
+               "Shortcuts`Private`mykeyevents", ",", 
+                "Shortcuts`Private`keyevent"}], "}"}], ",", 
+              RowBox[{
+               RowBox[{
+                RowBox[{
+                "Shortcuts`Private`keyevent", "[", "\<\"TestRun1\"\>", "]"}], 
+                "=", 
+                RowBox[{
+                 RowBox[{"Shortcuts`Private`keyevent", "[", "1", "]"}], 
+                 
+                 "=", "\<\"\\n(* Test Run 1: delete all output, do not \
+restart the kernel and evaluate all cells above  \
+*)\\n\\tItem[\\tKeyEvent[\\\"Tab\\\", Modifiers -> {Control}], KernelExecute[ \
+Needs[\\\"Shortcuts`\\\"]; Shortcuts`Shortcut[\\\"TestRun1\\\"] ], \
+MenuEvaluator -> Automatic\\n\\t], \\n\"\>"}]}], ";", 
+               RowBox[{
+                RowBox[{
+                "Shortcuts`Private`keyevent", "[", "\<\"TestRun2\"\>", "]"}], 
+                "=", 
+                RowBox[{
+                 RowBox[{"Shortcuts`Private`keyevent", "[", "2", "]"}], 
+                 "=", "\<\"\\n(* Test Run 2: delete all output, restart the \
+kernel and evaluate all cells above  *)\\n\\tItem[\\tKeyEvent[\\\"Tab\\\", \
+Modifiers -> {Control, Shift}],\\n\\t\\t\\tKernelExecute[ \
+Needs[\\\"Shortcuts`\\\"]; Shortcuts`Shortcut[\\\"TestRun2\\\"] ], \
+MenuEvaluator -> Automatic\\n    ],\\n\"\>"}]}], ";", 
+               RowBox[{
+                RowBox[{
+                "Shortcuts`Private`keyevent", "[", "\<\"Minimize\"\>", "]"}], 
+                "=", 
+                RowBox[{
+                 RowBox[{"Shortcuts`Private`keyevent", "[", "3", "]"}], 
+                 "=", "\<\"\\n(* Minimize all windows \
+*)\\n\\tItem[\\tKeyEvent[\\\"m\\\", Modifiers -> {Command, Option}],\\n\\t\\t\
+\\tKernelExecute[ Needs[\\\"Shortcuts`\\\"]; \
+Shortcuts`Shortcut[\\\"Minimize\\\"] ], MenuEvaluator -> Automatic\\n\\t],\\n\
+\"\>"}]}], ";", 
+               RowBox[{
+                RowBox[{
+                "Shortcuts`Private`keyevent", "[", "\<\"MoveCellsUp\"\>", 
+                 "]"}], "=", 
+                RowBox[{
+                 RowBox[{"Shortcuts`Private`keyevent", "[", "4", "]"}], 
+                 "=", "\<\"\\n(* move cell(s) up \
+*)\\n\\tItem[\\tKeyEvent[\\\"u\\\", Modifiers -> {Command, Option}],\\n\\t\\t\
+\\tKernelExecute[ Needs[\\\"Shortcuts`\\\"]; \
+Shortcuts`Shortcut[\\\"MoveCellsUp\\\"] ], MenuEvaluator -> Automatic\\n\\t],\
+\\n\"\>"}]}], ";", 
+               RowBox[{
+                RowBox[{
+                "Shortcuts`Private`keyevent", "[", "\<\"MoveCellsDown\"\>", 
+                 "]"}], "=", 
+                RowBox[{
+                 RowBox[{"Shortcuts`Private`keyevent", "[", "5", "]"}], 
+                 "=", "\<\"\\n(* move cell(s) down \
+*)\\n\\tItem[\\tKeyEvent[\\\"d\\\", Modifiers -> \
+{Command,Option}],\\n\\t\\t\\tKernelExecute[ Needs[\\\"Shortcuts`\\\"]; \
+Shortcuts`Shortcut[\\\"MoveCellsDown\\\"] ], MenuEvaluator -> \
+Automatic\\n\\t],\\n\"\>"}]}], ";", 
+               RowBox[{
+                RowBox[{
+                "Shortcuts`Private`keyevent", 
+                 "[", "\<\"SelectCellBracket\"\>", "]"}], "=", 
+                RowBox[{
+                 RowBox[{"Shortcuts`Private`keyevent", "[", "6", "]"}], 
+                 "=", "\<\"\\n(* from inside a cell select the cell bracket \
+*)\\n\\tItem[\\tKeyEvent[\\\"b\\\", Modifiers -> {Command, Option}],\\n\\t\\t\
+\\tKernelExecute[ Needs[\\\"Shortcuts`\\\"]; \
+Shortcuts`Shortcut[\\\"SelectCellBracket\\\"] ], MenuEvaluator -> \
+Automatic\\n\\t],\\n\"\>"}]}], ";", 
+               RowBox[{
+                RowBox[{
+                "Shortcuts`Private`keyevent", 
+                 "[", "\<\"DeleteOutputAndMEssages\"\>", "]"}], "=", 
+                RowBox[{
+                 RowBox[{"Shortcuts`Private`keyevent", "[", "7", "]"}], "=", 
+                 
+                 RowBox[{"\<\"\\n(* Delete output: Ctrl Shift x, is a \
+shortcut for  Delete All Output and for \
+NotebookDelete[Cells[MessagesNotebook[]]] *)\\n\\tItem[\\tKeyEvent[\\\"x\\\", \
+Modifiers -> \"\>", "<>", 
+                  RowBox[{"Switch", "[", 
+                   RowBox[{
+                   "$OperatingSystem", ",", 
+                    "\[IndentingNewLine]", "\<\"MacOSX\"\>", 
+                    ",", "\<\"{Command, Shift}\"\>", ",", 
+                    "\[IndentingNewLine]", "\<\"Windows\"\>", 
+                    ",", "\<\"{Control, Shift}\"\>", ",", 
+                    "\[IndentingNewLine]", "\<\"Unix\"\>", 
+                    ",", "\<\"{Control, Command}\"\>"}], "]"}], 
+                  "<>", "\<\"],\\n\\t\\t\\tKernelExecute[ \
+Needs[\\\"Shortcuts`\\\"]; \
+Shortcuts`Shortcut[\\\"DeleteOutputAndMessages\\\"] ], MenuEvaluator -> \
+Automatic\\n\\t],\\n\"\>"}]}]}], ";", 
+               RowBox[{
+                RowBox[{
+                "Shortcuts`Private`keyevent", 
+                 "[", "\<\"DeleteAllCellsButInputAndCode\"\>", "]"}], "=", 
+                RowBox[{
+                 RowBox[{"Shortcuts`Private`keyevent", "[", "8", "]"}], "=", 
+                 
+                 RowBox[{"\<\"\\n(* Delete all cells but Input and Code: Ctrl \
+Alt x, is a shortcut for  Delete All Output and all non-Input and non-Code \
+cells and\\n   for NotebookDelete[Cells[MessagesNotebook[]]]\\n   Suggested \
+by Mooniac\\n*)\\n\\tItem[\\tKeyEvent[\\\"x\\\", Modifiers -> {\"\>", "<>", 
+                  RowBox[{"If", "[", 
+                   RowBox[{
+                    RowBox[{"$OperatingSystem", "===", "\<\"MacOSX\"\>"}], 
+                    ",", "\<\"Command\"\>", ",", "\<\"Control\"\>"}], "]"}], 
+                  "<>", "\<\", Command}],\\n\\t\\t\\tKernelExecute[ \
+Needs[\\\"Shortcuts`\\\"]; \
+Shortcuts`Shortcut[\\\"DeleteAllCellsButInputAndCode\\\"] ], MenuEvaluator -> \
+Automatic\\n\\t],\\n\"\>"}]}]}], ";", 
+               RowBox[{
+                RowBox[{
+                "Shortcuts`Private`keyevent", "[", "\<\"RestartFrontEnd\"\>", 
+                 "]"}], "=", 
+                RowBox[{
+                 RowBox[{"Shortcuts`Private`keyevent", "[", "9", "]"}], 
+                 "=", "\<\"\\n(* Restart that Mathematica FrontEnd which was \
+started last *)\\nItem[KeyEvent[\\\"r\\\", Modifiers -> {Control}],\\n     \
+KernelExecute[ Needs[\\\"Shortcuts`\\\"]; \
+Shortcuts`Shortcut[\\\"RestartFrontEnd\\\"] ], MenuEvaluator -> \
+Automatic\\n],\\n\"\>"}]}], ";", 
+               RowBox[{
+                RowBox[{
+                "Shortcuts`Private`keyevent", "[", "\<\"QuitFrontEnd\"\>", 
+                 "]"}], "=", 
+                RowBox[{
+                 RowBox[{"Shortcuts`Private`keyevent", "[", "10", "]"}], "=", 
+                 RowBox[{"If", "[", 
+                  RowBox[{
+                   RowBox[{"$OperatingSystem", "===", "\<\"MacOSX\"\>"}], 
+                   ",", "\<\"\"\>", 
+                   ",", "\<\"\\n       (* Quit the last Mathematica FrontEnd \
+*)\\n       Item[KeyEvent[\\\"Delete\\\", Modifiers -> {Command, Option}],\\n \
+           KernelExecute[ Needs[\\\"Shortcuts`\\\"]; \
+Shortcuts`Shortcut[\\\"QuitFrontEnd\\\"] ], MenuEvaluator -> Automatic\\n     \
+  ],\"\>"}], "]"}]}]}], ";", 
+               RowBox[{
+                RowBox[{
+                "Shortcuts`Private`keyevent", "[", "\<\"RestartKernel\"\>", 
+                 "]"}], "=", 
+                RowBox[{
+                 RowBox[{"Shortcuts`Private`keyevent", "[", "11", "]"}], "=", 
+                 
+                 RowBox[{"\<\"(* Quit and restart the Kernel; using this by \
+Kuba: *)\\n\\t (* \
+http://mathematica.stackexchange.com/questions/82803/quit-the-kernel-and-\
+start-new-session-automatically *)\\n\\t Item[KeyEvent[\\\"q\\\",  Modifiers \
+-> \"\>", "<>", 
+                  RowBox[{"If", "[", 
+                   RowBox[{
+                    RowBox[{"$OperatingSystem", "===", "\<\"Unix\"\>"}], 
+                    ",", "\<\"{Control, Shift}\"\>", 
+                    ",", "\<\"{Control}\"\>"}], "]"}], 
+                  "<>", "\<\"],     \\n           KernelExecute[ \
+Needs[\\\"Shortcuts`\\\"]; Shortcuts`Shortcut[\\\"RestartKernel\\\"] ], \
+MenuEvaluator -> Automatic\\n     ],\"\>"}]}]}], ";", 
+               RowBox[{
+                RowBox[{
+                "Shortcuts`Private`keyevent", "[", "\<\"EvaluateFromTop\"\>", 
+                 "]"}], "=", 
+                RowBox[{
+                 RowBox[{"Shortcuts`Private`keyevent", "[", "12", "]"}], "=", 
+                 
+                 RowBox[{"\<\"\\n\\t(* Select all Input and Code cells \
+upwards from where the mouse is and evaluate those cells. \
+*)\\n\\tItem[KeyEvent[\\\"Up\\\", Modifiers -> {\"\>", "<>", 
+                  RowBox[{"If", "[", 
+                   RowBox[{
+                    RowBox[{"$OperatingSystem", "===", "\<\"MacOSX\"\>"}], 
+                    ",", "\<\"Command\"\>", ",", "\<\"Control\"\>"}], "]"}], 
+                  "<>", "\<\", Shift}\\n         ],\\n         \
+KernelExecute[Needs[\\\"Shortcuts`\\\"]; \
+Shortcuts`Shortcut[\\\"EvaluateFromTop\\\"]], MenuEvaluator -> Automatic\\n   \
+  ],\"\>"}]}]}], ";", 
+               RowBox[{
+                RowBox[{
+                "Shortcuts`Private`keyevent", "[", "\<\"EvaluateNotebook\"\>",
+                  "]"}], "=", 
+                RowBox[{
+                 RowBox[{"Shortcuts`Private`keyevent", "[", "13", "]"}], 
+                 "=", "\<\"\\n\\t(* Evaluate Notebook \
+*)\\n\\tItem[KeyEvent[\\\"h\\\", Modifiers -> {Control}],\\\"EvaluateNotebook\
+\\\"\\n\\t],\"\>"}]}], ";", 
+               RowBox[{
+                RowBox[{
+                "Shortcuts`Private`keyevent", 
+                 "[", "\<\"EvaluateNotebook2\"\>", "]"}], "=", 
+                RowBox[{
+                 RowBox[{"Shortcuts`Private`keyevent", "[", "14", "]"}], 
+                 "=", "\<\"\\n\\t(* Evaluate Notebook *)\\n    Item[KeyEvent[\
+\\\"`\\\", Modifiers -> {Control}],\\\"EvaluateNotebook\\\"\\n\\t],\"\>"}]}], 
+               ";", 
+               RowBox[{
+                RowBox[{
+                "Shortcuts`Private`keyevent", "[", "\<\"SelectToTop\"\>", 
+                 "]"}], "=", 
+                RowBox[{
+                 RowBox[{"Shortcuts`Private`keyevent", "[", "15", "]"}], "=", 
+                 
+                 RowBox[{"\<\"\\n\\t(* Select all cells upwards from where \
+the mouse is *)\\n\\tItem[KeyEvent[\\\";\\\", Modifiers -> {\"\>", "<>", 
+                  RowBox[{"If", "[", 
+                   RowBox[{
+                    RowBox[{"$OperatingSystem", "===", "\<\"MacOSX\"\>"}], 
+                    ",", "\<\"Command\"\>", ",", "\<\"Control\"\>"}], "]"}], 
+                  "<>", "\<\"}\\n         ],\\n         KernelExecute[ Needs[\
+\\\"Shortcuts`\\\"]; Shortcuts`Shortcut[\\\"SelectToTop\\\"] ] , \
+MenuEvaluator -> Automatic\\n\\t],\"\>"}]}]}], ";", 
+               RowBox[{
+                RowBox[{
+                "Shortcuts`Private`keyevent", "[", "\<\"SelectToBottom\"\>", 
+                 "]"}], "=", 
+                RowBox[{
+                 RowBox[{"Shortcuts`Private`keyevent", "[", "16", "]"}], "=", 
+                 
+                 RowBox[{"\<\"\\n\\t(* Select all cells downwards from where \
+the mouse is *)\\n\\tItem[KeyEvent[\\\"Down\\\", Modifiers -> {\"\>", "<>", 
+                  RowBox[{"If", "[", 
+                   RowBox[{
+                    RowBox[{"$OperatingSystem", "===", "\<\"MacOSX\"\>"}], 
+                    ",", "\<\"Command\"\>", ",", "\<\"Control\"\>"}], "]"}], 
+                  "<>", "\<\", Shift}],\\n         KernelExecute[ \
+Needs[\\\"Shortcuts`\\\"]; Shortcuts`Shortcut[\\\"SelectToBottom\\\"] ]\\n    \
+     , MenuEvaluator -> Automatic\\n\\t],\"\>"}]}]}], ";", 
+               RowBox[{
+                RowBox[{
+                "Shortcuts`Private`keyevent", 
+                 "[", "\<\"CloseUntitledNotebooks\"\>", "]"}], "=", 
+                RowBox[{
+                 RowBox[{"Shortcuts`Private`keyevent", "[", "17", "]"}], 
+                 "=", "\<\"\\n\\t(* Close all Untitled* Notebooks \
+*)\\n\\tItem[KeyEvent[\\\"Delete\\\", Modifiers -> {Control, Shift}],\\n      \
+   KernelExecute[ Needs[\\\"Shortcuts`\\\"]; \
+Shortcuts`Shortcut[\\\"CloseUntitledNotebooks\\\"] ]\\n         , \
+MenuEvaluator -> Automatic\\n\\t],\"\>"}]}], ";", 
+               RowBox[{
+                RowBox[{
+                "Shortcuts`Private`keyevent", "[", "\<\"[[\"\>", "]"}], "=", 
+                RowBox[{
+                 RowBox[{"Shortcuts`Private`keyevent", "[", "18", "]"}], "=", 
+                 
+                 RowBox[{"\<\"\\n\\t(* by rm-rf: \
+http://mathematica.stackexchange.com/questions/5212/automating-esc-esc-\
+formatting/5215#5215*)\\n\\tItem[KeyEvent[\\\"[\\\"(*]*), Modifiers -> \
+{Control}],\\n        FrontEndExecute[\\n            \
+FrontEnd`NotebookWrite[FrontEnd`InputNotebook[], \\\" \"\>", 
+                  "<>", "\<\"\\\\\"\>", 
+                  "<>", "\<\"[LeftDoubleBracket]\\\", After]\\n        \
+]\\n\\t],\"\>"}]}]}], ";", 
+               RowBox[{
+                RowBox[{
+                "Shortcuts`Private`keyevent", "[", "\<\"]]\"\>", "]"}], "=", 
+                RowBox[{
+                 RowBox[{"Shortcuts`Private`keyevent", "[", "19", "]"}], "=", 
+                 
+                 RowBox[{"\<\"\\n\\tItem[KeyEvent[(*[*)\\\"]\\\", Modifiers \
+-> {Control}],\\n        FrontEndExecute[\\n            \
+FrontEnd`NotebookWrite[FrontEnd`InputNotebook[], \\\" \"\>", 
+                  "<>", "\<\"\\\\\"\>", 
+                  "<>", "\<\"[RightDoubleBracket]\\\", After] \\n        ]\\n\
+\\t],\"\>"}]}]}], ";", 
+               RowBox[{
+                RowBox[{
+                "Shortcuts`Private`keyevent", "[", "\<\"[[]]\"\>", "]"}], "=", 
+                RowBox[{
+                 RowBox[{"Shortcuts`Private`keyevent", "[", "20", "]"}], "=", 
+                 
+                 RowBox[{"\<\"\\n\\tItem[KeyEvent[(*[*)\\\"]\\\", Modifiers \
+-> {Control, Command}],\\n        FrontEndExecute[{\\n            \
+FrontEnd`NotebookWrite[FrontEnd`InputNotebook[],\\n               \\\"\"\>", 
+                  "<>", "\<\"\\\\\"\>", 
+                  "<>", "\<\"[LeftDoubleBracket]\\\", After],\\n            \
+FrontEnd`NotebookWrite[FrontEnd`InputNotebook[],\\n               \\\"\"\>", 
+                  "<>", "\<\"\\\\\"\>", 
+                  "<>", "\<\"[RightDoubleBracket]\\\", Before]\\n        \
+}]\\n\\t],\"\>"}]}]}], ";", 
+               RowBox[{
+                RowBox[{
+                "Shortcuts`Private`keyevent", "[", "\<\"F4\"\>", "]"}], "=", 
+                RowBox[{
+                 RowBox[{"Shortcuts`Private`keyevent", "[", "21", "]"}], "=", 
+                 
+                 RowBox[{"\<\"\\n\\t(* for german keyboards, for Yves  \
+*)\\n\\tItem[KeyEvent[\\\"F4\\\"],\\n        FrontEndExecute[{\\n            \
+FrontEnd`NotebookWrite[FrontEnd`InputNotebook[], \\\"\"\>", 
+                  "<>", "\<\"\\\\\"\>", 
+                  "<>", "\<\"[LeftDoubleBracket]\\\", After],\\n            \
+FrontEnd`NotebookWrite[FrontEnd`InputNotebook[], \\\"\"\>", 
+                  "<>", "\<\"\\\\\"\>", 
+                  "<>", "\<\"[RightDoubleBracket]\\\", Before]\\n        \
+}]\\n\\t],\"\>"}]}]}], ";", 
+               RowBox[{
+                RowBox[{
+                "Shortcuts`Private`keyevent", "[", "\<\"F6\"\>", "]"}], "=", 
+                RowBox[{
+                 RowBox[{"Shortcuts`Private`keyevent", "[", "22", "]"}], 
+                 "=", "\<\"\\n\\t(* on Linux and  Windows: set WindowMargins \
+-> 42 on the selected notebook \
+*)\\n\\tItem[KeyEvent[\\\"F6\\\"],\\n\\t\\tKernelExecute[ \
+Needs[\\\"Shortcuts`\\\"]; Shortcuts`Shortcut[\\\"F6\\\"] ] , MenuEvaluator \
+-> Automatic\\n\\t],\"\>"}]}], ";", 
+               RowBox[{
+                RowBox[{
+                "Shortcuts`Private`keyevent", "[", "\<\"RunJoker\"\>", "]"}], 
+                "=", 
+                RowBox[{
+                 RowBox[{"Shortcuts`Private`keyevent", "[", "23", "]"}], "=", 
+                 
+                 RowBox[{"\<\"\\n\\t(* run 'live' configurable joker keyboard \
+shortcut: *)\\n\\tItem[KeyEvent[\\\"\"\>", "<>", 
+                  RowBox[{"If", "[", 
+                   RowBox[{
+                    RowBox[{"$OperatingSystem", "===", "\<\"MacOSX\"\>"}], 
+                    ",", "\<\"d\"\>", ",", "\<\"t\"\>"}], "]"}], 
+                  "<>", "\<\"\\\", Modifiers -> {Control}],\\n        \
+KernelExecute[ Needs[\\\"Shortcuts`\\\"]; \
+Shortcuts`Shortcut[\\\"RunJoker\\\"] ], MenuEvaluator -> Automatic \\n\\t],\"\
+\>"}]}]}], ";", 
+               RowBox[{
+                RowBox[{
+                "Shortcuts`Private`keyevent", "[", "\<\"OpenJoker\"\>", "]"}],
+                 "=", 
+                RowBox[{
+                 RowBox[{"Shortcuts`Private`keyevent", "[", "24", "]"}], 
+                 "=", "\<\"\\n\\t(* edit 'live' configurable joker keyboard \
+shortcut: *)\\n\\tItem[KeyEvent[\\\"j\\\", Modifiers -> {Control, Shift}],\\n \
+       KernelExecute[ Needs[\\\"Shortcuts`\\\"]; \
+Shortcuts`Shortcut[\\\"OpenJoker\\\"] ], MenuEvaluator -> Automatic\\n\\t],\"\
+\>"}]}], ";", 
+               RowBox[{
+                RowBox[{
+                "Shortcuts`Private`keyevent", "[", "\<\"EvaluateSelected\"\>",
+                  "]"}], "=", 
+                RowBox[{
+                 RowBox[{"Shortcuts`Private`keyevent", "[", "25", "]"}], "=", 
+                 
+                 RowBox[{"\<\"\\n\\t(* evaluate selected expression in a new \
+notebook *)               \\n\\t(* inspired by Kuba: \
+http://mathematica.stackexchange.com/questions/32340/evaluating-selected-\
+expression-using-keyboard-shortcut/32341#32341 \
+*)\\n\\tItem[KeyEvent[\\\"\"\>", "<>", 
+                  RowBox[{"Switch", "[", 
+                   RowBox[{
+                   "$OperatingSystem", ",", 
+                    "\[IndentingNewLine]", "\<\"Windows\"\>", 
+                    ",", "\<\",\"\>", ",", 
+                    "\[IndentingNewLine]", "\<\"MacOSX\"\>", 
+                    ",", "\<\"PageDown\"\>", ",", 
+                    "\[IndentingNewLine]", "\<\"Unix\"\>", ",", "\<\"c\"\>"}],
+                    "]"}], "<>", "\<\"\\\", Modifiers -> {\"\>", "<>", 
+                  RowBox[{"Switch", "[", 
+                   RowBox[{
+                   "$OperatingSystem", ",", 
+                    "\[IndentingNewLine]", "\<\"MacOSX\"\>", 
+                    ",", "\<\"Command\"\>", ",", 
+                    "\[IndentingNewLine]", "\<\"Windows\"\>", 
+                    ",", "\<\"Control, Shift\"\>", ",", 
+                    "\[IndentingNewLine]", "\<\"Unix\"\>", 
+                    ",", "\<\"Command, Option\"\>"}], "]"}], 
+                  "<>", "\<\"}\\n      ],\\n      KernelExecute[ \
+Needs[\\\"Shortcuts`\\\"]; Shortcuts`Shortcut[\\\"EvaluateSelected\\\"] ], \
+MenuEvaluator -> Automatic \\n      ],\"\>"}]}]}], ";", 
+               RowBox[{
+                RowBox[{
+                "Shortcuts`Private`keyevent", 
+                 "[", "\<\"ShowShortcutsTutorial\"\>", "]"}], "=", 
+                RowBox[{
+                 RowBox[{"Shortcuts`Private`keyevent", "[", "26", "]"}], 
+                 "=", "\<\"\\n\\t(* open the guid page of shortcuts \
+*)\\n\\tstem[KeyEvent[\\\"F1\\\", Modifiers -> {Control}],\\n        \
+KernelExecute[ Needs[\\\"Shortcuts`\\\"]; \
+NotebookOpen@\\\"paclet:Shortcuts/tutorial/ShortcutsTutorialLinearSystems\\\" \
+], MenuEvaluator -> Automatic\\n\\t],\"\>"}]}], ";", 
+               RowBox[{"Shortcuts`Private`mykeyevents", "=", 
+                RowBox[{"StringJoin", "@@", 
+                 RowBox[{"Array", "[", 
+                  RowBox[{"Shortcuts`Private`keyevent", ",", "26"}], 
+                  "]"}]}]}], ";", 
+               RowBox[{"With", "[", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"Shortcuts`Private`os", "=", 
+                   RowBox[{"Switch", "[", 
+                    RowBox[{
+                    "$OperatingSystem", ",", 
+                    "\[IndentingNewLine]", "\<\"MacOSX\"\>", 
+                    ",", "\<\"Macintosh\"\>", ",", 
+                    "\[IndentingNewLine]", "\<\"Windows\"\>", 
+                    ",", "\<\"Windows\"\>", ",", 
+                    "\[IndentingNewLine]", "\<\"Unix\"\>", ",", "\<\"X\"\>"}],
+                     "]"}]}], "}"}], ",", 
+                 RowBox[{
+                  RowBox[{"Quiet", "[", 
+                   RowBox[{"CreateDirectory", "[", 
+                    RowBox[{"FileNameJoin", "[", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "$UserBaseDirectory", ",", "\<\"SystemFiles\"\>", 
+                    ",", "\<\"FrontEnd\"\>", ",", "\<\"TextResources\"\>", 
+                    ",", "Shortcuts`Private`os"}], "}"}], "]"}], "]"}], "]"}],
+                   ";", 
+                  RowBox[{"Module", "[", 
+                   RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"Shortcuts`Private`mykeyeventtrans", "=", 
+                    RowBox[{"FileNameJoin", "[", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "$UserBaseDirectory", ",", "\<\"SystemFiles\"\>", 
+                    ",", "\<\"FrontEnd\"\>", ",", "\<\"TextResources\"\>", 
+                    ",", "Shortcuts`Private`os", 
+                    ",", "\<\"KeyEventTranslations.tr\"\>"}], "}"}], "]"}]}], 
+                    ",", 
+                    RowBox[{"Shortcuts`Private`myjokerfilename", "=", 
+                    RowBox[{"FileNameJoin", "[", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "$UserBaseDirectory", ",", "\<\"SystemFiles\"\>", 
+                    ",", "\<\"FrontEnd\"\>", ",", "\<\"TextResources\"\>", 
+                    ",", "Shortcuts`Private`os", ",", "\<\"joker.m\"\>"}], 
+                    "}"}], "]"}]}], ",", "Shortcuts`Private`keytext", ",", 
+                    "Shortcuts`Private`mykeytext", ",", 
+                    "Shortcuts`Private`myjokerdir"}], "}"}], ",", 
+                    RowBox[{
+                    RowBox[{"Shortcuts`Private`myjokerdir", "=", 
+                    RowBox[{
+                    "DirectoryName", "[", "Shortcuts`Private`myjokerfilename",
+                     "]"}]}], ";", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    "FileExistsQ", "[", "Shortcuts`Private`mykeyeventtrans", 
+                    "]"}], ",", 
+                    RowBox[{
+                    "DeleteFile", "[", "Shortcuts`Private`mykeyeventtrans", 
+                    "]"}]}], "]"}], ";", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    "FileExistsQ", "[", "Shortcuts`Private`myjokerfilename", 
+                    "]"}], ",", 
+                    RowBox[{"Quiet", "[", 
+                    RowBox[{
+                    "DeleteFile", "[", "Shortcuts`Private`myjokerfilename", 
+                    "]"}], "]"}]}], "]"}], ";", 
+                    RowBox[{"Export", "[", 
+                    RowBox[{
+                    "Shortcuts`Private`myjokerfilename", 
+                    ",", "\<\"\\n(* Define your own shortcut definitions \
+here, without restarting the FrontEnd.\\n   The action defined here is \
+executed by Ctrl T (Windows / Linux)  or Ctrl D (MacOSX)\\n*)\\n\\n(* \
+uncomment an example below or add your own definitions, save this file \
+without renaming it and use it directly *)\\n\\n(* Example 1: copy the \
+selection as LaTeX. Evaluating sel pastes the clipboard *)\\n\\n(*\\n  \
+FrontEnd`CopyToClipboard[FrontEnd`CopyAsTeX[]];\\n  (* and also function \
+assignments: *)\\n  sel := Paste[];\\n*)\\n\\n(* Example 2:  wrap selection \
+in [ ] *)\\n\\n(*\\n  NotebookApply[SelectedNotebook[], RowBox[{\\\"[\\\", \\\
+\"\\\\[SelectionPlaceholder]\\\", \\\"]\\\"}], Before]\\n*)\\n\\n\\n\"\>", 
+                    ",", "\<\"Text\"\>", ",", 
+                    RowBox[{
+                    "CharacterEncoding", "\[RuleDelayed]", 
+                    "$CharacterEncoding"}]}], "]"}], ";", 
+                    RowBox[{"CopyFile", "[", 
+                    RowBox[{
+                    RowBox[{"FileNameJoin", "[", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "$InstallationDirectory", ",", "\<\"SystemFiles\"\>", 
+                    ",", "\<\"FrontEnd\"\>", ",", "\<\"TextResources\"\>", 
+                    ",", "Shortcuts`Private`os", 
+                    ",", "\<\"KeyEventTranslations.tr\"\>"}], "}"}], "]"}], 
+                    ",", "Shortcuts`Private`mykeyeventtrans"}], "]"}], ";", 
+                    RowBox[{"Shortcuts`Private`keytext", "=", 
+                    RowBox[{"Import", "[", 
+                    RowBox[{
+                    "Shortcuts`Private`mykeyeventtrans", 
+                    ",", "\<\"Text\"\>"}], "]"}]}], ";", 
+                    RowBox[{"Shortcuts`Private`mykeytext", "=", 
+                    RowBox[{"StringReplace", "[", 
+                    RowBox[{"Shortcuts`Private`keytext", ",", 
+                    RowBox[{"\<\"EventTranslations[{\"\>", "\[RuleDelayed]", 
+                    
+                    RowBox[{"\<\"EventTranslations[{\\n \"\>", "<>", 
+                    "Shortcuts`Private`mykeyevents", 
+                    "<>", "\<\"\\n \"\>"}]}]}], "]"}]}], ";", 
+                    RowBox[{"Shortcuts`Private`mykeytext", "=", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"#1", "<>", "\<\"\\n\"\>"}], "&"}], "@*", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"StringReplace", "[", 
+                    RowBox[{"#1", ",", 
+                    RowBox[{
+                    
+                    RowBox[{"\<\"Item[KeyEvent[\\\"\"\>", "~~", 
+                    "Shortcuts`Private`it_", "~~", "\<\"\\\", Modifiers\"\>", 
+                    "~~", 
+                    RowBox[{"(", 
+                    RowBox[{"Shortcuts`Private`mo__", "/;", 
+                    RowBox[{
+                    RowBox[{
+                    "StringLength", "[", "Shortcuts`Private`mo", "]"}], "<", 
+                    "30"}]}], ")"}], "~~", "\<\"\\\"Redo\\\"]\"\>"}], 
+                    "\[RuleDelayed]", 
+                    
+                    RowBox[{"\<\"If[$VersionNumber < 10, {}, Item[KeyEvent[\"\
+\>", "~~", "Shortcuts`Private`it", "~~", "\<\", Modifiers\"\>", "~~", 
+                    "Shortcuts`Private`mo", 
+                    "~~", "\<\" \\\"Redo\\\"]]\"\>"}]}], ",", "1"}], "]"}], 
+                    "&"}], ")"}], "@*", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"StringReplace", "[", 
+                    RowBox[{"#1", ",", 
+                    
+                    RowBox[{"\<\"Item[KeyEvent[\\\"Redo\\\"]\"\>", 
+                    "\[Rule]", "\<\"If[$VersionNumber < 10, {}, \
+Item[KeyEvent[\\\"Redo\\\"]]\"\>"}], ",", "1"}], "]"}], "&"}], ")"}]}], ")"}],
+                     "/@", 
+                    RowBox[{"ImportString", "[", 
+                    RowBox[{
+                    "Shortcuts`Private`mykeytext", ",", "\<\"Lines\"\>", ",", 
+                    RowBox[{
+                    "CharacterEncoding", "\[RuleDelayed]", 
+                    "$CharacterEncoding"}]}], "]"}]}]}], ";", 
+                    RowBox[{"Export", "[", 
+                    RowBox[{
+                    "Shortcuts`Private`mykeyeventtrans", ",", 
+                    "Shortcuts`Private`mykeytext", ",", "\<\"Text\"\>", ",", 
+                    RowBox[{
+                    "CharacterEncoding", "\[RuleDelayed]", 
+                    "$CharacterEncoding"}]}], "]"}], ";", 
+                    RowBox[{"CellPrint", "[", 
+                    RowBox[{"ExpressionCell", "[", 
+                    RowBox[{
+                    RowBox[{"Column", "[", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"Two files have been generated:\"\>", ",", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"Button", "[", 
+                    RowBox[{
+                    RowBox[{"StringReplace", "[", 
+                    RowBox[{"#1", ",", 
+                    RowBox[{
+                    "$UserBaseDirectory", 
+                    "\[Rule]", "\<\"$UserBaseDirectory\"\>"}]}], "]"}], ",", 
+                    RowBox[{"CreateDocument", "[", 
+                    RowBox[{"{", 
+                    RowBox[{"TextCell", "[", 
+                    RowBox[{"Import", "[", 
+                    RowBox[{"#1", ",", "\<\"Text\"\>"}], "]"}], "]"}], "}"}], 
+                    "]"}]}], "]"}], "&"}], ")"}], "[", 
+                    "Shortcuts`Private`mykeyeventtrans", "]"}], 
+                    ",", "\<\"and\"\>", ",", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"Button", "[", 
+                    RowBox[{
+                    RowBox[{"StringReplace", "[", 
+                    RowBox[{"#1", ",", 
+                    RowBox[{
+                    "$UserBaseDirectory", 
+                    "\[Rule]", "\<\"$UserBaseDirectory\"\>"}]}], "]"}], ",", 
+                    RowBox[{"NotebookOpen", "[", "#1", "]"}]}], "]"}], "&"}], 
+                    ")"}], "[", "Shortcuts`Private`myjokerfilename", "]"}]}], 
+                    "}"}], "]"}], ",", "\<\"Text\"\>", ",", 
+                    RowBox[{"ShowStringCharacters", "\[Rule]", "False"}]}], 
+                    "]"}], "]"}], ";", 
+                    RowBox[{"CellPrint", "[", 
+                    RowBox[{"TextCell", "[", 
+                    
+                    RowBox[{"\<\"After restarting the FrontEnd once the \
+following extra keyboard shortcuts can be used: \"\>", ",", "\<\"Text\"\>", 
+                    ",", 
+                    RowBox[{"FontWeight", "\[Rule]", "Bold"}]}], "]"}], "]"}],
+                     ";", 
+                    RowBox[{"CellPrint", "[", 
+                    RowBox[{"Cell", "[", 
+                    RowBox[{"\<\"?Shortcuts\"\>", ",", "\<\"Input\"\>"}], 
+                    "]"}], "]"}], ";", 
+                    RowBox[{"CellPrint", "[", 
+                    RowBox[{"ExpressionCell", "[", 
+                    RowBox[{
+                    RowBox[{"Information", "[", 
+                    RowBox[{"\<\"Shortcuts\"\>", ",", 
+                    RowBox[{"LongForm", "\[Rule]", "True"}]}], "]"}], 
+                    ",", "\<\"Output\"\>"}], "]"}], "]"}], ";", 
+                    RowBox[{"With", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"Shortcuts`Private`nb", "=", 
+                    RowBox[{"EvaluationNotebook", "[", "]"}]}], "}"}], ",", 
+                    RowBox[{"DialogInput", "[", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"TextCell", "[", 
+                    
+                    RowBox[{"\<\"Restart the FrontEnd now? All Untitled \
+notebooks will be closed automatically.\"\>", ",", 
+                    RowBox[{"FontSize", "\[Rule]", "20"}]}], "]"}], ",", 
+                    RowBox[{"Row", "[", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"DefaultButton", "[", 
+                    RowBox[{
+                    RowBox[{"DialogReturn", "[", 
+                    RowBox[{"Shortcut", "[", 
+                    
+                    RowBox[{"\<\"RestartFrontEnd\"\>", ",", 
+                    "Shortcuts`Private`nb"}], "]"}], "]"}], ",", 
+                    RowBox[{"ImageSize", "\[Rule]", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"50", " ", "GoldenRatio"}], ",", "50"}], 
+                    "}"}]}]}], "]"}], ",", 
+                    RowBox[{"CancelButton", "[", 
+                    RowBox[{"ImageSize", "\[Rule]", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"50", " ", "GoldenRatio"}], ",", "50"}], "}"}]}], 
+                    "]"}]}], "}"}], "]"}]}], "}"}], "]"}]}], "]"}]}]}], 
+                   "]"}]}]}], "]"}]}]}], "]"}]}]}], "]"}]}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[Shortcuts`InstallShortcuts],
+  Editable->False]], "Print",
+ CellTags->"Info3642153925-2551823"]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"UninstallShortcuts", "[", "]"}]], "Input"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData["\<\"Deleted C:\\\\Users\\\\Rolf \
-Mertig\\\\AppData\\\\Roaming\\\\Mathematica\\\\SystemFiles\\\\FrontEnd\\\\\
-TextResources\\\\Windows\\\\KeyEventTranslations.tr\"\>"], "Print"],
-
-Cell[BoxData["\<\"Deleted C:\\\\Users\\\\Rolf \
-Mertig\\\\AppData\\\\Roaming\\\\Mathematica\\\\SystemFiles\\\\FrontEnd\\\\\
-TextResources\\\\Windows\\\\joker.m\"\>"], "Print"]
-}, Open  ]],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -77,9 +1132,677 @@ Cell[BoxData[
 Cell[BoxData[
  RowBox[{"InstallShortcuts", "[", "]"}]], "Input"],
 
+Cell[CellGroupData[{
+
 Cell["?Shortcuts", "Input",
  GeneratedCell->True,
  CellAutoOverwrite->True],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ StyleBox["\<\"Shortcuts[] gives a list of extra keyboard shortcuts which \
+were defined by InstallShortcuts[].\"\>", "MSG"]], "Print", "PrintUsage",
+ CellTags->"Info3642153909-3804921"],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{
+         RowBox[{"Shortcuts", "[", "]"}], ":=", 
+         RowBox[{"DynamicModule", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+            "Shortcuts`Private`keyStyle", ",", 
+             "Shortcuts`Private`toKeyStyle"}], "}"}], ",", 
+           RowBox[{"Dynamic", "[", 
+            RowBox[{"Style", "[", 
+             RowBox[{
+              RowBox[{"With", "[", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"Shortcuts`Private`os", "=", 
+                  RowBox[{"Switch", "[", 
+                   RowBox[{
+                   "$OperatingSystem", ",", 
+                    "\[IndentingNewLine]", "\<\"MacOSX\"\>", 
+                    ",", "\<\"Macintosh\"\>", ",", 
+                    "\[IndentingNewLine]", "\<\"Windows\"\>", 
+                    ",", "\<\"Windows\"\>", ",", 
+                    "\[IndentingNewLine]", "\<\"Unix\"\>", ",", "\<\"X\"\>"}],
+                    "]"}]}], "}"}], ",", 
+                RowBox[{"With", "[", 
+                 RowBox[{
+                  RowBox[{"{", 
+                   RowBox[{"Shortcuts`Private`myjokerdir2", "=", 
+                    RowBox[{"StringReplace", "[", 
+                    RowBox[{
+                    RowBox[{"FileNameJoin", "[", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "$UserBaseDirectory", ",", "\<\"SystemFiles\"\>", 
+                    ",", "\<\"FrontEnd\"\>", ",", "\<\"TextResources\"\>", 
+                    ",", "Shortcuts`Private`os"}], "}"}], "]"}], ",", 
+                    RowBox[{
+                    "$UserBaseDirectory", 
+                    "\[Rule]", "\<\"$UserBaseDirectory\"\>"}]}], "]"}]}], 
+                   "}"}], ",", 
+                  RowBox[{"Column", "[", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\<\"In the following table the \"\>", "<>", 
+                    RowBox[{"Switch", "[", 
+                    RowBox[{
+                    "$OperatingSystem", ",", 
+                    "\[IndentingNewLine]", "\<\"Windows\"\>", ",", 
+                    RowBox[{
+                    RowBox[{
+                    "Shortcuts`Private`keyStyle", "[", "\<\"Win\"\>", "]"}], 
+                    "<>", "\<\" key is meant to be the Windows key next to \
+the \"\>", "<>", 
+                    RowBox[{
+                    "Shortcuts`Private`keyStyle", "[", "\<\"Alt\"\>", "]"}], 
+                    "<>", "\<\"key.\\n\"\>"}], ",", 
+                    "\[IndentingNewLine]", "\<\"Unix\"\>", ",", 
+                    RowBox[{
+                    RowBox[{
+                    "Shortcuts`Private`keyStyle", "[", "\<\"Mod1\"\>", "]"}], 
+                    "<>", "\<\" key is usually the Windows key and the \"\>", 
+                    "<>", 
+                    RowBox[{
+                    "Shortcuts`Private`keyStyle", "[", "\<\"Mod2\"\>", "]"}], 
+                    "<>", "\<\" key is usually the \"\>", "<>", 
+                    RowBox[{
+                    "Shortcuts`Private`keyStyle", "[", "\<\"Alt\"\>", "]"}], 
+                    "<>", "\<\" key\"\>"}], ",", "\[IndentingNewLine]", "_", 
+                    ",", "\<\"\"\>"}], "]"}]}], ",", 
+                    RowBox[{"Switch", "[", 
+                    RowBox[{
+                    "$OperatingSystem", ",", 
+                    "\[IndentingNewLine]", "\<\"Windows\"\>", ",", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"StringReplace", "[", 
+                    RowBox[{"#1", ",", 
+                    RowBox[{"\<\"Cmd\"\>", "\[Rule]", "\<\"Win\"\>"}]}], 
+                    "]"}], "&"}], ")"}], "[", 
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"#1", ",", "\<\"StandardForm\"\>"}], "]"}], "]"}],
+                     "&"}], ")"}], "[", 
+                    RowBox[{"Grid", "[", 
+                    RowBox[{
+                    RowBox[{"Shortcuts`Private`toKeyStyle", "/@", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl F1\"\>", 
+                    ",", "\<\"Open the Shortcuts tutorial with a list of all \
+extra keyboard shortcuts.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Tab\"\>", 
+                    ",", "\<\"Delete all output and evaluate all cells from \
+the top to the insertion point.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Shift Tab\"\>", 
+                    ",", "\<\"Delete all output, restart the kernel and \
+evaluate all cells from the top to the insertion point.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Shift \[UpArrow]\"\>", 
+                    ",", "\<\"Evaluate all cells from the beginning of the \
+notebook until the insertion point.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl ;\"\>", 
+                    ",", "\<\"Select all cells from the beginning of the \
+notebook until the insertion point.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Shift \[DownArrow]\"\>", 
+                    ",", "\<\"Select all cells from the insertion point until \
+the end of the notebook.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Shift X\"\>", 
+                    ",", "\<\"Delete all generated cells, like Output, \
+Message and Print cells, also in MessagesNotebook[].\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Alt X\"\>", 
+                    ",", "\<\"Delete all non-Input and non-Code cells.\"\>"}],
+                     "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Q\"\>", 
+                    ",", "\<\"Quit and restart the Kernel.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl R\"\>", 
+                    ",", "\<\"Quit and restart the FrontEnd; all Untitled \
+notebooks are closed and others saved. Reopening the selected notebook if it \
+is saved.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"Ctrl H\"\>", 
+                    ",", "\<\"Evaluate Notebook.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Shift ,\"\>", 
+                    ",", "\<\"Copy, paste and evaluate the selected \
+expression from the inside of a cell into a new notebook.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Cmd Alt B\"\>", 
+                    ",", "\<\"Select current cell. The insertion point can be \
+anywhere inside the cell.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Cmd Alt M\"\>", 
+                    ",", "\<\"Minimize all Mathematica notebooks.\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Cmd Alt U\"\>", 
+                    ",", "\<\"Cut the selected cell and paste it before the \
+preceding cell.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Cmd Alt D\"\>", 
+                    ",", "\<\"Cut the selected cell and paste it after the \
+following cell.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Cmd Alt Delete\"\>", 
+                    ",", "\<\"Quit the FrontEnd, saving named notebooks \
+first.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Shift Delete\"\>", 
+                    ",", "\<\"Close all Untitled-*  notebooks without \
+confirmation.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"F4\"\>", 
+                    ",", "\<\"Insert \
+\[LeftDoubleBracket]\[RightDoubleBracket]\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"F6\"\>", ",", "\<\"Stack Windows.\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"Ctrl T\"\>", ",", 
+                    
+                    RowBox[{"\<\"Evaluate the file joker.m from \"\>", "<>", 
+                    "Shortcuts`Private`myjokerdir2"}]}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"Ctrl Shift J\"\>", ",", 
+                    
+                    RowBox[{"\<\"Open joker.m from \"\>", "<>", 
+                    "Shortcuts`Private`myjokerdir2"}]}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"Framed", "[", 
+                    RowBox[{
+                    RowBox[{"Style", "[", 
+                    
+                    RowBox[{"\<\"The following four shortcuts work only on \
+english keyboard layouts:\"\>", ",", "\<\"Text\"\>"}], "]"}], ",", 
+                    RowBox[{"FrameStyle", "\[Rule]", "None"}], ",", 
+                    RowBox[{"FrameMargins", "\[Rule]", "10"}]}], "]"}], ",", 
+                    "\[SpanFromLeft]"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl `\"\>", 
+                    ",", "\<\"Evaluate Notebook.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"Ctrl [\"\>", ",", "\<\"Insert [[\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"Ctrl ] \"\>", ",", "\<\"Insert ]]\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Alt ]\"\>", 
+                    ",", "\<\"Insert [[]]\"\>"}], "}"}]}], "}"}]}], ",", 
+                    RowBox[{"Alignment", "\[Rule]", 
+                    RowBox[{"{", "Left", "}"}]}], ",", 
+                    RowBox[{"Dividers", "\[Rule]", "All"}], ",", 
+                    RowBox[{"FrameStyle", "\[Rule]", "LightGray"}]}], "]"}], 
+                    "]"}], ",", "\[IndentingNewLine]", "\<\"Unix\"\>", ",", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"StringReplace", "[", 
+                    RowBox[{"#1", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\<\"Cmd\"\>", "\[Rule]", "\<\"Mod1\"\>"}], ",", 
+                    RowBox[{"\<\"Alt\"\>", "\[Rule]", "\<\"Mod2\"\>"}]}], 
+                    "}"}]}], "]"}], "&"}], ")"}], "[", 
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"#1", ",", "\<\"StandardForm\"\>"}], "]"}], "]"}],
+                     "&"}], ")"}], "[", 
+                    RowBox[{"Grid", "[", 
+                    RowBox[{
+                    RowBox[{"Shortcuts`Private`toKeyStyle", "/@", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl F1\"\>", 
+                    ",", "\<\"Open the Shortcuts tutorial with a list of all \
+extra keyboard shortcuts.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Tab\"\>", 
+                    ",", "\<\"Delete all output and evaluate all cells from \
+the top to the insertion point.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Shift Tab\"\>", 
+                    ",", "\<\"Delete all output, restart the kernel and \
+evaluate all cells from the top to the insertion point.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Shift \[UpArrow]\"\>", 
+                    ",", "\<\"Evaluate all cells from the beginning of the \
+notebook until the insertion point.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl ;\"\>", 
+                    ",", "\<\"Select all cells from the beginning of the \
+notebook until the insertion point.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Shift \[DownArrow]\"\>", 
+                    ",", "\<\"Select all cells from the insertion point until \
+the end of the notebook.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Shift X\"\>", 
+                    ",", "\<\"Delete all generated cells, like Output, \
+Message and Print cells, also in MessagesNotebook[].\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Alt X\"\>", 
+                    ",", "\<\"Delete all non-Input and non-Code cells.\"\>"}],
+                     "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Shift Q\"\>", 
+                    ",", "\<\"Quit and restart the Kernel.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl R\"\>", 
+                    ",", "\<\"Quit and restart the FrontEnd; all Untitled \
+notebooks are closed and others saved. Reopening the selected notebook if it \
+is saved.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl H\"\>", 
+                    ",", "\<\"Evaluate Notebook.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Cmd Alt C\"\>", 
+                    ",", "\<\"Copy, paste and evaluate the selected \
+expression from the inside of a cell into a new notebook.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Cmd Alt B\"\>", 
+                    ",", "\<\"Select current cell. The insertion point can be \
+anywhere inside the cell.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Cmd Alt M\"\>", 
+                    ",", "\<\"Minimize all Mathematica notebooks.\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Cmd Alt U\"\>", 
+                    ",", "\<\"Cut the selected cell and paste it before the \
+preceding cell.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Cmd Alt D\"\>", 
+                    ",", "\<\"Cut the selected cell and paste it after the \
+following cell.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Cmd Alt Delete\"\>", 
+                    ",", "\<\"Quit the FrontEnd, saving named notebooks \
+first.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"Ctrl Shift Delete\"\>", 
+                    ",", "\<\"Close all Untitled-*  notebooks without \
+confirmation.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"F4\"\>", 
+                    ",", "\<\"Insert \
+\[LeftDoubleBracket]\[RightDoubleBracket]\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"F6\"\>", ",", "\<\"Stack Windows.\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"Ctrl T\"\>", ",", 
+                    
+                    RowBox[{"\<\"Evaluate the file joker.m from \"\>", "<>", 
+                    "Shortcuts`Private`myjokerdir2"}]}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"Ctrl Shift J\"\>", ",", 
+                    
+                    RowBox[{"\<\"Open joker.m from \"\>", "<>", 
+                    "Shortcuts`Private`myjokerdir2"}]}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"Framed", "[", 
+                    RowBox[{
+                    RowBox[{"Style", "[", 
+                    
+                    RowBox[{"\<\"The following four shortcuts work only on \
+english keyboard layouts:\"\>", ",", "\<\"Text\"\>"}], "]"}], ",", 
+                    RowBox[{"FrameStyle", "\[Rule]", "None"}], ",", 
+                    RowBox[{"FrameMargins", "\[Rule]", "10"}]}], "]"}], ",", 
+                    "\[SpanFromLeft]"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl `\"\>", 
+                    ",", "\<\"Evaluate Notebook.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"Ctrl [\"\>", ",", "\<\"Insert [[\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"Ctrl ] \"\>", ",", "\<\"Insert ]]\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Alt ]\"\>", 
+                    ",", "\<\"Insert [[]]\"\>"}], "}"}]}], "}"}]}], ",", 
+                    RowBox[{"Alignment", "\[Rule]", 
+                    RowBox[{"{", "Left", "}"}]}], ",", 
+                    RowBox[{"Dividers", "\[Rule]", "All"}], ",", 
+                    RowBox[{"FrameStyle", "\[Rule]", "LightGray"}]}], "]"}], 
+                    "]"}], ",", "\[IndentingNewLine]", "\<\"MacOSX\"\>", ",", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"StringReplace", "[", 
+                    RowBox[{"#1", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\<\"Cmd\"\>", "\[Rule]", "\<\"Mod1\"\>"}], ",", 
+                    RowBox[{"\<\"Alt\"\>", "\[Rule]", "\<\"Opt\"\>"}]}], 
+                    "}"}]}], "]"}], "&"}], ")"}], "[", 
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"#1", ",", "\<\"StandardForm\"\>"}], "]"}], "]"}],
+                     "&"}], ")"}], "[", 
+                    RowBox[{"Grid", "[", 
+                    RowBox[{
+                    RowBox[{"Shortcuts`Private`toKeyStyle", "/@", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl F1\"\>", 
+                    ",", "\<\"Open the Shortcuts tutorial with a list of all \
+extra keyboard shortcuts.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Tab\"\>", 
+                    ",", "\<\"Delete all output and evaluate all cells from \
+the top to the insertion point.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Shift Tab\"\>", 
+                    ",", "\<\"Delete all output, restart the kernel and \
+evaluate all cells from the top to the insertion point.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Shift \[UpArrow]\"\>", 
+                    
+                    ",", "\<\"Evaluate all cells from the beginning of the \
+notebook until the insertion point.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl ;\"\>", 
+                    ",", "\<\"Select all cells from the beginning of the \
+notebook until the insertion point.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Shift \[DownArrow]\"\>", 
+                    ",", "\<\"Select all cells from the insertion point until \
+the end of the notebook.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Shift X\"\>", 
+                    ",", "\<\"Delete all generated cells, like Output, \
+Message and Print cells, also in MessagesNotebook[].\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Alt X\"\>", 
+                    ",", "\<\"Delete all non-Input and non-Code cells.\"\>"}],
+                     "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Q\"\>", 
+                    ",", "\<\"Quit and restart the Kernel.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl R\"\>", 
+                    ",", "\<\"Quit and restart the FrontEnd; all Untitled \
+notebooks are closed and others saved. Reopening the selected notebook if it \
+is saved.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl H\"\>", 
+                    ",", "\<\"Evaluate Notebook.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Shift ,\"\>", 
+                    ",", "\<\"Copy, paste and evaluate the selected \
+expression from the inside of a cell into a new notebook.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Cmd Alt B\"\>", 
+                    ",", "\<\"Select current cell. The insertion point can be \
+anywhere inside the cell.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"Cmd Alt M\"\>", 
+                    ",", "\<\"Minimize all Mathematica notebooks.\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Cmd Alt U\"\>", 
+                    ",", "\<\"Cut the selected cell and paste it before the \
+preceding cell.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Cmd Alt D\"\>", 
+                    ",", "\<\"Cut the selected cell and paste it after the \
+following cell.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Cmd Alt Delete\"\>", 
+                    ",", "\<\"Quit the FrontEnd, saving named notebooks \
+first.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Shift Delete\"\>", 
+                    ",", "\<\"Close all Untitled-*  notebooks without \
+confirmation.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"F4\"\>", 
+                    ",", "\<\"Insert \
+\[LeftDoubleBracket]\[RightDoubleBracket]\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"F6\"\>", ",", "\<\"Stack Windows.\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"Ctrl T\"\>", ",", 
+                    
+                    RowBox[{"\<\"Evaluate the file joker.m from \"\>", "<>", 
+                    "Shortcuts`Private`myjokerdir2"}]}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"Ctrl Shift J\"\>", ",", 
+                    
+                    RowBox[{"\<\"Open joker.m from \"\>", "<>", 
+                    "Shortcuts`Private`myjokerdir2"}]}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"Framed", "[", 
+                    RowBox[{
+                    RowBox[{"Style", "[", 
+                    
+                    RowBox[{"\<\"The following four shortcuts work only on \
+english keyboard layouts:\"\>", ",", "\<\"Text\"\>"}], "]"}], ",", 
+                    RowBox[{"FrameStyle", "\[Rule]", "None"}], ",", 
+                    RowBox[{"FrameMargins", "\[Rule]", "10"}]}], "]"}], ",", 
+                    "\[SpanFromLeft]"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl `\"\>", 
+                    ",", "\<\"Evaluate Notebook.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"Ctrl [\"\>", ",", "\<\"Insert [[\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"Ctrl ] \"\>", ",", "\<\"Insert ]]\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Alt ]\"\>", 
+                    ",", "\<\"Insert [[]]\"\>"}], "}"}]}], "}"}]}], ",", 
+                    RowBox[{"Alignment", "\[Rule]", 
+                    RowBox[{"{", "Left", "}"}]}], ",", 
+                    RowBox[{"Dividers", "\[Rule]", "All"}], ",", 
+                    RowBox[{"FrameStyle", "\[Rule]", "LightGray"}]}], "]"}], 
+                    "]"}]}], "]"}]}], "}"}], "]"}]}], "]"}]}], "]"}], 
+              ",", "\<\"Text\"\>"}], "]"}], "]"}], ",", 
+           RowBox[{"Initialization", "\[RuleDelayed]", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{
+               RowBox[{
+               "Shortcuts`Private`keyStyle", "[", "Shortcuts`Private`s_", 
+                "]"}], ":=", 
+               RowBox[{"ToString", "[", 
+                RowBox[{
+                 RowBox[{"Framed", "[", 
+                  RowBox[{
+                   RowBox[{"Style", "[", 
+                    RowBox[{"Shortcuts`Private`s", ",", 
+                    RowBox[{"FontFamily", "\[Rule]", "\<\"Verdana\"\>"}], ",", 
+                    RowBox[{"FontColor", "\[Rule]", 
+                    RowBox[{"GrayLevel", "[", "0.36`", "]"}]}]}], "]"}], ",", 
+                   RowBox[{"ImageMargins", "\[Rule]", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"2", ",", "2"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"2", ",", "2"}], "}"}]}], "}"}]}], ",", 
+                   RowBox[{"FrameStyle", "\[Rule]", 
+                    RowBox[{"GrayLevel", "[", "0.8`", "]"}]}], ",", 
+                   RowBox[{"Background", "\[Rule]", 
+                    RowBox[{"GrayLevel", "[", "0.965`", "]"}]}]}], "]"}], 
+                 ",", "\<\"StandardForm\"\>"}], "]"}]}], ";", 
+              RowBox[{
+               RowBox[{
+               "Shortcuts`Private`toKeyStyle", "[", "Shortcuts`Private`s_", 
+                "]"}], ":=", 
+               RowBox[{"Shortcuts`Private`s", "/.", "\[VeryThinSpace]", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{
+                  "Shortcuts`Private`keyshort_String", ",", 
+                   "Shortcuts`Private`desc_String"}], "}"}], "\[RuleDelayed]", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"Row", "[", 
+                    RowBox[{"Riffle", "[", 
+                    RowBox[{
+                    RowBox[{"Shortcuts`Private`keyStyle", "/@", 
+                    RowBox[{
+                    "StringSplit", "[", "Shortcuts`Private`keyshort", "]"}]}],
+                     ",", "\<\"+\"\>"}], "]"}], "]"}], ",", 
+                   "Shortcuts`Private`desc"}], "}"}]}]}]}], ";"}], ")"}]}]}], 
+          "]"}]}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[Shortcuts`Shortcuts],
+  Editable->False]], "Print",
+ CellTags->"Info3642153909-3804921"]
+}, Open  ]],
+
+Cell[BoxData[""], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"Two files have been generated:\"\>"},
+    {
+     ButtonBox["\<\"$UserBaseDirectory\\\\SystemFiles\\\\FrontEnd\\\\\
+TextResources\\\\Windows\\\\KeyEventTranslations.tr\"\>",
+      Appearance->Automatic,
+      ButtonFunction:>CreateDocument[{
+         TextCell[
+          Import[
+          "C:\\Users\\Rolf Mertig\\AppData\\Roaming\\Mathematica\\SystemFiles\
+\\FrontEnd\\TextResources\\Windows\\KeyEventTranslations.tr", "Text"]]}],
+      Evaluator->Automatic,
+      Method->"Preemptive"]},
+    {"\<\"and\"\>"},
+    {
+     ButtonBox["\<\"$UserBaseDirectory\\\\SystemFiles\\\\FrontEnd\\\\\
+TextResources\\\\Windows\\\\joker.m\"\>",
+      Appearance->Automatic,
+      ButtonFunction:>NotebookOpen[
+       "C:\\Users\\Rolf \
+Mertig\\AppData\\Roaming\\Mathematica\\SystemFiles\\FrontEnd\\TextResources\\\
+Windows\\joker.m"],
+      Evaluator->Automatic,
+      Method->"Preemptive"]}
+   },
+   DefaultBaseStyle->"Column",
+   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Column"]], "Text",
+ GeneratedCell->True,
+ CellAutoOverwrite->True,
+ ShowStringCharacters->False],
+
+Cell["\<\
+After restarting the FrontEnd once the following extra keyboard shortcuts can \
+be used: \
+\>", "Text",
+ GeneratedCell->True,
+ CellAutoOverwrite->True,
+ FontWeight->Bold],
 
 Cell[CellGroupData[{
 
@@ -87,149 +1810,636 @@ Cell["?Shortcuts", "Input",
  GeneratedCell->True,
  CellAutoOverwrite->True],
 
-Cell[BoxData[
- StyleBox["\<\"In the following table the \[CommandKey] key is meant to with \
-the Windows key next to the \[ControlKey] key. \
-\\n\\n\!\(\*TagBox[GridBox[{{\\\"\\\\\\\"\[ControlKey] \[ShiftKey] \[UpArrow] \
-\\\\\\\"\\\", \\\"\\\\\\\"Select all cells from the beginning of the notebook \
-until the  cursor position.\\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] \
-\[ShiftKey] \[DownArrow] \\\\\\\"\\\", \\\"\\\\\\\"Select all cells from the \
-position of the mouse until the end of the notebook.\\\\\\\"\\\"}, \
-{\\\"\\\\\\\"\[ControlKey] \[ShiftKey] PageUp \\\\\\\"\\\", \
-\\\"\\\\\\\"Evaluate all cells from the beginning of the notebook until the \
-position of the mouse.\\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] \[ShiftKey] X \
-\\\\\\\"\\\", \\\"\\\\\\\"Delete all generated cells, like Output, Message \
-and Print cells, also in MessagesNotebook[].\\\\\\\"\\\"}, {\\\"\\\\\\\"\
-\[ControlKey] \[AltKey] X \\\\\\\"\\\", \\\"\\\\\\\"Delete all non-Input and \
-non-Code cells \\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] Q \\\\\\\"\\\", \\\"\
-\\\\\\\"Quit and restart Kernel \\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] R\\\
-\\\\\"\\\", \\\"\\\\\\\"Quit and restart the FrontEnd; all Untitled notebooks \
-are closed and others saved. Reopening the selected notebook if it is saved \
-\\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] ` \\\\\\\"\\\", \
-\\\"\\\\\\\"Evaluate Notebook\\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] H \\\\\
-\\\"\\\", \\\"\\\\\\\"Evaluate Notebook\\\\\\\"\\\"}, {\\\"\\\\\\\"\
-\[ControlKey] \[TabKey] \\\\\\\"\\\", \\\"\\\\\\\"Delete all output and \
-evaluate all cells from the beginning  of the notebook until the cursor \
-position \\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] \[ShiftKey] \[TabKey] \\\\\
-\\\"\\\", \\\"\\\\\\\"Delete all output, restart the kernel and evaluate all \
-cells from the beginning of the notebook until the cursor position \\\\\\\"\\\
-\"}, {\\\"\\\\\\\"\[ControlKey] \[ShiftKey] ,\\\\\\\"\\\", \
-\\\"\\\\\\\"Copy/Evaluate/Paste the selected cell subexpression into a new \
-notebook \\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] \[ShiftKey] X \
-\\\\\\\"\\\", \\\"\\\\\\\"Delete all generated cells, like Output, Message \
-and Print cells \\\\\\\"\\\"}, {\\\"\\\\\\\"\[CommandKey] \[AltKey] B \
-\\\\\\\"\\\", \\\"\\\\\\\"Move the cursor from anywhere inside a cell to the \
-cell bracket \\\\\\\"\\\"}, {\\\"\\\\\\\"\[CommandKey] \[AltKey] M \\\\\\\"\\\
-\", \\\"\\\\\\\"Minimize all Mathematica notebooks \\\\\\\"\\\"}, {\\\"\\\\\\\
-\"\[CommandKey] \[AltKey] U \\\\\\\"\\\", \\\"\\\\\\\"Cut the selected cell \
-and paste it before the preceding cell \\\\\\\"\\\"}, {\\\"\\\\\\\"\
-\[CommandKey] \[AltKey] D \\\\\\\"\\\", \\\"\\\\\\\"Cut the selected cell and \
-paste it after the following cell \\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] \
-\[ShiftKey] Delete \\\\\\\"\\\", \\\"\\\\\\\"Close all Untitled-*  notebooks \
-without confirmation \\\\\\\"\\\"}, {\\\"\\\\\\\"F4 \\\\\\\"\\\", \
-\\\"\\\\\\\"Insert [[]]\\\\\\\"\\\"}, {\\\"\\\\\\\"F6 \\\\\\\"\\\", \
-\\\"\\\\\\\"Stack Windows\\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] T \\\\\\\"\
-\\\", \\\"\\\\\\\"Evaluate the file joker.m from \
-C:\\\\\\\\\\\\\\\\Users\\\\\\\\\\\\\\\\Rolf Mertig\\\\\\\\\\\\\\\\AppData\\\\\
-\\\\\\\\\\\\Roaming\\\\\\\\\\\\\\\\Mathematica\\\\\\\\\\\\\\\\SystemFiles\\\\\
-\\\\\\\\\\\\FrontEnd\\\\\\\\\\\\\\\\TextResources\\\\\\\\\\\\\\\\Windows\\\\\\\
-\"\\\"}, {\\\"\\\\\\\"\[ControlKey] \[ShiftKey] J \\\\\\\"\\\", \
-\\\"\\\\\\\"Open joker.m from C:\\\\\\\\\\\\\\\\Users\\\\\\\\\\\\\\\\Rolf \
-Mertig\\\\\\\\\\\\\\\\AppData\\\\\\\\\\\\\\\\Roaming\\\\\\\\\\\\\\\\\
-Mathematica\\\\\\\\\\\\\\\\SystemFiles\\\\\\\\\\\\\\\\FrontEnd\\\\\\\\\\\\\\\\\
-TextResources\\\\\\\\\\\\\\\\Windows\\\\\\\"\\\"}, \
-{FrameBox[StyleBox[\\\"\\\\\\\"The following three shortcuts work only on \
-english  keyboards: \\\\\\\"\\\", \\\"Text\\\", Rule[StripOnInput, False]], \
-Rule[FrameStyle, None], Rule[FrameMargins, 10], Rule[StripOnInput, False]], \
-\\\"\[SpanFromLeft]\\\"}, {\\\"\\\\\\\"\[ControlKey] [ \\\\\\\"\\\", \\\"\\\\\
-\\\"Insert [[\\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] ] \\\\\\\"\\\", \\\"\\\
-\\\\\"Insert ]]\\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] \[AltKey] ] \\\\\\\"\
-\\\", \\\"\\\\\\\"Insert [[]]\\\\\\\"\\\"}}, GridBoxAlignment -> {\\\"Columns\
-\\\" -> {{Left}}}, AutoDelete -> False, GridBoxDividers -> {\\\"Columns\\\" \
--> {{True}}, \\\"Rows\\\" -> {{True}}}, GridBoxItemSize -> {\\\"Columns\\\" \
--> {{Automatic}}, \\\"Rows\\\" -> {{Automatic}}}, BaseStyle -> {FontSize -> \
-18}, FrameStyle -> GrayLevel[0.85]], \\\"Grid\\\"]\)\"\>", "MSG"]], "Print", \
-"PrintUsage",
- CellTags->"Info3641757714-5667396"],
-
-Cell[BoxData[""], "Output"],
+Cell[CellGroupData[{
 
 Cell[BoxData[
- TemplateBox[{FrontEndObject[
-    LinkObject["t3eqd_shm", 3, 1]],30,
-   "FrontEndObject[LinkObject[\"t3eqd_shm\", 3, 1]]","30","30"},
-  "NotebookObjectUnsaved"]], "Output"],
+ StyleBox["\<\"Shortcuts[] gives a list of extra keyboard shortcuts which \
+were defined by InstallShortcuts[].\"\>", "MSG"]], "Print", "PrintUsage",
+ CellTags->"Info3642153944-2551823"],
 
 Cell[BoxData[
- StyleBox["\<\"In the following table the \[CommandKey] key is meant to with \
-the Windows key next to the \[ControlKey] key. \
-\\n\\n\!\(\*TagBox[GridBox[{{\\\"\\\\\\\"\[ControlKey] \[ShiftKey] \[UpArrow] \
-\\\\\\\"\\\", \\\"\\\\\\\"Select all cells from the beginning of the notebook \
-until the  cursor position.\\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] \
-\[ShiftKey] \[DownArrow] \\\\\\\"\\\", \\\"\\\\\\\"Select all cells from the \
-position of the mouse until the end of the notebook.\\\\\\\"\\\"}, \
-{\\\"\\\\\\\"\[ControlKey] \[ShiftKey] PageUp \\\\\\\"\\\", \
-\\\"\\\\\\\"Evaluate all cells from the beginning of the notebook until the \
-position of the mouse.\\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] \[ShiftKey] X \
-\\\\\\\"\\\", \\\"\\\\\\\"Delete all generated cells, like Output, Message \
-and Print cells, also in MessagesNotebook[].\\\\\\\"\\\"}, {\\\"\\\\\\\"\
-\[ControlKey] \[AltKey] X \\\\\\\"\\\", \\\"\\\\\\\"Delete all non-Input and \
-non-Code cells \\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] Q \\\\\\\"\\\", \\\"\
-\\\\\\\"Quit and restart Kernel \\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] R\\\
-\\\\\"\\\", \\\"\\\\\\\"Quit and restart the FrontEnd; all Untitled notebooks \
-are closed and others saved. Reopening the selected notebook if it is saved \
-\\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] ` \\\\\\\"\\\", \
-\\\"\\\\\\\"Evaluate Notebook\\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] H \\\\\
-\\\"\\\", \\\"\\\\\\\"Evaluate Notebook\\\\\\\"\\\"}, {\\\"\\\\\\\"\
-\[ControlKey] \[TabKey] \\\\\\\"\\\", \\\"\\\\\\\"Delete all output and \
-evaluate all cells from the beginning  of the notebook until the cursor \
-position \\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] \[ShiftKey] \[TabKey] \\\\\
-\\\"\\\", \\\"\\\\\\\"Delete all output, restart the kernel and evaluate all \
-cells from the beginning of the notebook until the cursor position \\\\\\\"\\\
-\"}, {\\\"\\\\\\\"\[ControlKey] \[ShiftKey] ,\\\\\\\"\\\", \
-\\\"\\\\\\\"Copy/Evaluate/Paste the selected cell subexpression into a new \
-notebook \\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] \[ShiftKey] X \
-\\\\\\\"\\\", \\\"\\\\\\\"Delete all generated cells, like Output, Message \
-and Print cells \\\\\\\"\\\"}, {\\\"\\\\\\\"\[CommandKey] \[AltKey] B \
-\\\\\\\"\\\", \\\"\\\\\\\"Move the cursor from anywhere inside a cell to the \
-cell bracket \\\\\\\"\\\"}, {\\\"\\\\\\\"\[CommandKey] \[AltKey] M \\\\\\\"\\\
-\", \\\"\\\\\\\"Minimize all Mathematica notebooks \\\\\\\"\\\"}, {\\\"\\\\\\\
-\"\[CommandKey] \[AltKey] U \\\\\\\"\\\", \\\"\\\\\\\"Cut the selected cell \
-and paste it before the preceding cell \\\\\\\"\\\"}, {\\\"\\\\\\\"\
-\[CommandKey] \[AltKey] D \\\\\\\"\\\", \\\"\\\\\\\"Cut the selected cell and \
-paste it after the following cell \\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] \
-\[ShiftKey] Delete \\\\\\\"\\\", \\\"\\\\\\\"Close all Untitled-*  notebooks \
-without confirmation \\\\\\\"\\\"}, {\\\"\\\\\\\"F4 \\\\\\\"\\\", \
-\\\"\\\\\\\"Insert [[]]\\\\\\\"\\\"}, {\\\"\\\\\\\"F6 \\\\\\\"\\\", \
-\\\"\\\\\\\"Stack Windows\\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] T \\\\\\\"\
-\\\", \\\"\\\\\\\"Evaluate the file joker.m from \
-C:\\\\\\\\\\\\\\\\Users\\\\\\\\\\\\\\\\Rolf Mertig\\\\\\\\\\\\\\\\AppData\\\\\
-\\\\\\\\\\\\Roaming\\\\\\\\\\\\\\\\Mathematica\\\\\\\\\\\\\\\\SystemFiles\\\\\
-\\\\\\\\\\\\FrontEnd\\\\\\\\\\\\\\\\TextResources\\\\\\\\\\\\\\\\Windows\\\\\\\
-\"\\\"}, {\\\"\\\\\\\"\[ControlKey] \[ShiftKey] J \\\\\\\"\\\", \
-\\\"\\\\\\\"Open joker.m from C:\\\\\\\\\\\\\\\\Users\\\\\\\\\\\\\\\\Rolf \
-Mertig\\\\\\\\\\\\\\\\AppData\\\\\\\\\\\\\\\\Roaming\\\\\\\\\\\\\\\\\
-Mathematica\\\\\\\\\\\\\\\\SystemFiles\\\\\\\\\\\\\\\\FrontEnd\\\\\\\\\\\\\\\\\
-TextResources\\\\\\\\\\\\\\\\Windows\\\\\\\"\\\"}, \
-{FrameBox[StyleBox[\\\"\\\\\\\"The following three shortcuts work only on \
-english  keyboards: \\\\\\\"\\\", \\\"Text\\\", Rule[StripOnInput, False]], \
-Rule[FrameStyle, None], Rule[FrameMargins, 10], Rule[StripOnInput, False]], \
-\\\"\[SpanFromLeft]\\\"}, {\\\"\\\\\\\"\[ControlKey] [ \\\\\\\"\\\", \\\"\\\\\
-\\\"Insert [[\\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] ] \\\\\\\"\\\", \\\"\\\
-\\\\\"Insert ]]\\\\\\\"\\\"}, {\\\"\\\\\\\"\[ControlKey] \[AltKey] ] \\\\\\\"\
-\\\", \\\"\\\\\\\"Insert [[]]\\\\\\\"\\\"}}, GridBoxAlignment -> {\\\"Columns\
-\\\" -> {{Left}}}, AutoDelete -> False, GridBoxDividers -> {\\\"Columns\\\" \
--> {{True}}, \\\"Rows\\\" -> {{True}}}, GridBoxItemSize -> {\\\"Columns\\\" \
--> {{Automatic}}, \\\"Rows\\\" -> {{Automatic}}}, BaseStyle -> {FontSize -> \
-18}, FrameStyle -> GrayLevel[0.85]], \\\"Grid\\\"]\)\"\>", "MSG"]], "Print", \
-"PrintUsage",
- CellTags->"Info3641757714-5667396"]
-}, Open  ]]
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{
+         RowBox[{"Shortcuts", "[", "]"}], ":=", 
+         RowBox[{"DynamicModule", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+            "Shortcuts`Private`keyStyle", ",", 
+             "Shortcuts`Private`toKeyStyle"}], "}"}], ",", 
+           RowBox[{"Dynamic", "[", 
+            RowBox[{"Style", "[", 
+             RowBox[{
+              RowBox[{"With", "[", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"Shortcuts`Private`os", "=", 
+                  RowBox[{"Switch", "[", 
+                   RowBox[{
+                   "$OperatingSystem", ",", 
+                    "\[IndentingNewLine]", "\<\"MacOSX\"\>", 
+                    ",", "\<\"Macintosh\"\>", ",", 
+                    "\[IndentingNewLine]", "\<\"Windows\"\>", 
+                    ",", "\<\"Windows\"\>", ",", 
+                    "\[IndentingNewLine]", "\<\"Unix\"\>", ",", "\<\"X\"\>"}],
+                    "]"}]}], "}"}], ",", 
+                RowBox[{"With", "[", 
+                 RowBox[{
+                  RowBox[{"{", 
+                   RowBox[{"Shortcuts`Private`myjokerdir2", "=", 
+                    RowBox[{"StringReplace", "[", 
+                    RowBox[{
+                    RowBox[{"FileNameJoin", "[", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "$UserBaseDirectory", ",", "\<\"SystemFiles\"\>", 
+                    ",", "\<\"FrontEnd\"\>", ",", "\<\"TextResources\"\>", 
+                    ",", "Shortcuts`Private`os"}], "}"}], "]"}], ",", 
+                    RowBox[{
+                    "$UserBaseDirectory", 
+                    "\[Rule]", "\<\"$UserBaseDirectory\"\>"}]}], "]"}]}], 
+                   "}"}], ",", 
+                  RowBox[{"Column", "[", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\<\"In the following table the \"\>", "<>", 
+                    RowBox[{"Switch", "[", 
+                    RowBox[{
+                    "$OperatingSystem", ",", 
+                    "\[IndentingNewLine]", "\<\"Windows\"\>", ",", 
+                    RowBox[{
+                    RowBox[{
+                    "Shortcuts`Private`keyStyle", "[", "\<\"Win\"\>", "]"}], 
+                    "<>", "\<\" key is meant to be the Windows key next to \
+the \"\>", "<>", 
+                    RowBox[{
+                    "Shortcuts`Private`keyStyle", "[", "\<\"Alt\"\>", "]"}], 
+                    "<>", "\<\"key.\\n\"\>"}], ",", 
+                    "\[IndentingNewLine]", "\<\"Unix\"\>", ",", 
+                    RowBox[{
+                    RowBox[{
+                    "Shortcuts`Private`keyStyle", "[", "\<\"Mod1\"\>", "]"}], 
+                    "<>", "\<\" key is usually the Windows key and the \"\>", 
+                    "<>", 
+                    RowBox[{
+                    "Shortcuts`Private`keyStyle", "[", "\<\"Mod2\"\>", "]"}], 
+                    "<>", "\<\" key is usually the \"\>", "<>", 
+                    RowBox[{
+                    "Shortcuts`Private`keyStyle", "[", "\<\"Alt\"\>", "]"}], 
+                    "<>", "\<\" key\"\>"}], ",", "\[IndentingNewLine]", "_", 
+                    ",", "\<\"\"\>"}], "]"}]}], ",", 
+                    RowBox[{"Switch", "[", 
+                    RowBox[{
+                    "$OperatingSystem", ",", 
+                    "\[IndentingNewLine]", "\<\"Windows\"\>", ",", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"StringReplace", "[", 
+                    RowBox[{"#1", ",", 
+                    RowBox[{"\<\"Cmd\"\>", "\[Rule]", "\<\"Win\"\>"}]}], 
+                    "]"}], "&"}], ")"}], "[", 
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"#1", ",", "\<\"StandardForm\"\>"}], "]"}], "]"}],
+                     "&"}], ")"}], "[", 
+                    RowBox[{"Grid", "[", 
+                    RowBox[{
+                    RowBox[{"Shortcuts`Private`toKeyStyle", "/@", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl F1\"\>", 
+                    ",", "\<\"Open the Shortcuts tutorial with a list of all \
+extra keyboard shortcuts.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Tab\"\>", 
+                    ",", "\<\"Delete all output and evaluate all cells from \
+the top to the insertion point.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Shift Tab\"\>", 
+                    ",", "\<\"Delete all output, restart the kernel and \
+evaluate all cells from the top to the insertion point.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Shift \[UpArrow]\"\>", 
+                    ",", "\<\"Evaluate all cells from the beginning of the \
+notebook until the insertion point.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl ;\"\>", 
+                    ",", "\<\"Select all cells from the beginning of the \
+notebook until the insertion point.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Shift \[DownArrow]\"\>", 
+                    ",", "\<\"Select all cells from the insertion point until \
+the end of the notebook.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Shift X\"\>", 
+                    ",", "\<\"Delete all generated cells, like Output, \
+Message and Print cells, also in MessagesNotebook[].\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Alt X\"\>", 
+                    ",", "\<\"Delete all non-Input and non-Code cells.\"\>"}],
+                     "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Q\"\>", 
+                    ",", "\<\"Quit and restart the Kernel.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl R\"\>", 
+                    ",", "\<\"Quit and restart the FrontEnd; all Untitled \
+notebooks are closed and others saved. Reopening the selected notebook if it \
+is saved.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"Ctrl H\"\>", 
+                    ",", "\<\"Evaluate Notebook.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Shift ,\"\>", 
+                    ",", "\<\"Copy, paste and evaluate the selected \
+expression from the inside of a cell into a new notebook.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Cmd Alt B\"\>", 
+                    ",", "\<\"Select current cell. The insertion point can be \
+anywhere inside the cell.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Cmd Alt M\"\>", 
+                    ",", "\<\"Minimize all Mathematica notebooks.\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Cmd Alt U\"\>", 
+                    ",", "\<\"Cut the selected cell and paste it before the \
+preceding cell.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Cmd Alt D\"\>", 
+                    ",", "\<\"Cut the selected cell and paste it after the \
+following cell.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Cmd Alt Delete\"\>", 
+                    ",", "\<\"Quit the FrontEnd, saving named notebooks \
+first.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Shift Delete\"\>", 
+                    ",", "\<\"Close all Untitled-*  notebooks without \
+confirmation.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"F4\"\>", 
+                    ",", "\<\"Insert \
+\[LeftDoubleBracket]\[RightDoubleBracket]\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"F6\"\>", ",", "\<\"Stack Windows.\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"Ctrl T\"\>", ",", 
+                    
+                    RowBox[{"\<\"Evaluate the file joker.m from \"\>", "<>", 
+                    "Shortcuts`Private`myjokerdir2"}]}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"Ctrl Shift J\"\>", ",", 
+                    
+                    RowBox[{"\<\"Open joker.m from \"\>", "<>", 
+                    "Shortcuts`Private`myjokerdir2"}]}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"Framed", "[", 
+                    RowBox[{
+                    RowBox[{"Style", "[", 
+                    
+                    RowBox[{"\<\"The following four shortcuts work only on \
+english keyboard layouts:\"\>", ",", "\<\"Text\"\>"}], "]"}], ",", 
+                    RowBox[{"FrameStyle", "\[Rule]", "None"}], ",", 
+                    RowBox[{"FrameMargins", "\[Rule]", "10"}]}], "]"}], ",", 
+                    "\[SpanFromLeft]"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl `\"\>", 
+                    ",", "\<\"Evaluate Notebook.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"Ctrl [\"\>", ",", "\<\"Insert [[\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"Ctrl ] \"\>", ",", "\<\"Insert ]]\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Alt ]\"\>", 
+                    ",", "\<\"Insert [[]]\"\>"}], "}"}]}], "}"}]}], ",", 
+                    RowBox[{"Alignment", "\[Rule]", 
+                    RowBox[{"{", "Left", "}"}]}], ",", 
+                    RowBox[{"Dividers", "\[Rule]", "All"}], ",", 
+                    RowBox[{"FrameStyle", "\[Rule]", "LightGray"}]}], "]"}], 
+                    "]"}], ",", "\[IndentingNewLine]", "\<\"Unix\"\>", ",", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"StringReplace", "[", 
+                    RowBox[{"#1", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\<\"Cmd\"\>", "\[Rule]", "\<\"Mod1\"\>"}], ",", 
+                    RowBox[{"\<\"Alt\"\>", "\[Rule]", "\<\"Mod2\"\>"}]}], 
+                    "}"}]}], "]"}], "&"}], ")"}], "[", 
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"#1", ",", "\<\"StandardForm\"\>"}], "]"}], "]"}],
+                     "&"}], ")"}], "[", 
+                    RowBox[{"Grid", "[", 
+                    RowBox[{
+                    RowBox[{"Shortcuts`Private`toKeyStyle", "/@", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl F1\"\>", 
+                    ",", "\<\"Open the Shortcuts tutorial with a list of all \
+extra keyboard shortcuts.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Tab\"\>", 
+                    ",", "\<\"Delete all output and evaluate all cells from \
+the top to the insertion point.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Shift Tab\"\>", 
+                    ",", "\<\"Delete all output, restart the kernel and \
+evaluate all cells from the top to the insertion point.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Shift \[UpArrow]\"\>", 
+                    ",", "\<\"Evaluate all cells from the beginning of the \
+notebook until the insertion point.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl ;\"\>", 
+                    ",", "\<\"Select all cells from the beginning of the \
+notebook until the insertion point.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Shift \[DownArrow]\"\>", 
+                    ",", "\<\"Select all cells from the insertion point until \
+the end of the notebook.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Shift X\"\>", 
+                    ",", "\<\"Delete all generated cells, like Output, \
+Message and Print cells, also in MessagesNotebook[].\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Alt X\"\>", 
+                    ",", "\<\"Delete all non-Input and non-Code cells.\"\>"}],
+                     "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Shift Q\"\>", 
+                    ",", "\<\"Quit and restart the Kernel.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl R\"\>", 
+                    ",", "\<\"Quit and restart the FrontEnd; all Untitled \
+notebooks are closed and others saved. Reopening the selected notebook if it \
+is saved.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl H\"\>", 
+                    ",", "\<\"Evaluate Notebook.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Cmd Alt C\"\>", 
+                    ",", "\<\"Copy, paste and evaluate the selected \
+expression from the inside of a cell into a new notebook.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Cmd Alt B\"\>", 
+                    ",", "\<\"Select current cell. The insertion point can be \
+anywhere inside the cell.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Cmd Alt M\"\>", 
+                    ",", "\<\"Minimize all Mathematica notebooks.\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Cmd Alt U\"\>", 
+                    ",", "\<\"Cut the selected cell and paste it before the \
+preceding cell.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Cmd Alt D\"\>", 
+                    ",", "\<\"Cut the selected cell and paste it after the \
+following cell.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Cmd Alt Delete\"\>", 
+                    ",", "\<\"Quit the FrontEnd, saving named notebooks \
+first.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"Ctrl Shift Delete\"\>", 
+                    ",", "\<\"Close all Untitled-*  notebooks without \
+confirmation.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"F4\"\>", 
+                    ",", "\<\"Insert \
+\[LeftDoubleBracket]\[RightDoubleBracket]\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"F6\"\>", ",", "\<\"Stack Windows.\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"Ctrl T\"\>", ",", 
+                    
+                    RowBox[{"\<\"Evaluate the file joker.m from \"\>", "<>", 
+                    "Shortcuts`Private`myjokerdir2"}]}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"Ctrl Shift J\"\>", ",", 
+                    
+                    RowBox[{"\<\"Open joker.m from \"\>", "<>", 
+                    "Shortcuts`Private`myjokerdir2"}]}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"Framed", "[", 
+                    RowBox[{
+                    RowBox[{"Style", "[", 
+                    
+                    RowBox[{"\<\"The following four shortcuts work only on \
+english keyboard layouts:\"\>", ",", "\<\"Text\"\>"}], "]"}], ",", 
+                    RowBox[{"FrameStyle", "\[Rule]", "None"}], ",", 
+                    RowBox[{"FrameMargins", "\[Rule]", "10"}]}], "]"}], ",", 
+                    "\[SpanFromLeft]"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl `\"\>", 
+                    ",", "\<\"Evaluate Notebook.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"Ctrl [\"\>", ",", "\<\"Insert [[\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"Ctrl ] \"\>", ",", "\<\"Insert ]]\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Alt ]\"\>", 
+                    ",", "\<\"Insert [[]]\"\>"}], "}"}]}], "}"}]}], ",", 
+                    RowBox[{"Alignment", "\[Rule]", 
+                    RowBox[{"{", "Left", "}"}]}], ",", 
+                    RowBox[{"Dividers", "\[Rule]", "All"}], ",", 
+                    RowBox[{"FrameStyle", "\[Rule]", "LightGray"}]}], "]"}], 
+                    "]"}], ",", "\[IndentingNewLine]", "\<\"MacOSX\"\>", ",", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"StringReplace", "[", 
+                    RowBox[{"#1", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\<\"Cmd\"\>", "\[Rule]", "\<\"Mod1\"\>"}], ",", 
+                    RowBox[{"\<\"Alt\"\>", "\[Rule]", "\<\"Opt\"\>"}]}], 
+                    "}"}]}], "]"}], "&"}], ")"}], "[", 
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"#1", ",", "\<\"StandardForm\"\>"}], "]"}], "]"}],
+                     "&"}], ")"}], "[", 
+                    RowBox[{"Grid", "[", 
+                    RowBox[{
+                    RowBox[{"Shortcuts`Private`toKeyStyle", "/@", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl F1\"\>", 
+                    ",", "\<\"Open the Shortcuts tutorial with a list of all \
+extra keyboard shortcuts.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Tab\"\>", 
+                    ",", "\<\"Delete all output and evaluate all cells from \
+the top to the insertion point.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Shift Tab\"\>", 
+                    ",", "\<\"Delete all output, restart the kernel and \
+evaluate all cells from the top to the insertion point.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Shift \[UpArrow]\"\>", 
+                    
+                    ",", "\<\"Evaluate all cells from the beginning of the \
+notebook until the insertion point.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl ;\"\>", 
+                    ",", "\<\"Select all cells from the beginning of the \
+notebook until the insertion point.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Shift \[DownArrow]\"\>", 
+                    ",", "\<\"Select all cells from the insertion point until \
+the end of the notebook.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Shift X\"\>", 
+                    ",", "\<\"Delete all generated cells, like Output, \
+Message and Print cells, also in MessagesNotebook[].\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Alt X\"\>", 
+                    ",", "\<\"Delete all non-Input and non-Code cells.\"\>"}],
+                     "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Q\"\>", 
+                    ",", "\<\"Quit and restart the Kernel.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl R\"\>", 
+                    ",", "\<\"Quit and restart the FrontEnd; all Untitled \
+notebooks are closed and others saved. Reopening the selected notebook if it \
+is saved.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl H\"\>", 
+                    ",", "\<\"Evaluate Notebook.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Shift ,\"\>", 
+                    ",", "\<\"Copy, paste and evaluate the selected \
+expression from the inside of a cell into a new notebook.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Cmd Alt B\"\>", 
+                    ",", "\<\"Select current cell. The insertion point can be \
+anywhere inside the cell.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"Cmd Alt M\"\>", 
+                    ",", "\<\"Minimize all Mathematica notebooks.\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Cmd Alt U\"\>", 
+                    ",", "\<\"Cut the selected cell and paste it before the \
+preceding cell.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Cmd Alt D\"\>", 
+                    ",", "\<\"Cut the selected cell and paste it after the \
+following cell.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Cmd Alt Delete\"\>", 
+                    ",", "\<\"Quit the FrontEnd, saving named notebooks \
+first.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Shift Delete\"\>", 
+                    ",", "\<\"Close all Untitled-*  notebooks without \
+confirmation.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"F4\"\>", 
+                    ",", "\<\"Insert \
+\[LeftDoubleBracket]\[RightDoubleBracket]\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"F6\"\>", ",", "\<\"Stack Windows.\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"Ctrl T\"\>", ",", 
+                    
+                    RowBox[{"\<\"Evaluate the file joker.m from \"\>", "<>", 
+                    "Shortcuts`Private`myjokerdir2"}]}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"Ctrl Shift J\"\>", ",", 
+                    
+                    RowBox[{"\<\"Open joker.m from \"\>", "<>", 
+                    "Shortcuts`Private`myjokerdir2"}]}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"Framed", "[", 
+                    RowBox[{
+                    RowBox[{"Style", "[", 
+                    
+                    RowBox[{"\<\"The following four shortcuts work only on \
+english keyboard layouts:\"\>", ",", "\<\"Text\"\>"}], "]"}], ",", 
+                    RowBox[{"FrameStyle", "\[Rule]", "None"}], ",", 
+                    RowBox[{"FrameMargins", "\[Rule]", "10"}]}], "]"}], ",", 
+                    "\[SpanFromLeft]"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl `\"\>", 
+                    ",", "\<\"Evaluate Notebook.\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"Ctrl [\"\>", ",", "\<\"Insert [[\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"Ctrl ] \"\>", ",", "\<\"Insert ]]\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Ctrl Alt ]\"\>", 
+                    ",", "\<\"Insert [[]]\"\>"}], "}"}]}], "}"}]}], ",", 
+                    RowBox[{"Alignment", "\[Rule]", 
+                    RowBox[{"{", "Left", "}"}]}], ",", 
+                    RowBox[{"Dividers", "\[Rule]", "All"}], ",", 
+                    RowBox[{"FrameStyle", "\[Rule]", "LightGray"}]}], "]"}], 
+                    "]"}]}], "]"}]}], "}"}], "]"}]}], "]"}]}], "]"}], 
+              ",", "\<\"Text\"\>"}], "]"}], "]"}], ",", 
+           RowBox[{"Initialization", "\[RuleDelayed]", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{
+               RowBox[{
+               "Shortcuts`Private`keyStyle", "[", "Shortcuts`Private`s_", 
+                "]"}], ":=", 
+               RowBox[{"ToString", "[", 
+                RowBox[{
+                 RowBox[{"Framed", "[", 
+                  RowBox[{
+                   RowBox[{"Style", "[", 
+                    RowBox[{"Shortcuts`Private`s", ",", 
+                    RowBox[{"FontFamily", "\[Rule]", "\<\"Verdana\"\>"}], ",", 
+                    RowBox[{"FontColor", "\[Rule]", 
+                    RowBox[{"GrayLevel", "[", "0.36`", "]"}]}]}], "]"}], ",", 
+                   RowBox[{"ImageMargins", "\[Rule]", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"2", ",", "2"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"2", ",", "2"}], "}"}]}], "}"}]}], ",", 
+                   RowBox[{"FrameStyle", "\[Rule]", 
+                    RowBox[{"GrayLevel", "[", "0.8`", "]"}]}], ",", 
+                   RowBox[{"Background", "\[Rule]", 
+                    RowBox[{"GrayLevel", "[", "0.965`", "]"}]}]}], "]"}], 
+                 ",", "\<\"StandardForm\"\>"}], "]"}]}], ";", 
+              RowBox[{
+               RowBox[{
+               "Shortcuts`Private`toKeyStyle", "[", "Shortcuts`Private`s_", 
+                "]"}], ":=", 
+               RowBox[{"Shortcuts`Private`s", "/.", "\[VeryThinSpace]", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{
+                  "Shortcuts`Private`keyshort_String", ",", 
+                   "Shortcuts`Private`desc_String"}], "}"}], "\[RuleDelayed]", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"Row", "[", 
+                    RowBox[{"Riffle", "[", 
+                    RowBox[{
+                    RowBox[{"Shortcuts`Private`keyStyle", "/@", 
+                    RowBox[{
+                    "StringSplit", "[", "Shortcuts`Private`keyshort", "]"}]}],
+                     ",", "\<\"+\"\>"}], "]"}], "]"}], ",", 
+                   "Shortcuts`Private`desc"}], "}"}]}]}]}], ";"}], ")"}]}]}], 
+          "]"}]}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[Shortcuts`Shortcuts],
+  Editable->False]], "Print",
+ CellTags->"Info3642153944-2551823"]
+}, Open  ]],
+
+Cell[BoxData[""], "Output"]
+}, Open  ]],
+
+Cell[BoxData["f"], "Input"]
 },
 Editable->True,
-WindowSize->{775, 872},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
-Magnification:>1.4 Inherited,
+WindowSize->{1240, 865},
+WindowMargins->{{28, Automatic}, {Automatic, 26}},
+Magnification:>1.1 Inherited,
 FrontEndVersion->"10.1 for Microsoft Windows (64-bit) (March 23, 2015)",
 StyleDefinitions->"Default.nb"
 ]
@@ -238,60 +2448,96 @@ StyleDefinitions->"Default.nb"
 (* Internal cache information *)
 (*CellTagsOutline
 CellTagsIndex->{
- "Info3641757713-5667396"->{
-  Cell[899, 36, 241, 4, 83, "Print",
-   CellTags->"Info3641757713-5667396"],
-  Cell[1239, 48, 219, 4, 83, "Print",
-   CellTags->"Info3641757713-5667396"]},
- "Info3641757714-5667396"->{
-  Cell[2309, 89, 4617, 63, 2946, "Print",
-   CellTags->"Info3641757714-5667396"],
-  Cell[7148, 162, 4617, 63, 2946, "Print",
-   CellTags->"Info3641757714-5667396"]}
+ "Info3642153925-2551823"->{
+  Cell[13538, 310, 241, 4, 48, "Print",
+   CellTags->"Info3642153925-2551823"],
+  Cell[13782, 316, 2389, 59, 137, "Print",
+   CellTags->"Info3642153925-2551823"],
+  Cell[16305, 386, 219, 4, 48, "Print",
+   CellTags->"Info3642153925-2551823"],
+  Cell[16527, 392, 36159, 725, 4713, "Print",
+   CellTags->"Info3642153925-2551823"]},
+ "Info3642153909-3804921"->{
+  Cell[53087, 1142, 200, 3, 52, "Print",
+   CellTags->"Info3642153909-3804921"],
+  Cell[53290, 1147, 28461, 611, 2159, "Print",
+   CellTags->"Info3642153909-3804921"]},
+ "Info3642153944-2551823"->{
+  Cell[83292, 1814, 200, 3, 48, "Print",
+   CellTags->"Info3642153944-2551823"],
+  Cell[83495, 1819, 28461, 611, 1963, "Print",
+   CellTags->"Info3642153944-2551823"]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"Info3641757713-5667396", 12132, 240},
- {"Info3641757714-5667396", 12317, 245}
+ {"Info3642153925-2551823", 112398, 2450},
+ {"Info3642153909-3804921", 112757, 2459},
+ {"Info3642153944-2551823", 112955, 2464}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 65, 1, 42, "Input"],
-Cell[648, 25, 72, 0, 41, "Output"]
-}, Open  ]],
-Cell[735, 28, 75, 1, 42, "Input"],
-Cell[CellGroupData[{
-Cell[835, 33, 61, 1, 42, "Input"],
-Cell[899, 36, 241, 4, 83, "Print",
- CellTags->"Info3641757713-5667396"]
+Cell[580, 22, 65, 1, 32, "Input"],
+Cell[648, 25, 72, 0, 33, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1177, 45, 59, 1, 42, "Input"],
-Cell[1239, 48, 219, 4, 83, "Print",
- CellTags->"Info3641757713-5667396"]
+Cell[757, 30, 78, 1, 32, "Input"],
+Cell[838, 33, 98, 1, 33, "Output"]
 }, Open  ]],
+Cell[951, 37, 75, 1, 32, "Input"],
 Cell[CellGroupData[{
-Cell[1495, 57, 66, 1, 42, "Input"],
-Cell[CellGroupData[{
-Cell[1586, 62, 191, 2, 82, "Print"],
-Cell[1780, 66, 175, 2, 82, "Print"]
+Cell[1051, 42, 57, 1, 32, "Input"],
+Cell[1111, 45, 12273, 253, 1197, "Output"]
 }, Open  ]],
-Cell[1970, 71, 79, 2, 41, "Output"]
-}, Open  ]],
-Cell[2064, 76, 64, 1, 42, "Input"],
-Cell[2131, 79, 75, 2, 42, "Input"],
+Cell[13399, 301, 27, 0, 35, "Input"],
 Cell[CellGroupData[{
-Cell[2231, 85, 75, 2, 42, "Input"],
-Cell[2309, 89, 4617, 63, 2946, "Print",
- CellTags->"Info3641757714-5667396"],
-Cell[6929, 154, 27, 0, 41, "Output"],
-Cell[6959, 156, 186, 4, 66, "Output"],
-Cell[7148, 162, 4617, 63, 2946, "Print",
- CellTags->"Info3641757714-5667396"]
+Cell[13451, 305, 62, 1, 35, "Input"],
+Cell[CellGroupData[{
+Cell[13538, 310, 241, 4, 48, "Print",
+ CellTags->"Info3642153925-2551823"],
+Cell[13782, 316, 2389, 59, 137, "Print",
+ CellTags->"Info3642153925-2551823"]
 }, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16220, 381, 60, 1, 35, "Input"],
+Cell[CellGroupData[{
+Cell[16305, 386, 219, 4, 48, "Print",
+ CellTags->"Info3642153925-2551823"],
+Cell[16527, 392, 36159, 725, 4713, "Print",
+ CellTags->"Info3642153925-2551823"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[52735, 1123, 66, 1, 35, "Input"],
+Cell[52804, 1126, 79, 2, 36, "Output"]
+}, Open  ]],
+Cell[52898, 1131, 64, 1, 35, "Input"],
+Cell[CellGroupData[{
+Cell[52987, 1136, 75, 2, 38, "Input"],
+Cell[CellGroupData[{
+Cell[53087, 1142, 200, 3, 52, "Print",
+ CellTags->"Info3642153909-3804921"],
+Cell[53290, 1147, 28461, 611, 2159, "Print",
+ CellTags->"Info3642153909-3804921"]
+}, Open  ]],
+Cell[81766, 1761, 27, 0, 36, "Output"]
+}, Open  ]],
+Cell[81808, 1764, 1176, 32, 125, "Text"],
+Cell[82987, 1798, 180, 6, 36, "Text"],
+Cell[CellGroupData[{
+Cell[83192, 1808, 75, 2, 35, "Input"],
+Cell[CellGroupData[{
+Cell[83292, 1814, 200, 3, 48, "Print",
+ CellTags->"Info3642153944-2551823"],
+Cell[83495, 1819, 28461, 611, 1963, "Print",
+ CellTags->"Info3642153944-2551823"]
+}, Open  ]],
+Cell[111971, 2433, 27, 0, 36, "Output"]
+}, Open  ]],
+Cell[112013, 2436, 27, 0, 38, "Input"]
 }
 ]
 *)
