@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      2307,         86]
-NotebookOptionsPosition[      1702,         59]
-NotebookOutlinePosition[      2095,         76]
-CellTagsIndexPosition[      2052,         73]
+NotebookDataLength[      2378,         87]
+NotebookOptionsPosition[      1772,         60]
+NotebookOutlinePosition[      2165,         77]
+CellTagsIndexPosition[      2122,         74]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -54,7 +54,8 @@ Cell[BoxData[
 }, Open  ]],
 
 Cell[BoxData[
- RowBox[{"InstallShortcuts", "[", "]"}]], "Input"]
+ RowBox[{"InstallShortcuts", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.6429609416637316`*^9, 3.6429609425243034`*^9}}]
 }, Open  ]]
 },
 Editable->True,
@@ -86,7 +87,7 @@ Cell[1154, 41, 266, 4, 24, "Print"]
 }, Open  ]],
 Cell[1435, 48, 172, 4, 33, "Output"]
 }, Open  ]],
-Cell[1622, 55, 64, 1, 32, "Input"]
+Cell[1622, 55, 134, 2, 32, "Input"]
 }, Open  ]]
 }
 ]
