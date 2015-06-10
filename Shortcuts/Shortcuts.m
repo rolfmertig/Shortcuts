@@ -1,17 +1,18 @@
-(* Wolfram Language Package *)
-(* Author:: Rolf Mertig :: *)
+(* Author:: Rolf Mertig ; GluonVision GmbH, Berlin, Germany:: *)
 
 (*
-This
-
 
 (* load the MathematicaPackageInstall function from github *)
-
 
 (* install the Shortcuts` package from github into $UserBaseDirectory/Applications *)
 MathematicaPackageInstall`MathematicaPackageInstall["Shortcuts`"];
 
+URLSave["https://raw.githubusercontent.com/rolfmertig/Shortcuts/master/Shortcuts.zip",
+ FileNameJoin[{$TemporaryDirectory, "Shortcuts.zip"}]];
+ExtractArchive[FileNameJoin[{$TemporaryDirectory, "Shortcuts.zip"}], 
+ FileNameJoin[{$UserBaseDirectory, "Applications"}]];
 Needs["Shortcuts`"];                     
+Shortcuts`InstallShortcuts[];
 
 *)
 
