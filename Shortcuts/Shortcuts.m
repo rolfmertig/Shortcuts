@@ -667,7 +667,13 @@ keyevent["SelectToBottom"] = keyevent[16] =
                           ]
                         ] /@ ImportString[mykeytext, "Lines", CharacterEncoding :> $CharacterEncoding];
                     Export[mykeyeventtrans, mykeytext, "Text", CharacterEncoding :> $CharacterEncoding];
-                    SetSelectedNotebook @ Shortcuts`Shortcut["OpenShortcutHelpPage"];
+                    SetSelectedNotebook @ NotebookOpen[
+                    						FileNameJoin[{
+                    	                         $UserBaseDirectory, "Applications", "Shortcuts", "Documentation", "English", "ReferencePages", "Symbols",
+                    	                         "Shortcuts.nb"}],
+ 												 WindowSize -> {Scaled[1/2], Scaled[1]}, 
+												 WindowMargins -> {{0, Automatic}, {Automatic, 0}}
+									  ];
                     (*
                     CellPrint[ExpressionCell[Column[{ "Two files have been generated:",
                       ( Button[StringReplace[#, $UserBaseDirectory -> "$UserBaseDirectory"],
