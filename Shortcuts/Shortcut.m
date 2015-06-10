@@ -131,6 +131,8 @@ Shortcut["RestartFrontEnd", enb_:EvaluationNotebook[]] :=
 
 Shortcut["RestartKernel"] :=
 (
+"Info: Based on an idea of Kuba.";
+
                     With[{ enb = SelectedNotebook[],
                              currentSetting = ToString@CurrentValue[$FrontEnd, "ClearEvaluationQueueOnKernelQuit"] },
                        Composition[
@@ -155,8 +157,9 @@ Shortcut["RestartKernel"] :=
 
 
 
-(* So this is a slight rewrite of Kuba's answer here: http://mathematica.stackexchange.com/a/55073/29
-   However, it is not the same, which becomes apparent when evaluatin a larger notebook 
+(* This is a slight rewrite of Kuba's answer here: http://mathematica.stackexchange.com/a/55073/29
+   However, it is not quite the same, which becomes apparent when evaluating a larger notebook 
+   Therefore I prefer to user the version below using Shortcut["SelectToTop"]
 
 Shortcut["EvaluateFromTop"] :=  Module[{i, enb = EvaluationNotebook[]},
   (* allow the cursor to be in between cells :*)
@@ -367,5 +370,16 @@ Shortcut["EvaluateSelected"] :=
     Replace[NotebookRead[SelectedNotebook[]], {} -> Null]], WindowSize -> {Medium, FitAll}, 
     WindowMargins -> {{Automatic, 2}, {Automatic, 2}}, Magnification -> 1.5]
     );
+    
+Shortcut["OpenInit.m"] :=  NotebookOpen@FindFile["init.m"];
+
+Shortcut["OpenUserBaseDirectory"] :=  SystemOpen[$UserBaseDirectory];
+
+Shortcut["OpenShortcutHelpPage"] := ( 
+                                      NotebookOpen["paclet:Shortcuts/ref/Shortcuts", 
+ 												 WindowSize -> {Scaled[1/2], Scaled[1]}, 
+												 WindowMargins -> {{0, Automatic}, {Automatic, 0}}
+									  ]
+									);
     
 End[];

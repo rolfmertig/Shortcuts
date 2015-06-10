@@ -45,8 +45,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ShortcutCode.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Shortcuts/ShortcutCode.m">
+      <file leaf-file-name="Shortcut.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Shortcuts/Shortcut.m">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
@@ -64,7 +64,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Shortcuts/s.m" />
-        <option value="$PROJECT_DIR$/Shortcuts/ShortcutCode.m" />
+        <option value="$PROJECT_DIR$/Shortcuts/Shortcut.m" />
         <option value="$PROJECT_DIR$/Shortcuts/Shortcuts.m" />
       </list>
     </option>
@@ -313,7 +313,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Shortcuts/ShortcutCode.m">
+    <entry file="file://$PROJECT_DIR$/Shortcuts/Shortcut.m">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />

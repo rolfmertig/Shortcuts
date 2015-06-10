@@ -1,6 +1,6 @@
 (* Paclet Info File *)
 
-(* created 2015/05/31*)
+(* created 2015/06/09*)
 
 Paclet[
     Name -> "Shortcuts",
@@ -12,7 +12,7 @@ Paclet[
         {
             {"Documentation", Resources -> 
                 {"Guides/ShortCutsGuide"}
-            , Language -> "English"}
+            , Language -> "English", MainPage -> "Guides/ShortcutsGuide"}
         }
 ]
 
