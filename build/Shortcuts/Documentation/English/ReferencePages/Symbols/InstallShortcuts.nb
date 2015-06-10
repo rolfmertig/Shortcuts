@@ -3,17 +3,17 @@
 (*** Wolfram Notebook File ***)
 (* http://www.wolfram.com/nb *)
 
-(* CreatedBy='Mathematica 10.1' *)
+(* CreatedBy='Mathematica 9.0' *)
 
 (*CacheID: 234*)
 (* Internal cache information:
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
-NotebookDataPosition[       158,          7]
-NotebookDataLength[     11542,        348]
-NotebookOptionsPosition[      8549,        269]
-NotebookOutlinePosition[     10812,        323]
-CellTagsIndexPosition[     10769,        320]
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     11531,        347]
+NotebookOptionsPosition[      8503,        267]
+NotebookOutlinePosition[     10800,        322]
+CellTagsIndexPosition[     10757,        319]
 WindowTitle->InstallShortcuts
 WindowFrame->Normal*)
 
@@ -100,7 +100,7 @@ InstallShortcuts.html"], StandardForm]], "Input", TextClipboardType ->
            URL[
             StringJoin[
              If[
-              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$2223], 
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$5599], 
               "http://reference.wolfram.com/system-modeler/", 
               "http://reference.wolfram.com/language/"], 
              "Shortcuts/ref/InstallShortcuts", ".html"]], None}]}]},
@@ -225,15 +225,13 @@ Cell[TextData[{
 
 Cell[TextData[{
  Cell[BoxData[
-  TemplateBox[{Cell[
-     TextData["UninstallShortcuts"]],
-    "paclet:Shortcuts/ref/UninstallShortcuts"},
+  TemplateBox[{
+   Cell["UninstallShortcuts"],"paclet:Shortcuts/ref/UninstallShortcuts"},
    "RefLink",
    BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
  ", ",
  Cell[BoxData[
-  TemplateBox[{Cell[
-     TextData["Shortcuts"]],"paclet:Shortcuts/ref/Shortcuts"},
+  TemplateBox[{Cell["Shortcuts"],"paclet:Shortcuts/ref/Shortcuts"},
    "RefLink",
    BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]
 }], "SeeAlso",
@@ -258,8 +256,8 @@ Cell[TextData[{
 Cell["", "SectionHeaderSpacer"],
 
 Cell[BoxData[
- TemplateBox[{Cell[
-    TextData["ShortcutsGuide"]],"paclet:Shortcuts/guide/ShortcutsGuide"},
+ TemplateBox[{Cell["ShortcutsGuide"],"paclet:Shortcuts/guide/ShortcutsGuide"},
+  
   "RefLink",
   BaseStyle->"MoreAbout"]], "MoreAbout",
  CellID->1]
@@ -282,7 +280,7 @@ TaggingRules->{
     Left], "HasOptions" -> False, "ExampleCounter" -> 1, 
   "ExamplePageLinks" -> {}, "NeedPlatMsgIn" -> None, "RootCaptions" -> "", 
   "Metadata" -> {
-   "built" -> "{2015, 6, 10, 12, 32, 59.0599382}", 
+   "built" -> "{2015, 6, 10, 15, 23, 8.0328234}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "Shortcuts`", 
     "keywords" -> {}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
@@ -297,9 +295,10 @@ TooltipStyle->\"TextStyling\"], Annotation[#, \"click to open\", \
 \"Tooltip\"]& ]. The package Shortcuts` should be loaded first by \
 Needs[\"Shortcuts`\"].", "synonyms" -> {}, "title" -> "InstallShortcuts", 
     "titlemodifier" -> "", "windowtitle" -> "InstallShortcuts", "type" -> 
-    "Symbol", "uri" -> "Shortcuts/ref/InstallShortcuts"}},
+    "Symbol", "uri" -> "Shortcuts/ref/InstallShortcuts"}, 
+  "SearchTextTranslated" -> ""},
 CellContext->"Global`",
-FrontEndVersion->"10.1 for Microsoft Windows (64-bit) (March 23, 2015)",
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (January 25, 2013)",
 StyleDefinitions->Notebook[{
    Cell[
     StyleData[
@@ -308,7 +307,7 @@ StyleDefinitions->Notebook[{
     StyleData["Input"], CellContext -> "Global`"], 
    Cell[
     StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
-  FrontEndVersion -> "10.1 for Microsoft Windows (64-bit) (March 23, 2015)", 
+  FrontEndVersion -> "9.0 for Microsoft Windows (64-bit) (January 25, 2013)", 
   StyleDefinitions -> "Default.nb"]
 ]
 (* End of Notebook Content *)
@@ -322,34 +321,34 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[588, 21, 3663, 90, 70, "AnchorBarGrid",
+Cell[587, 21, 3663, 90, 70, "AnchorBarGrid",
  CellID->1],
-Cell[4254, 113, 59, 1, 70, "ObjectName",
+Cell[4253, 113, 59, 1, 70, "ObjectName",
  CellID->1224892054],
-Cell[4316, 116, 1944, 52, 70, "Usage",
+Cell[4315, 116, 1944, 52, 70, "Usage",
  CellID->982511436],
 Cell[CellGroupData[{
-Cell[6285, 172, 730, 24, 70, "NotesSection",
+Cell[6284, 172, 730, 24, 70, "NotesSection",
  CellGroupingRules->{"SectionGrouping", 50},
  CellID->1],
-Cell[7018, 198, 31, 0, 70, "SectionHeaderSpacer"],
-Cell[7052, 200, 146, 4, 70, "Notes",
+Cell[7017, 198, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[7051, 200, 146, 4, 70, "Notes",
  CellID->1067943069],
-Cell[7201, 206, 31, 0, 70, "SectionFooterSpacer"]
+Cell[7200, 206, 31, 0, 70, "SectionFooterSpacer"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[7269, 211, 270, 12, 70, "SeeAlsoSection",
+Cell[7268, 211, 270, 12, 70, "SeeAlsoSection",
  CellID->1255426704],
-Cell[7542, 225, 461, 14, 70, "SeeAlso",
+Cell[7541, 225, 428, 12, 70, "SeeAlso",
  CellID->929782353]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8040, 244, 257, 11, 70, "MoreAboutSection"],
-Cell[8300, 257, 31, 0, 70, "SectionHeaderSpacer"],
-Cell[8334, 259, 173, 5, 70, "MoreAbout",
+Cell[8006, 242, 257, 11, 70, "MoreAboutSection"],
+Cell[8266, 255, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[8300, 257, 161, 5, 70, "MoreAbout",
  CellID->1]
 }, Open  ]],
-Cell[8522, 267, 23, 0, 70, "FooterCell"]
+Cell[8476, 265, 23, 0, 70, "FooterCell"]
 }
 ]
 *)

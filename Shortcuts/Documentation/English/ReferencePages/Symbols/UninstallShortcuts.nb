@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      6530,        269]
-NotebookOptionsPosition[      4322,        188]
-NotebookOutlinePosition[      4771,        205]
-CellTagsIndexPosition[      4728,        202]
+NotebookDataLength[      6600,        270]
+NotebookOptionsPosition[      4390,        189]
+NotebookOutlinePosition[      4840,        206]
+CellTagsIndexPosition[      4797,        203]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -131,6 +131,7 @@ Cell["XXXX", "Details",
 Cell[CellGroupData[{
 
 Cell["UninstallShortcuts", "ObjectName",
+ CellChangeTimes->{{3.6429565023064423`*^9, 3.642956502525201*^9}},
  CellID->1224892054],
 
 Cell[TextData[{
@@ -189,7 +190,7 @@ Cell[TextData[{
 WindowSize->{700, 770},
 WindowMargins->{{Automatic, 425}, {0, Automatic}},
 CellContext->"Global`",
-FrontEndVersion->"10.1 for Microsoft Windows (64-bit) (March 23, 2015)",
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (January 25, 2013)",
 StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStyles.nb", 
   CharacterEncoding -> "WindowsANSI"]
 ]
@@ -258,17 +259,17 @@ Cell[2543, 125, 67, 2, 70, "Details",
  CellID->240026365]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[2647, 132, 61, 1, 62, "ObjectName",
+Cell[2647, 132, 129, 2, 62, "ObjectName",
  CellID->1224892054],
-Cell[2711, 135, 949, 26, 85, "Usage",
+Cell[2779, 136, 949, 26, 85, "Usage",
  CellID->982511436],
-Cell[3663, 163, 148, 2, 23, "Notes",
+Cell[3731, 164, 148, 2, 23, "Notes",
  CellID->1067943069]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3848, 170, 55, 1, 30, "SeeAlsoSection",
+Cell[3916, 171, 55, 1, 30, "SeeAlsoSection",
  CellID->1255426704],
-Cell[3906, 173, 400, 12, 19, "SeeAlso",
+Cell[3974, 174, 400, 12, 19, "SeeAlso",
  CellID->929782353]
 }, Open  ]]
 }

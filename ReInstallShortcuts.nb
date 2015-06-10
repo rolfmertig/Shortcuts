@@ -10,16 +10,18 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      2156,         78]
-NotebookOptionsPosition[      1585,         53]
-NotebookOutlinePosition[      1979,         70]
-CellTagsIndexPosition[      1936,         67]
+NotebookDataLength[      2307,         86]
+NotebookOptionsPosition[      1702,         59]
+NotebookOutlinePosition[      2095,         76]
+CellTagsIndexPosition[      2052,         73]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
-Cell[BoxData["\[IndentingNewLine]"], "Input",
- CellChangeTimes->{3.642896866295608*^9}],
+
+Cell[CellGroupData[{
+Cell["Re-Install", "Section",
+ CellChangeTimes->{{3.642956412822627*^9, 3.642956416057616*^9}}],
 
 Cell[BoxData[
  RowBox[{"Needs", "[", "\"\<Shortcuts`\>\"", "]"}]], "Input"],
@@ -34,28 +36,32 @@ Cell[CellGroupData[{
 Cell[BoxData["\<\"Deleted C:\\\\Users\\\\Rolf \
 Mertig\\\\AppData\\\\Roaming\\\\Mathematica\\\\SystemFiles\\\\FrontEnd\\\\\
 TextResources\\\\Windows\\\\KeyEventTranslations.tr\"\>"], "Print",
- CellChangeTimes->{3.642897023571583*^9, 3.6429436188399963`*^9}],
+ CellChangeTimes->{3.642897023571583*^9, 3.6429436188399963`*^9, 
+  3.642956420183535*^9}],
 
 Cell[BoxData["\<\"Deleted C:\\\\Users\\\\Rolf \
 Mertig\\\\AppData\\\\Roaming\\\\Mathematica\\\\SystemFiles\\\\FrontEnd\\\\\
 TextResources\\\\Windows\\\\joker.m\"\>"], "Print",
- CellChangeTimes->{3.642897023571583*^9, 3.6429436188399963`*^9}]
+ CellChangeTimes->{3.642897023571583*^9, 3.6429436188399963`*^9, 
+  3.642956420183535*^9}]
 }, Open  ]],
 
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{"Null", ",", "Null"}], "}"}]], "Output",
- CellChangeTimes->{3.6428970235872126`*^9, 3.6429436188399963`*^9}]
+ CellChangeTimes->{3.6428970235872126`*^9, 3.6429436188399963`*^9, 
+  3.642956420183535*^9}]
 }, Open  ]],
 
 Cell[BoxData[
  RowBox[{"InstallShortcuts", "[", "]"}]], "Input"]
+}, Open  ]]
 },
 Editable->True,
 WindowSize->{1141, 883},
-WindowMargins->{{Automatic, -288}, {-181, Automatic}},
+WindowMargins->{{Automatic, 94}, {-159, Automatic}},
 Magnification:>1.1 Inherited,
-FrontEndVersion->"10.1 for Microsoft Windows (64-bit) (March 23, 2015)",
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (January 25, 2013)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -69,17 +75,19 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 87, 1, 53, "Input"],
-Cell[648, 23, 75, 1, 32, "Input"],
 Cell[CellGroupData[{
-Cell[748, 28, 66, 1, 32, "Input"],
+Cell[580, 22, 95, 1, 95, "Section"],
+Cell[678, 25, 75, 1, 32, "Input"],
 Cell[CellGroupData[{
-Cell[839, 33, 257, 3, 24, "Print"],
-Cell[1099, 38, 241, 3, 24, "Print"]
+Cell[778, 30, 66, 1, 32, "Input"],
+Cell[CellGroupData[{
+Cell[869, 35, 282, 4, 24, "Print"],
+Cell[1154, 41, 266, 4, 24, "Print"]
 }, Open  ]],
-Cell[1355, 44, 147, 3, 33, "Output"]
+Cell[1435, 48, 172, 4, 33, "Output"]
 }, Open  ]],
-Cell[1517, 50, 64, 1, 32, "Input"]
+Cell[1622, 55, 64, 1, 32, "Input"]
+}, Open  ]]
 }
 ]
 *)

@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      8270,        324]
-NotebookOptionsPosition[      5816,        235]
-NotebookOutlinePosition[      6263,        252]
-CellTagsIndexPosition[      6220,        249]
+NotebookDataLength[      7581,        295]
+NotebookOptionsPosition[      5371,        214]
+NotebookOutlinePosition[      5819,        231]
+CellTagsIndexPosition[      5776,        228]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -131,6 +131,7 @@ Cell["XXXX", "Details",
 Cell[CellGroupData[{
 
 Cell["InstallShortcuts", "ObjectName",
+ CellChangeTimes->{{3.6429565107617025`*^9, 3.642956510980485*^9}},
  CellID->1224892054],
 
 Cell[TextData[{
@@ -192,15 +193,6 @@ Needs[\"Shortcuts`\"]\
 
 Cell[CellGroupData[{
 
-Cell["Related Links", "RelatedLinksSection",
- CellID->1584193535],
-
-Cell["XXXX", "RelatedLinks",
- CellID->1038487239]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
 Cell["See Also", "SeeAlsoSection",
  CellID->1255426704],
 
@@ -218,25 +210,12 @@ Cell[TextData[{
  CellChangeTimes->{{3.6428504695671463`*^9, 3.6428504737521915`*^9}, {
   3.642850541943827*^9, 3.6428505768920393`*^9}},
  CellID->929782353]
-}, Open  ]],
-
-Cell[BoxData[
- InterpretationBox[GridBox[{
-    {
-     StyleBox["Examples", "PrimaryExamplesSection"], 
-     ButtonBox[
-      RowBox[{
-       RowBox[{"More", " ", "Examples"}], " ", "\[RightTriangle]"}],
-      BaseStyle->"ExtendedExamplesLink",
-      ButtonData:>"ExtendedExamples"]}
-   }],
-  $Line = 0; Null]], "PrimaryExamplesSection",
- CellID->880084151]
+}, Open  ]]
 },
 WindowSize->{700, 770},
 WindowMargins->{{4, Automatic}, {Automatic, 0}},
 CellContext->"Global`",
-FrontEndVersion->"10.1 for Microsoft Windows (64-bit) (March 23, 2015)",
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (January 25, 2013)",
 StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStyles.nb", 
   CharacterEncoding -> "WindowsANSI"]
 ]
@@ -305,27 +284,19 @@ Cell[2541, 125, 67, 2, 70, "Details",
  CellID->240026365]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[2645, 132, 59, 1, 62, "ObjectName",
+Cell[2645, 132, 127, 2, 62, "ObjectName",
  CellID->1224892054],
-Cell[2707, 135, 1813, 47, 111, "Usage",
+Cell[2775, 136, 1813, 47, 111, "Usage",
  CellID->982511436],
-Cell[4523, 184, 212, 5, 23, "Notes",
+Cell[4591, 185, 212, 5, 23, "Notes",
  CellID->1067943069]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4772, 194, 65, 1, 30, "RelatedLinksSection",
- CellID->1584193535],
-Cell[4840, 197, 49, 1, 16, "RelatedLinks",
- CellID->1038487239]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[4926, 203, 55, 1, 30, "SeeAlsoSection",
+Cell[4840, 195, 55, 1, 30, "SeeAlsoSection",
  CellID->1255426704],
-Cell[4984, 206, 457, 13, 19, "SeeAlso",
+Cell[4898, 198, 457, 13, 19, "SeeAlso",
  CellID->929782353]
-}, Open  ]],
-Cell[5456, 222, 356, 11, 68, "PrimaryExamplesSection",
- CellID->880084151]
+}, Open  ]]
 }
 ]
 *)

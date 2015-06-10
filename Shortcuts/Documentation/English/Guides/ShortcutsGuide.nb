@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      6626,        258]
-NotebookOptionsPosition[      4455,        180]
-NotebookOutlinePosition[      4880,        196]
-CellTagsIndexPosition[      4837,        193]
+NotebookDataLength[      6695,        259]
+NotebookOptionsPosition[      4525,        181]
+NotebookOutlinePosition[      4948,        197]
+CellTagsIndexPosition[      4905,        194]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -110,6 +110,7 @@ Cell["XXXX", "Details",
 Cell[CellGroupData[{
 
 Cell["ShortcutsGuide", "GuideTitle",
+ CellChangeTimes->{{3.6429565356670136`*^9, 3.6429565358388853`*^9}},
  CellID->942062912],
 
 Cell["Overview of available functions in the Shortcuts` package.", \
@@ -179,8 +180,8 @@ UninstallShortcuts[].", "GuideText"]
 }, Open  ]]
 },
 WindowSize->{795, 938},
-WindowMargins->{{Automatic, -1802}, {Automatic, 21}},
-FrontEndVersion->"10.1 for Microsoft Windows (64-bit) (March 23, 2015)",
+WindowMargins->{{Automatic, 0}, {-16, Automatic}},
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (January 25, 2013)",
 StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "GuidePageStyles.nb", 
   CharacterEncoding -> "WindowsANSI"]
 ]
@@ -237,26 +238,26 @@ Cell[2167, 104, 67, 2, 70, "Details",
  CellID->240026365]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[2271, 111, 56, 1, 76, "GuideTitle",
+Cell[2271, 111, 126, 2, 76, "GuideTitle",
  CellID->942062912],
-Cell[2330, 114, 173, 3, 25, "GuideAbstract",
+Cell[2400, 115, 173, 3, 25, "GuideAbstract",
  CellID->2001916300]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2540, 122, 54, 1, 68, "GuideFunctionsSection",
+Cell[2610, 123, 54, 1, 68, "GuideFunctionsSection",
  CellID->1866139230],
-Cell[2597, 125, 470, 11, 23, "InlineGuideFunctionListing",
+Cell[2667, 126, 470, 11, 23, "InlineGuideFunctionListing",
  CellID->53954232],
 Cell[CellGroupData[{
-Cell[3092, 140, 48, 1, 26, "GuideDelimiter",
+Cell[3162, 141, 48, 1, 26, "GuideDelimiter",
  CellID->311258892],
-Cell[3143, 143, 553, 12, 37, "InlineGuideFunctionListing",
+Cell[3213, 144, 553, 12, 37, "InlineGuideFunctionListing",
  CellID->58033752]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3733, 160, 48, 1, 26, "GuideDelimiter",
+Cell[3803, 161, 48, 1, 26, "GuideDelimiter",
  CellID->594605181],
-Cell[3784, 163, 643, 13, 51, "InlineGuideFunctionListing",
+Cell[3854, 164, 643, 13, 51, "InlineGuideFunctionListing",
  CellID->510842220]
 }, Open  ]]
 }, Open  ]]

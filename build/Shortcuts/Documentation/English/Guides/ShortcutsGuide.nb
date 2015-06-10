@@ -3,17 +3,17 @@
 (*** Wolfram Notebook File ***)
 (* http://www.wolfram.com/nb *)
 
-(* CreatedBy='Mathematica 10.1' *)
+(* CreatedBy='Mathematica 9.0' *)
 
 (*CacheID: 234*)
 (* Internal cache information:
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
-NotebookDataPosition[       158,          7]
-NotebookDataLength[      8297,        251]
-NotebookOptionsPosition[      6071,        188]
-NotebookOutlinePosition[      7601,        227]
-CellTagsIndexPosition[      7558,        224]
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      8282,        249]
+NotebookOptionsPosition[      6025,        186]
+NotebookOutlinePosition[      7585,        225]
+CellTagsIndexPosition[      7542,        222]
 WindowTitle->ShortcutsGuide
 WindowFrame->Normal*)
 
@@ -83,7 +83,7 @@ ShortcutsGuide.html"], StandardForm]], "Input", TextClipboardType ->
            URL[
             StringJoin[
              If[
-              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$1880], 
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$5264], 
               "http://reference.wolfram.com/system-modeler/", 
               "http://reference.wolfram.com/language/"], 
              "Shortcuts/guide/ShortcutsGuide", ".html"]], None}]}]},
@@ -127,8 +127,7 @@ Cell["", "SectionHeaderSpacer"],
 
 Cell[TextData[{
  Cell[BoxData[
-  TemplateBox[{Cell[
-     TextData["Shortcuts"]],"paclet:Shortcuts/ref/Shortcuts"},
+  TemplateBox[{Cell["Shortcuts"],"paclet:Shortcuts/ref/Shortcuts"},
    "RefLink",
    BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
  "\[NonBreakingSpace]",
@@ -146,8 +145,8 @@ Cell["\t", "GuideDelimiter",
 
 Cell[TextData[{
  Cell[BoxData[
-  TemplateBox[{Cell[
-     TextData["InstallShortcuts"]],"paclet:Shortcuts/ref/InstallShortcuts"},
+  TemplateBox[{
+   Cell["InstallShortcuts"],"paclet:Shortcuts/ref/InstallShortcuts"},
    "RefLink",
    BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
  "\[NonBreakingSpace]",
@@ -167,9 +166,8 @@ Cell["\t", "GuideDelimiter",
 
 Cell[TextData[{
  Cell[BoxData[
-  TemplateBox[{Cell[
-     TextData["UninstallShortcuts"]],
-    "paclet:Shortcuts/ref/UninstallShortcuts"},
+  TemplateBox[{
+   Cell["UninstallShortcuts"],"paclet:Shortcuts/ref/UninstallShortcuts"},
    "RefLink",
    BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
  "\[NonBreakingSpace]",
@@ -201,7 +199,7 @@ TaggingRules->{
     Left], "ExampleCounter" -> 1, "ExamplePageLinks" -> {}, "NeedPlatMsgIn" -> 
   None, "RootCaptions" -> "", 
   "Metadata" -> {
-   "built" -> "{2015, 6, 10, 12, 32, 57.3703441}", 
+   "built" -> "{2015, 6, 10, 15, 23, 6.0845282}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "Shortcuts`", 
     "keywords" -> {"Shortcuts keyboard"}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
@@ -210,8 +208,8 @@ TaggingRules->{
     "Overview of available functions in the Shortcuts` package.", 
     "synonyms" -> {}, "title" -> "ShortcutsGuide", "titlemodifier" -> "", 
     "windowtitle" -> "ShortcutsGuide", "type" -> "Guide", "uri" -> 
-    "Shortcuts/guide/ShortcutsGuide"}},
-FrontEndVersion->"10.1 for Microsoft Windows (64-bit) (March 23, 2015)",
+    "Shortcuts/guide/ShortcutsGuide"}, "SearchTextTranslated" -> ""},
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (January 25, 2013)",
 StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
   CharacterEncoding -> "WindowsANSI"]
 ]
@@ -226,33 +224,33 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[586, 21, 3244, 77, 70, "AnchorBarGrid",
+Cell[585, 21, 3244, 77, 70, "AnchorBarGrid",
  CellID->1],
 Cell[CellGroupData[{
-Cell[3855, 102, 56, 1, 70, "GuideTitle",
+Cell[3854, 102, 56, 1, 70, "GuideTitle",
  CellID->942062912],
-Cell[3914, 105, 106, 2, 70, "GuideAbstract",
+Cell[3913, 105, 106, 2, 70, "GuideAbstract",
  CellID->2001916300]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4057, 112, 257, 11, 70, "GuideReferenceSection"],
-Cell[4317, 125, 31, 0, 70, "SectionHeaderSpacer"],
-Cell[4351, 127, 429, 12, 70, "InlineGuideFunctionListing",
+Cell[4056, 112, 257, 11, 70, "GuideReferenceSection"],
+Cell[4316, 125, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[4350, 127, 413, 11, 70, "InlineGuideFunctionListing",
  CellID->53954232],
 Cell[CellGroupData[{
-Cell[4805, 143, 48, 1, 70, "GuideDelimiter",
+Cell[4788, 142, 48, 1, 70, "GuideDelimiter",
  CellID->311258892],
-Cell[4856, 146, 513, 13, 70, "InlineGuideFunctionListing",
+Cell[4839, 145, 501, 13, 70, "InlineGuideFunctionListing",
  CellID->58033752]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5406, 164, 48, 1, 70, "GuideDelimiter",
+Cell[5377, 163, 48, 1, 70, "GuideDelimiter",
  CellID->594605181],
-Cell[5457, 167, 560, 15, 70, "InlineGuideFunctionListing",
+Cell[5428, 166, 543, 14, 70, "InlineGuideFunctionListing",
  CellID->510842220]
 }, Open  ]]
 }, Open  ]],
-Cell[6044, 186, 23, 0, 70, "FooterCell"]
+Cell[5998, 184, 23, 0, 70, "FooterCell"]
 }
 ]
 *)

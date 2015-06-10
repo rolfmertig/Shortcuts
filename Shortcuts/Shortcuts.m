@@ -241,8 +241,8 @@ Shortcuts[] :=
         (*[*)keyHelp["Ctrl Alt ]"]         = "Insert [[]]";
                        
                        keyStyle[s_] :=
-                           ToString[ Framed[ Style[s, FontFamily -> "Courier", FontColor -> GrayLevel[0.36]], 
-                           	FontWeight -> "Bold",
+                           ToString[ Framed[ Style[s, FontFamily -> "Courier", FontColor -> GrayLevel[0.36], 
+                           	FontWeight -> "Bold"],
                            ImageMargins -> {{2, 2}, {2, 2}}, FrameStyle -> GrayLevel[0.8], Background -> GrayLevel[0.965] ], StandardForm
                            ];
                        toKeyStyle[{keyshort_String, desc_String}] :=
