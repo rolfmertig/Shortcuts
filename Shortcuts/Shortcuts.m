@@ -5,14 +5,18 @@
 (* load the MathematicaPackageInstall function from github *)
 
 (* install the Shortcuts` package from github into $UserBaseDirectory/Applications *)
-MathematicaPackageInstall`MathematicaPackageInstall["Shortcuts`"];
 
-URLSave["https://raw.githubusercontent.com/rolfmertig/Shortcuts/master/Shortcuts.zip",
- FileNameJoin[{$TemporaryDirectory, "Shortcuts.zip"}]];
+
+(
+URLSave[
+	"https://raw.githubusercontent.com/rolfmertig/Shortcuts/master/Shortcuts.zip",
+     FileNameJoin[{$TemporaryDirectory, "Shortcuts.zip"}]
+];
 ExtractArchive[FileNameJoin[{$TemporaryDirectory, "Shortcuts.zip"}], 
- FileNameJoin[{$UserBaseDirectory, "Applications"}]];
-Needs["Shortcuts`"];                     
-Shortcuts`InstallShortcuts[];
+               FileNameJoin[{$UserBaseDirectory, "Applications"}] // Quiet;
+];
+Needs["Shortcuts`"]; Shortcuts`InstallShortcuts[];
+)
 
 *)
 
