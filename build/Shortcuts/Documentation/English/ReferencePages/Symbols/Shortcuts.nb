@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     20710,        563]
-NotebookOptionsPosition[     17403,        465]
-NotebookOutlinePosition[     19476,        520]
-CellTagsIndexPosition[     19391,        515]
+NotebookDataLength[     20706,        563]
+NotebookOptionsPosition[     17402,        465]
+NotebookOutlinePosition[     19473,        520]
+CellTagsIndexPosition[     19388,        515]
 WindowTitle->Shortcuts
 WindowFrame->Normal*)
 
@@ -156,7 +156,7 @@ Cell[TextData[Cell[BoxData[
   Method->"Preemptive"]]]], "NotesSection",
  WholeCellGroupOpener->True,
  CellGroupingRules->{"SectionGrouping", 50},
- CellID->492222964],
+ CellID->346132937],
 
 Cell["", "SectionHeaderSpacer"],
 
@@ -184,7 +184,7 @@ Cell[TextData[{
 }], "PrimaryExamplesSection",
  WholeCellGroupOpener->True,
  CellTags->"PrimaryExamplesSection",
- CellID->375786050],
+ CellID->68984658],
 
 Cell[CellGroupData[{
 
@@ -194,7 +194,7 @@ Cell[TextData[{
  Cell["(1)", "ExampleCount"]
 }], "ExampleSection", "ExampleSection",
  WholeCellGroupOpener->True,
- CellID->787095058],
+ CellID->133800228],
 
 Cell[CellGroupData[{
 
@@ -458,7 +458,7 @@ Cell[BoxData[
  TemplateBox[{Cell["ShortcutsGuide"],"paclet:Shortcuts/guide/ShortcutsGuide"},
   "RefLink",
   BaseStyle->"MoreAbout"]], "MoreAbout",
- CellID->692478456]
+ CellID->202854554]
 }, Open  ]],
 
 Cell[" ", "FooterCell"]
@@ -478,7 +478,7 @@ TaggingRules->{
     Left], "HasOptions" -> False, "ExampleCounter" -> 1, 
   "ExamplePageLinks" -> {}, "NeedPlatMsgIn" -> None, "RootCaptions" -> "", 
   "Metadata" -> {
-   "built" -> "{2015, 6, 10, 15, 23, 9.7829853}", 
+   "built" -> "{2015, 6, 10, 16, 5, 3.6554776}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "Shortcuts`", 
     "keywords" -> {"Keyboard shortcut"}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
@@ -507,14 +507,14 @@ StyleDefinitions->Notebook[{
 (*CellTagsOutline
 CellTagsIndex->{
  "PrimaryExamplesSection"->{
-  Cell[5670, 171, 387, 15, 30, "PrimaryExamplesSection",
+  Cell[5670, 171, 386, 15, 30, "PrimaryExamplesSection",
    CellTags->"PrimaryExamplesSection",
-   CellID->375786050]}
+   CellID->68984658]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"PrimaryExamplesSection", 19248, 508}
+ {"PrimaryExamplesSection", 19246, 508}
  }
 *)
 (*NotebookFileOutline
@@ -529,7 +529,7 @@ Cell[4307, 118, 394, 12, 81, "Usage",
 Cell[CellGroupData[{
 Cell[4726, 134, 738, 24, 32, "NotesSection",
  CellGroupingRules->{"SectionGrouping", 50},
- CellID->492222964],
+ CellID->346132937],
 Cell[5467, 160, 31, 0, 70, "SectionHeaderSpacer"],
 Cell[5501, 162, 86, 1, 70, "Notes",
  CellID->1067943069],
@@ -537,34 +537,34 @@ Cell[5590, 165, 31, 0, 70, "SectionFooterSpacer"]
 }, Closed]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5670, 171, 387, 15, 30, "PrimaryExamplesSection",
+Cell[5670, 171, 386, 15, 30, "PrimaryExamplesSection",
  CellTags->"PrimaryExamplesSection",
- CellID->375786050],
+ CellID->68984658],
 Cell[CellGroupData[{
-Cell[6082, 190, 195, 6, 25, "ExampleSection",
- CellID->787095058],
+Cell[6081, 190, 195, 6, 25, "ExampleSection",
+ CellID->133800228],
 Cell[CellGroupData[{
-Cell[6302, 200, 198, 6, 47, "Input",
+Cell[6301, 200, 198, 6, 47, "Input",
  CellID->28637205],
-Cell[6503, 208, 9547, 192, 40, "Output",
+Cell[6502, 208, 9547, 192, 40, "Output",
  CellID->221682291]
 }, Open  ]]
 }, Open  ]],
-Cell[16077, 404, 31, 0, 29, "SectionFooterSpacer"]
+Cell[16076, 404, 31, 0, 29, "SectionFooterSpacer"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[16145, 409, 270, 12, 30, "SeeAlsoSection",
+Cell[16144, 409, 270, 12, 30, "SeeAlsoSection",
  CellID->1255426704],
-Cell[16418, 423, 446, 13, 58, "SeeAlso",
+Cell[16417, 423, 446, 13, 58, "SeeAlso",
  CellID->929782353]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[16901, 441, 257, 11, 30, "MoreAboutSection"],
-Cell[17161, 454, 31, 0, 14, "SectionHeaderSpacer"],
-Cell[17195, 456, 166, 4, 19, "MoreAbout",
- CellID->692478456]
+Cell[16900, 441, 257, 11, 30, "MoreAboutSection"],
+Cell[17160, 454, 31, 0, 14, "SectionHeaderSpacer"],
+Cell[17194, 456, 166, 4, 19, "MoreAbout",
+ CellID->202854554]
 }, Open  ]],
-Cell[17376, 463, 23, 0, 41, "FooterCell"]
+Cell[17375, 463, 23, 0, 41, "FooterCell"]
 }
 ]
 *)
