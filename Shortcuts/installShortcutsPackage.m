@@ -12,8 +12,8 @@ URLSave[
 	"https://raw.githubusercontent.com/rolfmertig/Shortcuts/master/Shortcuts.zip",
      FileNameJoin[{$TemporaryDirectory, "Shortcuts.zip"}]
 ];
-ExtractArchive[FileNameJoin[{$TemporaryDirectory, "Shortcuts.zip"}], 
-               FileNameJoin[{$UserBaseDirectory, "Applications"}] // Quiet;
+Quiet @ ExtractArchive[FileNameJoin[{$TemporaryDirectory, "Shortcuts.zip"}], 
+               FileNameJoin[{$UserBaseDirectory, "Applications"}] 
 ];
 Needs["Shortcuts`"]; Shortcuts`InstallShortcuts[];
 )
