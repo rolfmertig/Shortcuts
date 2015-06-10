@@ -12,13 +12,17 @@ Get @ "https://raw.githubusercontent.com/rolfmertig/Shortcuts/master/Shortcuts/i
 
 (* If your firewall does not permit this, just download Shortcuts.zip  and install it to $UserBaseDirectory/Applications *)
 
-(
-URLSave[
-	"https://raw.githubusercontent.com/rolfmertig/Shortcuts/master/Shortcuts.zip",
-     FileNameJoin[{$TemporaryDirectory, "Shortcuts.zip"}]
-];
-Quiet @ ExtractArchive[FileNameJoin[{$TemporaryDirectory, "Shortcuts.zip"}], 
-               FileNameJoin[{$UserBaseDirectory, "Applications"}] 
-];
-Needs["Shortcuts`"]; Shortcuts`InstallShortcuts[];
-)
+Module[{tmpzip = FileNameJoin[{$TemporaryDirectory, "Shortcuts.zip"}],
+	    gitzip = "https://raw.githubusercontent.com/rolfmertig/Shortcuts/master/Shortcuts.zip"
+	   },
+        If[FileExistsQ[tmpzip], DeleteFile[tmpzip]];
+        URLSave[gitzip, tmpzip];
+		If[!FileExistsQ[ tmpzip ], 
+			Print["Installation failed!"]
+			,
+			Quiet @ DeleteDirectory[ FileNameJoin[{$UserBaseDirectory, "Applications", "Shortcuts"}], DeleteContents -> True];
+        	ExtractArchive[tmpzip, FileNameJoin[{$UserBaseDirectory, "Applications"}] ]
+		];
+       Needs["Shortcuts`"]; 
+       Shortcuts`InstallShortcuts[]
+]
