@@ -280,7 +280,7 @@ TaggingRules->{
     Left], "HasOptions" -> False, "ExampleCounter" -> 1, 
   "ExamplePageLinks" -> {}, "NeedPlatMsgIn" -> None, "RootCaptions" -> "", 
   "Metadata" -> {
-   "built" -> "{2015, 6, 10, 16, 33, 50.7798473}", 
+   "built" -> "{2015, 6, 11, 10, 44, 59.1482212}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "Shortcuts`", 
     "keywords" -> {}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 

@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     20709,        563]
-NotebookOptionsPosition[     17402,        465]
-NotebookOutlinePosition[     19476,        520]
-CellTagsIndexPosition[     19391,        515]
+NotebookDataLength[     20814,        565]
+NotebookOptionsPosition[     17509,        467]
+NotebookOutlinePosition[     19582,        522]
+CellTagsIndexPosition[     19497,        517]
 WindowTitle->Shortcuts
 WindowFrame->Normal*)
 
@@ -156,7 +156,7 @@ Cell[TextData[Cell[BoxData[
   Method->"Preemptive"]]]], "NotesSection",
  WholeCellGroupOpener->True,
  CellGroupingRules->{"SectionGrouping", 50},
- CellID->198376072],
+ CellID->363633817],
 
 Cell["", "SectionHeaderSpacer"],
 
@@ -184,7 +184,7 @@ Cell[TextData[{
 }], "PrimaryExamplesSection",
  WholeCellGroupOpener->True,
  CellTags->"PrimaryExamplesSection",
- CellID->317583524],
+ CellID->313574029],
 
 Cell[CellGroupData[{
 
@@ -194,7 +194,7 @@ Cell[TextData[{
  Cell["(1)", "ExampleCount"]
 }], "ExampleSection", "ExampleSection",
  WholeCellGroupOpener->True,
- CellID->31433509],
+ CellID->97509556],
 
 Cell[CellGroupData[{
 
@@ -263,19 +263,20 @@ layouts:", "Text"], Background -> LightGray, FrameStyle -> None, FrameMargins ->
         ((StringReplace[#, {"Cmd" -> "\[CloverLeaf]", "Alt" -> "Alt"}]& )[
          ToString[#, StandardForm]]& )[
          Grid[
-          Map[
-          Shortcuts`Private`toKeyStyle, {
-           "Cmd Alt L", "Ctrl Tab", "Ctrl Shift Tab", "Cmd Shift \[UpArrow]", 
-            "Cmd Shift ;", "Cmd Shift \[DownArrow]", "Cmd Shift X", "Ctrl Q", 
-            "Ctrl R", "Ctrl H", "Cmd PageDown ,", "Cmd Alt B", "Cmd Alt M", 
-            "Cmd Alt U", "Cmd Alt J", "Cmd Alt Delete", "Ctrl Shift Delete", 
-            "F4", "F6", "Ctrl T", "Ctrl Shift J", "Ctrl F2", 
-            Framed[
-             Style[
-             "The following shortcuts do only work on english keyboard \
+          Map[Shortcuts`Private`toKeyStyle, 
+           Map[{#, 
+             Shortcuts`Private`keyHelp[#]}& , {
+            "Cmd Alt O", "Ctrl Tab", "Ctrl Shift Tab", "Cmd Shift \[UpArrow]",
+              "Cmd Shift ;", "Cmd Shift \[DownArrow]", "Cmd Shift X", 
+             "Ctrl Q", "Ctrl R", "Ctrl H", "Cmd Alt I", "Cmd PageDown", 
+             "Cmd PageUp", "Cmd Alt B", "Cmd Alt M", "Cmd Alt U", "Cmd Alt J",
+              "Ctrl Shift Delete", "Ctrl D", "Ctrl Shift J", 
+             Framed[
+              Style[
+              "The following shortcuts do only work on english keyboard \
 layouts:", "Text"], FrameStyle -> None, FrameMargins -> 10], "Ctrl `", 
-            "Ctrl Shift /", "Ctrl [", "Ctrl ]", "Ctrl Alt ]"}], 
-          Shortcuts`Private`gridOptions]]]}], "Text"], StandardForm],
+             "Ctrl [", "Ctrl ]"}]], Shortcuts`Private`gridOptions]]]}], 
+     "Text"], StandardForm],
    ImageSizeCache->{30., {6., 8.}}],
   DynamicModuleValues:>{},
   Initialization:>(
@@ -291,7 +292,7 @@ layouts:", "Text"], FrameStyle -> None, FrameMargins -> 10], "Ctrl `",
        Pattern[Shortcuts`Private`z, 
         Blank[]], Head[Shortcuts`Private`z] =!= String]] := SpanFromLeft; 
    Shortcuts`Private`keyHelp["Ctrl F1"] = (
-     Shortcuts`Private`keyHelp["Cmd Alt L"] = 
+     Shortcuts`Private`keyHelp["Cmd Alt O"] = 
      "Open the Shortcuts documentation page listing all extra keyboard \
 shortcuts."); 
    Shortcuts`Private`keyHelp["Ctrl Tab"] = 
@@ -335,7 +336,7 @@ without confirmation.", " All others are saved.",
       " The selected notebook is saved and reopened, if possible."]; 
    Shortcuts`Private`keyHelp["Ctrl H"] = "Evaluate Notebook."; 
    Shortcuts`Private`keyHelp["Ctrl Shift ,"] = (
-     Shortcuts`Private`keyHelp["Cmd PageDown ,"] = 
+     Shortcuts`Private`keyHelp["Cmd PageDown"] = 
      "Copy, paste and evaluate the selected expression from the inside of a \
 cell into a new notebook."); 
    Shortcuts`Private`keyHelp["Cmd Alt B"] = 
@@ -353,16 +354,17 @@ cell."; Shortcuts`Private`keyHelp["Cmd Alt M"] = "Minimize all notebooks.";
    Shortcuts`Private`keyHelp["F4"] = 
     "Insert \[LeftDoubleBracket]\[RightDoubleBracket]"; 
    Shortcuts`Private`keyHelp["F6"] = "Stack windows."; 
-   Shortcuts`Private`keyHelp["Ctrl T"] = 
-    StringJoin[
-     "Evaluate the user defined code written in joker.m from ", 
-      Shortcuts`Private`jokerdir]; 
+   Shortcuts`Private`keyHelp["Ctrl T"] = (Shortcuts`Private`keyHelp["Ctrl D"] = 
+     StringJoin[
+      "Evaluate the user defined code written in joker.m from ", 
+       Shortcuts`Private`jokerdir]); 
    Shortcuts`Private`keyHelp["Ctrl Shift J"] = 
     StringJoin[
      "Open the user configurable file joker.m from ", 
       Shortcuts`Private`jokerdir]; 
-   Shortcuts`Private`keyHelp["Ctrl F2"] = 
-    "Open $UserBaseDirectory by SystemOpen[$UserBaseDirectory]."; 
+   Shortcuts`Private`keyHelp["Ctrl F2"] = (
+     Shortcuts`Private`keyHelp["Cmd PageUp"] = 
+     "Open $UserBaseDirectory by SystemOpen[$UserBaseDirectory]."); 
    Shortcuts`Private`keyHelp["Ctrl `"] = "Evaluate Notebook."; 
    Shortcuts`Private`keyHelp["Ctrl Shift /"] = (
      Shortcuts`Private`keyHelp["Cmd Alt I"] = 
@@ -376,7 +378,7 @@ cell."; Shortcuts`Private`keyHelp["Cmd Alt M"] = "Minimize all notebooks.";
       Framed[
        Style[
        Shortcuts`Private`s, FontFamily -> "Courier", FontColor -> 
-        GrayLevel[0.36], FontWeight -> "Bold"], 
+        GrayLevel[0.365], FontWeight -> "Bold"], 
        ImageMargins -> {{2, 2}, {2, 2}}, FrameStyle -> GrayLevel[0.8], 
        Background -> GrayLevel[0.965]], StandardForm]; 
    Shortcuts`Private`toKeyStyle[{
@@ -398,7 +400,7 @@ cell."; Shortcuts`Private`keyHelp["Cmd Alt M"] = "Minimize all notebooks.";
  ImageMargins->{{0, 0}, {0, 0}},
  ImageRegion->{{0, 1}, {0, 1}},
  CellLabel->"Out[1]=",
- CellID->221682291]
+ CellID->101904474]
 }, Open  ]]
 }, Open  ]],
 
@@ -458,7 +460,7 @@ Cell[BoxData[
  TemplateBox[{Cell["ShortcutsGuide"],"paclet:Shortcuts/guide/ShortcutsGuide"},
   "RefLink",
   BaseStyle->"MoreAbout"]], "MoreAbout",
- CellID->611097554]
+ CellID->68500637]
 }, Open  ]],
 
 Cell[" ", "FooterCell"]
@@ -478,7 +480,7 @@ TaggingRules->{
     Left], "HasOptions" -> False, "ExampleCounter" -> 1, 
   "ExamplePageLinks" -> {}, "NeedPlatMsgIn" -> None, "RootCaptions" -> "", 
   "Metadata" -> {
-   "built" -> "{2015, 6, 10, 16, 33, 52.4669685}", 
+   "built" -> "{2015, 6, 11, 10, 45, 1.1975897}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "Shortcuts`", 
     "keywords" -> {"Keyboard shortcut"}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
@@ -509,12 +511,12 @@ CellTagsIndex->{
  "PrimaryExamplesSection"->{
   Cell[5670, 171, 387, 15, 30, "PrimaryExamplesSection",
    CellTags->"PrimaryExamplesSection",
-   CellID->317583524]}
+   CellID->313574029]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"PrimaryExamplesSection", 19248, 508}
+ {"PrimaryExamplesSection", 19354, 510}
  }
 *)
 (*NotebookFileOutline
@@ -529,7 +531,7 @@ Cell[4307, 118, 394, 12, 81, "Usage",
 Cell[CellGroupData[{
 Cell[4726, 134, 738, 24, 32, "NotesSection",
  CellGroupingRules->{"SectionGrouping", 50},
- CellID->198376072],
+ CellID->363633817],
 Cell[5467, 160, 31, 0, 70, "SectionHeaderSpacer"],
 Cell[5501, 162, 86, 1, 70, "Notes",
  CellID->1067943069],
@@ -539,32 +541,32 @@ Cell[5590, 165, 31, 0, 70, "SectionFooterSpacer"]
 Cell[CellGroupData[{
 Cell[5670, 171, 387, 15, 30, "PrimaryExamplesSection",
  CellTags->"PrimaryExamplesSection",
- CellID->317583524],
+ CellID->313574029],
 Cell[CellGroupData[{
 Cell[6082, 190, 194, 6, 25, "ExampleSection",
- CellID->31433509],
+ CellID->97509556],
 Cell[CellGroupData[{
 Cell[6301, 200, 198, 6, 47, "Input",
  CellID->28637205],
-Cell[6502, 208, 9547, 192, 40, "Output",
- CellID->221682291]
+Cell[6502, 208, 9655, 194, 40, "Output",
+ CellID->101904474]
 }, Open  ]]
 }, Open  ]],
-Cell[16076, 404, 31, 0, 29, "SectionFooterSpacer"]
+Cell[16184, 406, 31, 0, 29, "SectionFooterSpacer"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[16144, 409, 270, 12, 30, "SeeAlsoSection",
+Cell[16252, 411, 270, 12, 30, "SeeAlsoSection",
  CellID->1255426704],
-Cell[16417, 423, 446, 13, 58, "SeeAlso",
+Cell[16525, 425, 446, 13, 58, "SeeAlso",
  CellID->929782353]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[16900, 441, 257, 11, 30, "MoreAboutSection"],
-Cell[17160, 454, 31, 0, 14, "SectionHeaderSpacer"],
-Cell[17194, 456, 166, 4, 19, "MoreAbout",
- CellID->611097554]
+Cell[17008, 443, 257, 11, 30, "MoreAboutSection"],
+Cell[17268, 456, 31, 0, 14, "SectionHeaderSpacer"],
+Cell[17302, 458, 165, 4, 19, "MoreAbout",
+ CellID->68500637]
 }, Open  ]],
-Cell[17375, 463, 23, 0, 41, "FooterCell"]
+Cell[17482, 465, 23, 0, 41, "FooterCell"]
 }
 ]
 *)

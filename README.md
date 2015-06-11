@@ -1,10 +1,20 @@
 # Shortcuts
-Additional keyboard shortcuts for the Wolfram Mathematica FrontEnd
+This package adds additional keyboard shortcuts like restart the kernel, restart the FrontEnd, 
+evaluate cells upwards and more for Wolfram Mathematica 9 or 10 on Windows, Linux and MacOSX.
 
-Try to use this in a fresh notebook for installation:
+Try to install, in a fresh notebook:
 
-Import@"https://raw.githubusercontent.com/rolfmertig/Shortcuts/master/Shortcuts/installShortcutsPackage.m"
+Get @ "http://goo.gl/aAxplX"
 
-In case of firewall issues, just download this file 
+or
+
+Get @ "https://raw.githubusercontent.com/rolfmertig/Shortcuts/master/Shortcuts/installShortcutsPackage.m"
+
+In case of firewall issues, just download 
+
 https://github.com/rolfmertig/Shortcuts/blob/master/Shortcuts.zip
-and unzip it into $UserBaseDirectory/Applications
+
+and unzip it to $UserBaseDirectory/Applications, e.g. by 
+ExtractArchive["C:\\downloads\\Shortcuts.zip", FileNameJoin[{$UserBaseDirectory, "Applications"}]]
+
+

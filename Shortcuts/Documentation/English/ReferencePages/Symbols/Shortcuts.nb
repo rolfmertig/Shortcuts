@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     17087,        493]
-NotebookOptionsPosition[     14612,        402]
-NotebookOutlinePosition[     15065,        419]
-CellTagsIndexPosition[     15022,        416]
+NotebookDataLength[     17484,        500]
+NotebookOptionsPosition[     15009,        409]
+NotebookOutlinePosition[     15461,        426]
+CellTagsIndexPosition[     15418,        423]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -127,11 +127,13 @@ Cell["XXXX", "Details",
 Cell["XXXX", "Details",
  CellLabel->"Comments",
  CellID->240026365]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell["Shortcuts", "ObjectName",
+ CellChangeTimes->{{3.642986841859288*^9, 3.64298684219351*^9}, {
+  3.642990523737414*^9, 3.6429905247901125`*^9}},
  CellID->1224892054],
 
 Cell[TextData[{
@@ -191,7 +193,7 @@ Cell[BoxData[{
  RowBox[{"Shortcuts", "[", "]"}]}], "Input",
  CellChangeTimes->{{3.642068420998327*^9, 3.6420684232698374`*^9}, {
   3.642089232499487*^9, 3.6420892415624504`*^9}},
- CellLabel->"In[1]:=",
+ CellLabel->"In[12]:=",
  CellID->28637205],
 
 Cell[BoxData[
@@ -251,19 +253,20 @@ layouts:", "Text"], Background -> LightGray, FrameStyle -> None, FrameMargins ->
         ((StringReplace[#, {"Cmd" -> "\[CloverLeaf]", "Alt" -> "Alt"}]& )[
          ToString[#, StandardForm]]& )[
          Grid[
-          Map[
-          Shortcuts`Private`toKeyStyle, {
-           "Cmd Alt L", "Ctrl Tab", "Ctrl Shift Tab", "Cmd Shift \[UpArrow]", 
-            "Cmd Shift ;", "Cmd Shift \[DownArrow]", "Cmd Shift X", "Ctrl Q", 
-            "Ctrl R", "Ctrl H", "Cmd PageDown ,", "Cmd Alt B", "Cmd Alt M", 
-            "Cmd Alt U", "Cmd Alt J", "Cmd Alt Delete", "Ctrl Shift Delete", 
-            "F4", "F6", "Ctrl T", "Ctrl Shift J", "Ctrl F2", 
-            Framed[
-             Style[
-             "The following shortcuts do only work on english keyboard \
+          Map[Shortcuts`Private`toKeyStyle, 
+           Map[{#, 
+             Shortcuts`Private`keyHelp[#]}& , {
+            "Cmd Alt O", "Ctrl Tab", "Ctrl Shift Tab", "Cmd Shift \[UpArrow]",
+              "Cmd Shift ;", "Cmd Shift \[DownArrow]", "Cmd Shift X", 
+             "Ctrl Q", "Ctrl R", "Ctrl H", "Cmd Alt I", "Cmd PageDown", 
+             "Cmd PageUp", "Cmd Alt B", "Cmd Alt M", "Cmd Alt U", "Cmd Alt J",
+              "Ctrl Shift Delete", "Ctrl D", "Ctrl Shift J", 
+             Framed[
+              Style[
+              "The following shortcuts do only work on english keyboard \
 layouts:", "Text"], FrameStyle -> None, FrameMargins -> 10], "Ctrl `", 
-            "Ctrl Shift /", "Ctrl [", "Ctrl ]", "Ctrl Alt ]"}], 
-          Shortcuts`Private`gridOptions]]]}], "Text"], StandardForm],
+             "Ctrl [", "Ctrl ]"}]], Shortcuts`Private`gridOptions]]]}], 
+     "Text"], StandardForm],
    ImageSizeCache->{528., {789., 794.}}],
   DynamicModuleValues:>{{
     DownValues[Shortcuts`Private`keyStyle$$] = {HoldPattern[
@@ -273,7 +276,7 @@ layouts:", "Text"], FrameStyle -> None, FrameMargins -> 10], "Ctrl `",
          Framed[
           Style[
           Shortcuts`Private`s, FontFamily -> "Courier", FontColor -> 
-           GrayLevel[0.36], FontWeight -> "Bold"], 
+           GrayLevel[0.365], FontWeight -> "Bold"], 
           ImageMargins -> {{2, 2}, {2, 2}}, FrameStyle -> GrayLevel[0.8], 
           Background -> GrayLevel[0.965]], StandardForm]}}},
   Initialization:>(
@@ -289,7 +292,7 @@ layouts:", "Text"], FrameStyle -> None, FrameMargins -> 10], "Ctrl `",
        Pattern[Shortcuts`Private`z, 
         Blank[]], Head[Shortcuts`Private`z] =!= String]] := SpanFromLeft; 
    Shortcuts`Private`keyHelp["Ctrl F1"] = (
-     Shortcuts`Private`keyHelp["Cmd Alt L"] = 
+     Shortcuts`Private`keyHelp["Cmd Alt O"] = 
      "Open the Shortcuts documentation page listing all extra keyboard \
 shortcuts."); 
    Shortcuts`Private`keyHelp["Ctrl Tab"] = 
@@ -333,7 +336,7 @@ without confirmation.", " All others are saved.",
       " The selected notebook is saved and reopened, if possible."]; 
    Shortcuts`Private`keyHelp["Ctrl H"] = "Evaluate Notebook."; 
    Shortcuts`Private`keyHelp["Ctrl Shift ,"] = (
-     Shortcuts`Private`keyHelp["Cmd PageDown ,"] = 
+     Shortcuts`Private`keyHelp["Cmd PageDown"] = 
      "Copy, paste and evaluate the selected expression from the inside of a \
 cell into a new notebook."); 
    Shortcuts`Private`keyHelp["Cmd Alt B"] = 
@@ -351,16 +354,17 @@ cell."; Shortcuts`Private`keyHelp["Cmd Alt M"] = "Minimize all notebooks.";
    Shortcuts`Private`keyHelp["F4"] = 
     "Insert \[LeftDoubleBracket]\[RightDoubleBracket]"; 
    Shortcuts`Private`keyHelp["F6"] = "Stack windows."; 
-   Shortcuts`Private`keyHelp["Ctrl T"] = 
-    StringJoin[
-     "Evaluate the user defined code written in joker.m from ", 
-      Shortcuts`Private`jokerdir]; 
+   Shortcuts`Private`keyHelp["Ctrl T"] = (Shortcuts`Private`keyHelp["Ctrl D"] = 
+     StringJoin[
+      "Evaluate the user defined code written in joker.m from ", 
+       Shortcuts`Private`jokerdir]); 
    Shortcuts`Private`keyHelp["Ctrl Shift J"] = 
     StringJoin[
      "Open the user configurable file joker.m from ", 
       Shortcuts`Private`jokerdir]; 
-   Shortcuts`Private`keyHelp["Ctrl F2"] = 
-    "Open $UserBaseDirectory by SystemOpen[$UserBaseDirectory]."; 
+   Shortcuts`Private`keyHelp["Ctrl F2"] = (
+     Shortcuts`Private`keyHelp["Cmd PageUp"] = 
+     "Open $UserBaseDirectory by SystemOpen[$UserBaseDirectory]."); 
    Shortcuts`Private`keyHelp["Ctrl `"] = "Evaluate Notebook."; 
    Shortcuts`Private`keyHelp["Ctrl Shift /"] = (
      Shortcuts`Private`keyHelp["Cmd Alt I"] = 
@@ -374,7 +378,7 @@ cell."; Shortcuts`Private`keyHelp["Cmd Alt M"] = "Minimize all notebooks.";
       Framed[
        Style[
        Shortcuts`Private`s, FontFamily -> "Courier", FontColor -> 
-        GrayLevel[0.36], FontWeight -> "Bold"], 
+        GrayLevel[0.365], FontWeight -> "Bold"], 
        ImageMargins -> {{2, 2}, {2, 2}}, FrameStyle -> GrayLevel[0.8], 
        Background -> GrayLevel[0.965]], StandardForm]; 
    Shortcuts`Private`toKeyStyle[{
@@ -394,14 +398,17 @@ cell."; Shortcuts`Private`keyHelp["Cmd Alt M"] = "Minimize all notebooks.";
    Null)]], "Output",
  CellChangeTimes->{3.642874763552122*^9, 3.642885454996561*^9, 
   3.6428876308508*^9, 3.642887692039693*^9, 3.642887760043006*^9, 
-  3.642888006935956*^9, 3.642946328823387*^9, 3.6429564866902742`*^9},
- CellLabel->"Out[2]=",
- CellID->221682291]
+  3.642888006935956*^9, 3.642946328823387*^9, 3.6429564866902742`*^9, 
+  3.6429738929080763`*^9, 3.6429760645551434`*^9, 3.6429868456718197`*^9, 
+  3.64298963634319*^9, 3.6430234896150727`*^9, 3.643024644296463*^9, 
+  3.643026270430936*^9},
+ CellLabel->"Out[15]=",
+ CellID->101904474]
 }, Open  ]]
 }, Open  ]]
 },
 WindowSize->{1040, 970},
-WindowMargins->{{152, Automatic}, {Automatic, -13}},
+WindowMargins->{{234, Automatic}, {18, Automatic}},
 CellContext->"Global`",
 FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (January 25, 2013)",
 StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStyles.nb", 
@@ -470,29 +477,29 @@ Cell[2536, 122, 78, 2, 31, "Details",
  CellID->222905350],
 Cell[2617, 126, 67, 2, 31, "Details",
  CellID->240026365]
-}, Closed]],
+}, Open  ]],
 Cell[CellGroupData[{
-Cell[2721, 133, 52, 1, 62, "ObjectName",
+Cell[2721, 133, 168, 3, 62, "ObjectName",
  CellID->1224892054],
-Cell[2776, 136, 371, 9, 71, "Usage",
+Cell[2892, 138, 371, 9, 71, "Usage",
  CellID->982511436],
-Cell[3150, 147, 205, 3, 23, "Notes",
+Cell[3266, 149, 205, 3, 23, "Notes",
  CellID->1067943069]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3392, 155, 55, 1, 30, "SeeAlsoSection",
+Cell[3508, 157, 55, 1, 30, "SeeAlsoSection",
  CellID->1255426704],
-Cell[3450, 158, 420, 12, 19, "SeeAlso",
+Cell[3566, 160, 420, 12, 19, "SeeAlso",
  CellID->929782353]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3907, 175, 199, 7, 66, "PrimaryExamplesSection",
+Cell[4023, 177, 199, 7, 66, "PrimaryExamplesSection",
  CellID->880084151],
 Cell[CellGroupData[{
-Cell[4131, 186, 317, 8, 48, "Input",
+Cell[4247, 188, 318, 8, 48, "Input",
  CellID->28637205],
-Cell[4451, 196, 10133, 202, 1595, "Output",
- CellID->221682291]
+Cell[4568, 198, 10413, 207, 1595, "Output",
+ CellID->101904474]
 }, Open  ]]
 }, Open  ]]
 }

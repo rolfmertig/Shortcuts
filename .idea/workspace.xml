@@ -2,7 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="110421ee-22a5-4e01-ba97-8c201896dd9d" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\repositorygit\Shortcuts2\Shortcuts\.Shortcuts.m.swp" afterPath="" />
+      <change type="DELETED" beforePath="C:\repositorygit\Shortcuts2\build\Shortcuts\Documentation\English\Guides\ShortcutsGuide.nb" afterPath="" />
+      <change type="DELETED" beforePath="C:\repositorygit\Shortcuts2\build\Shortcuts\Documentation\English\Index\_0.cfs" afterPath="" />
+      <change type="DELETED" beforePath="C:\repositorygit\Shortcuts2\build\Shortcuts\Documentation\English\Index\segments.gen" afterPath="" />
+      <change type="DELETED" beforePath="C:\repositorygit\Shortcuts2\build\Shortcuts\Documentation\English\Index\segments_3" afterPath="" />
+      <change type="DELETED" beforePath="C:\repositorygit\Shortcuts2\build\Shortcuts\Documentation\English\ReferencePages\Symbols\InstallShortcuts.nb" afterPath="" />
+      <change type="DELETED" beforePath="C:\repositorygit\Shortcuts2\build\Shortcuts\Documentation\English\ReferencePages\Symbols\Shortcuts.nb" afterPath="" />
+      <change type="DELETED" beforePath="C:\repositorygit\Shortcuts2\build\Shortcuts\Documentation\English\ReferencePages\Symbols\UninstallShortcuts.nb" afterPath="" />
+      <change type="DELETED" beforePath="C:\repositorygit\Shortcuts2\build\Shortcuts\Documentation\English\SpellIndex\_0.cfs" afterPath="" />
+      <change type="DELETED" beforePath="C:\repositorygit\Shortcuts2\build\Shortcuts\Documentation\English\SpellIndex\segments.gen" afterPath="" />
+      <change type="DELETED" beforePath="C:\repositorygit\Shortcuts2\build\Shortcuts\Documentation\English\SpellIndex\segments_3" afterPath="" />
+      <change type="DELETED" beforePath="C:\repositorygit\Shortcuts2\build\Shortcuts\PacletInfo.m" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Shortcuts.zip" afterPath="$PROJECT_DIR$/Shortcuts.zip" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReInstallShortcuts.nb" afterPath="$PROJECT_DIR$/ReInstallShortcuts.nb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Shortcuts/Shortcut.m" afterPath="$PROJECT_DIR$/Shortcuts/Shortcut.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Shortcuts/Shortcuts.m" afterPath="$PROJECT_DIR$/Shortcuts/Shortcuts.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Shortcuts/Documentation/English/ReferencePages/Symbols/Shortcuts.nb" afterPath="$PROJECT_DIR$/Shortcuts/Documentation/English/ReferencePages/Symbols/Shortcuts.nb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Shortcuts2.iws" />
@@ -29,8 +44,28 @@
       <file leaf-file-name="Shortcuts.m" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Shortcuts/Shortcuts.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.76613885">
-              <caret line="223" column="23" selection-start-line="223" selection-start-column="23" selection-end-line="223" selection-end-column="24" />
+            <state vertical-scroll-proportion="-10.202192">
+              <caret line="195" column="21" selection-start-line="195" selection-start-column="21" selection-end-line="195" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PacletInfo.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PacletInfo.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="installShortcutsPackage.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Shortcuts/installShortcutsPackage.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -40,7 +75,7 @@
         <entry file="file://$PROJECT_DIR$/Shortcuts/Shortcut.m">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+              <caret line="387" column="4" selection-start-line="387" selection-start-column="4" selection-end-line="387" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -68,7 +103,8 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="130" />
+    <option name="x" value="171" />
+    <option name="y" value="33" />
     <option name="width" value="1535" />
     <option name="height" value="1007" />
   </component>
@@ -225,7 +261,7 @@
       <option name="number" value="Default" />
       <updated>1432672273736</updated>
       <workItem from="1432672275042" duration="3115000" />
-      <workItem from="1433972317641" duration="90000" />
+      <workItem from="1433972317641" duration="7897000" />
     </task>
     <task id="LOCAL-00001" summary="nearly">
       <created>1432672523181</created>
@@ -239,18 +275,25 @@
       <option name="project" value="LOCAL" />
       <updated>1432677337407</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="nearly">
+      <created>1433972420485</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1433972420485</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3205000" />
+    <option name="totallyTimeSpent" value="11012000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="130" y="0" width="1535" height="1007" extended-state="0" />
-    <editor active="false" />
+    <frame x="171" y="33" width="1535" height="1007" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40871614" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -258,13 +301,12 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25762713" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16949153" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40877193" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -311,18 +353,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Shortcuts/installShortcutsPackage.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Shortcuts/Shortcut.m">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <caret line="387" column="4" selection-start-line="387" selection-start-column="4" selection-end-line="387" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PacletInfo.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Shortcuts/Shortcuts.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76613885">
-          <caret line="223" column="23" selection-start-line="223" selection-start-column="23" selection-end-line="223" selection-end-column="24" />
+        <state vertical-scroll-proportion="-10.202192">
+          <caret line="195" column="21" selection-start-line="195" selection-start-column="21" selection-end-line="195" selection-end-column="21" />
           <folding />
         </state>
       </provider>

@@ -18,8 +18,8 @@ Shortcut["Minimize"] :=
     
 Shortcut["DeleteOutputAndMessages"] :=
     ( "Info: Delete all output (including Print cells) in the selected notebook and contents in the Messages notebook ";
-      FrontEndTokenExecute @ "DeleteGeneratedCells";
-      NotebookDelete @ Cells[ CellStyle -> "Print"];
+      If[$VersionNumber >= 10, FrontEndTokenExecute @ "DeleteGeneratedCells"];
+      NotebookDelete @ Cells[ CellStyle -> ( "Output" | "Print" | "Message" )];
       NotebookDelete @ Cells @ MessagesNotebook[];
     );
 
@@ -79,7 +79,8 @@ Shortcut["RestartFrontEnd", enb_:EvaluationNotebook[]] :=
     ( "Info: restart the FrontEnd including closing all Untitled notebooks and potentially repoen the already saved notebook from 
              where this shortcut is executed";
     Block[{reopenfilename = "", StartTime, ToFileTime, Id, mproc},
-    (* the restarting is done throu the OS. On MacOSX and Linux there needs to be a grace time *)
+    (* the restarting is done throu the OS. On MacOSX and Linux there needs to be a grace time,
+        and on Windows 7 it is also a good idea *)
 	With[{wait = "0.5" (* seconds *)}, (* this is heuristically determined! You may have to change this on you computer! *)
 		If[ ("FileName" /. NotebookInformation[enb]) === "FileName"
 			,
@@ -104,7 +105,7 @@ Shortcut["RestartFrontEnd", enb_:EvaluationNotebook[]] :=
 		ReadList["!taskkill /PID " <> 
 		ToString[(Last@SortBy[mproc, 
 		(* if there are processes by other users we might get Access Denied, so we skip them: *)	
-		#@StartTime @ ToFileTime[]&] ) @ Id ] <> " /f & start \"\" \"" <> 
+		#@StartTime @ ToFileTime[]&] ) @ Id ] <> " /f & timeout /t 0.3 & start \"\" \"" <> 
 		FileNameJoin[{$InstallationDirectory, "Mathematica.exe"}] <> "\" " <> reopenfilename
 		  ,String];
     	,
@@ -377,9 +378,9 @@ Shortcut["OpenUserBaseDirectory"] :=  SystemOpen[$UserBaseDirectory];
 
 Shortcut["OpenShortcutHelpPage"] := ( 
                                       NotebookOpen["paclet:Shortcuts/ref/Shortcuts", 
- 												 WindowSize -> {Scaled[1/2], Scaled[1]}, 
-												 WindowMargins -> {{0, Automatic}, {Automatic, 0}}
-									  ]
-									);
+               												 WindowSize -> {Scaled[1/2], Scaled[1]},
+						              						 WindowMargins -> {{0, Automatic}, {Automatic, 0}}
+									                    ]
+									                  );
     
 End[];
