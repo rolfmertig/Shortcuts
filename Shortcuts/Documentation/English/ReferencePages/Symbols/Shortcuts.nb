@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     16887,        493]
-NotebookOptionsPosition[     14412,        402]
-NotebookOutlinePosition[     14864,        419]
-CellTagsIndexPosition[     14821,        416]
+NotebookDataLength[     16908,        493]
+NotebookOptionsPosition[     14433,        402]
+NotebookOutlinePosition[     14885,        419]
+CellTagsIndexPosition[     14842,        416]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -190,7 +190,7 @@ Cell[BoxData[{
   RowBox[{"Needs", "[", "\"\<Shortcuts`\>\"", "]"}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{"Shortcuts", "[", "]"}]}], "Input",
- CellLabel->"In[10]:=",
+ CellLabel->"In[3]:=",
  CellID->263767708],
 
 Cell[BoxData[
@@ -202,7 +202,7 @@ Cell[BoxData[
         StringJoin["In the following table the ", 
          Shortcuts`Private`keyStyle$$["Win"], 
          " key is meant to be the Windows key next to the ", 
-         Shortcuts`Private`keyStyle$$["Alt"], "key.\n"], "Unix", 
+         Shortcuts`Private`keyStyle$$["Alt"], " key.\n"], "Unix", 
         StringJoin["In the following table the ", 
          Shortcuts`Private`keyStyle$$["Mod1"], 
          " key is usually the Windows key and the ", 
@@ -394,9 +394,9 @@ cell."; Shortcuts`Private`keyHelp["Cmd Alt M"] = "Minimize all notebooks.";
        Pattern[Shortcuts`Private`b, 
         Blank[Symbol]]}] := {Shortcuts`Private`a, Shortcuts`Private`b}; 
    Null)]], "Output",
- CellChangeTimes->{3.6431597901947813`*^9},
- CellLabel->"Out[11]=",
- CellID->131642349]
+ CellChangeTimes->{3.6431597901947813`*^9, 3.643160471353367*^9},
+ CellLabel->"Out[4]=",
+ CellID->320075134]
 }, Open  ]]
 }, Open  ]]
 },
@@ -489,10 +489,10 @@ Cell[CellGroupData[{
 Cell[3649, 172, 356, 11, 68, "PrimaryExamplesSection",
  CellID->880084151],
 Cell[CellGroupData[{
-Cell[4030, 187, 200, 6, 48, "Input",
+Cell[4030, 187, 199, 6, 48, "Input",
  CellID->263767708],
-Cell[4233, 195, 10151, 203, 1595, "Output",
- CellID->131642349]
+Cell[4232, 195, 10173, 203, 1595, "Output",
+ CellID->320075134]
 }, Open  ]]
 }, Open  ]]
 }
