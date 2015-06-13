@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     16956,        494]
-NotebookOptionsPosition[     14481,        403]
-NotebookOutlinePosition[     14933,        420]
-CellTagsIndexPosition[     14890,        417]
+NotebookDataLength[     17090,        497]
+NotebookOptionsPosition[     14615,        406]
+NotebookOutlinePosition[     15067,        423]
+CellTagsIndexPosition[     15024,        420]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -190,7 +190,7 @@ Cell[BoxData[{
   RowBox[{"Needs", "[", "\"\<Shortcuts`\>\"", "]"}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{"Shortcuts", "[", "]"}]}], "Input",
- CellLabel->"In[13]:=",
+ CellLabel->"In[1]:=",
  CellID->263767708],
 
 Cell[BoxData[
@@ -236,7 +236,7 @@ layouts:", "Text"], Background -> LightGray, FrameStyle -> None, FrameMargins ->
              Shortcuts`Private`keyHelp[#]}& , {
             "Ctrl F1", "Ctrl Tab", "Ctrl Shift Tab", "Ctrl Shift \[UpArrow]", 
              "Ctrl ;", "Ctrl Shift \[DownArrow]", "Ctrl Cmd X", "Cmd Alt X", 
-             "Ctrl Q", "Ctrl R", "Ctrl H", "Ctrl Shift ,", "Cmd Alt B", 
+             "Ctrl Shift Q", "Ctrl R", "Ctrl H", "Cmd Alt C", "Cmd Alt B", 
              "Cmd Alt M", "Cmd Alt U", "Cmd Alt D", "Cmd Alt Delete", 
              "Ctrl Shift Delete", "F4", "F6", "Ctrl T", "Ctrl Shift J", 
              "Ctrl F2", "Cmd Alt I", 
@@ -325,7 +325,9 @@ in MessagesNotebook[]."));
    Shortcuts`Private`keyHelp["Ctrl Alt X"] = (
      Shortcuts`Private`keyHelp["Cmd Alt X"] = 
      "Delete all non-Input and non-Code cells."); 
-   Shortcuts`Private`keyHelp["Ctrl Q"] = "Quit and restart the kernel."; 
+   Shortcuts`Private`keyHelp["Ctrl Q"] = (
+     Shortcuts`Private`keyHelp["Ctrl Shift Q"] = 
+     "Quit and restart the kernel."); 
    Shortcuts`Private`keyHelp["Ctrl R"] = 
     StringJoin[
      "Quit and restart the front end. All Untitled notebooks are closed \
@@ -333,9 +335,10 @@ without confirmation.", " All others are saved.",
       " The selected notebook is saved and reopened, if possible."]; 
    Shortcuts`Private`keyHelp["Ctrl H"] = "Evaluate Notebook."; 
    Shortcuts`Private`keyHelp["Ctrl Shift ,"] = (
-     Shortcuts`Private`keyHelp["Cmd PageDown"] = 
-     "Copy, paste and evaluate the selected expression from the inside of a \
-cell into a new notebook."); 
+     Shortcuts`Private`keyHelp["Cmd Alt C"] = (
+      Shortcuts`Private`keyHelp["Cmd PageDown"] = 
+      "Copy, paste and evaluate the selected expression from the inside of a \
+cell into a new notebook.")); 
    Shortcuts`Private`keyHelp["Cmd Alt B"] = 
     "Select the current cell. The insertion point can be anywhere inside the \
 cell."; Shortcuts`Private`keyHelp["Cmd Alt M"] = "Minimize all notebooks."; 
@@ -395,9 +398,9 @@ cell."; Shortcuts`Private`keyHelp["Cmd Alt M"] = "Minimize all notebooks.";
         Blank[Symbol]]}] := {Shortcuts`Private`a, Shortcuts`Private`b}; 
    Null)]], "Output",
  CellChangeTimes->{3.6431597901947813`*^9, 3.643160471353367*^9, 
-  3.643161665486539*^9, 3.64316200605676*^9},
- CellLabel->"Out[14]=",
- CellID->120506807]
+  3.643161665486539*^9, 3.64316200605676*^9, 3.6431624219858212`*^9},
+ CellLabel->"Out[2]=",
+ CellID->211059857]
 }, Open  ]]
 }, Open  ]]
 },
@@ -490,10 +493,10 @@ Cell[CellGroupData[{
 Cell[3649, 172, 356, 11, 68, "PrimaryExamplesSection",
  CellID->880084151],
 Cell[CellGroupData[{
-Cell[4030, 187, 200, 6, 48, "Input",
+Cell[4030, 187, 199, 6, 48, "Input",
  CellID->263767708],
-Cell[4233, 195, 10220, 204, 1595, "Output",
- CellID->120506807]
+Cell[4232, 195, 10355, 207, 1595, "Output",
+ CellID->211059857]
 }, Open  ]]
 }, Open  ]]
 }
