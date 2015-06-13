@@ -20,9 +20,15 @@ Needs["Shortcuts`"]; Shortcuts`InstallShortcuts[];
 
 *)
 
+
+
 BeginPackage["Shortcuts`"]
 
-keyevent;
+(* This is just to let the ref guides be displayed without warning *)
+If[ 9 <= $VersionNumber < 10,
+    SetOptions[$FrontEndSession, MessageOptions -> {"InsufficientVersionWarning" -> False}]
+];
+
 
 Shortcuts::usage = "Shortcuts[] gives a list of extra keyboard shortcuts which were defined by InstallShortcuts[]."
 
@@ -49,13 +55,14 @@ Shortcuts[] :=
         Dynamic[
         Style[
                 Column[{       
-                   "In the following table the " <>
                                   Switch[$OperatingSystem,
                                            "Windows", 
+                                           "In the following table the " <>
                                            keyStyle["Win"] <> 
                                              " key is meant to be the Windows key next to the "<>
                                            keyStyle["Alt"] <> "key.\n",
                                            "Unix", 
+                                           "In the following table the " <>
                                            keyStyle["Mod1"] <> 
                                              " key is usually the Windows key and the "<>
                                            keyStyle["Mod2"] <> 
@@ -153,19 +160,20 @@ Shortcuts[] :=
                 ,
                 StringReplace[#, {"Cmd" -> "\[CloverLeaf]", "Alt" -> "Alt"}]& @ ToString[#, StandardForm]& @ Grid[ toKeyStyle /@
                   ( {#, keyHelp[#]}& /@ {
-               (*keyevent[26]*) "Cmd Alt O",
+               (*keyevent[26]*) "Cmd Escape",
                 (*keyevent[1] *) "Ctrl Tab",
                 (*keyevent[2] *) "Ctrl Shift Tab",
                 (*keyevent[12]*)   "Cmd Shift \[UpArrow]",
-                (*keyevent[15]*) "Cmd Shift ;", 
                 (*keyevent[16]*) "Cmd Shift \[DownArrow]",
                 (*keyevent[7] *) "Cmd Shift X", 
                 (*keyevent[11]*) "Ctrl Q", 
                 (*keyevent[9] *) "Ctrl R", 
                 (*keyevent[13]*) "Ctrl H", 
-                (*keyevent[27]*) "Cmd Alt I", 
                 (*keyevent[25]*) "Cmd PageDown",
-                (*keyevent[]*) "Cmd PageUp",
+                (*keyevent[15]*) "Cmd PageUp",
+                (*keyevent[28]*) "Cmd Home",
+                (*keyevent[28]*) "Cmd End",
+                (*keyevent[27]*) "Cmd Alt I",
                 (*keyevent[6] *) "Cmd Alt B", 
                 (*keyevent[3] *) "Cmd Alt M",
                 (*keyevent[4] *) "Cmd Alt U",
@@ -193,12 +201,12 @@ Shortcuts[] :=
             keyHelp[z_ /; Head[z] =!= String] :=
                 SpanFromLeft;
             keyHelp["Ctrl F1"]                 =  (* Windows, Linux *)
-            keyHelp["Cmd Alt O"]               = "Open the Shortcuts documentation page listing all extra keyboard shortcuts.";  (* MacOSX *)
+            keyHelp["Cmd Escape"]               = "Open the Shortcuts documentation page listing all extra keyboard shortcuts.";  (* MacOSX *)
             keyHelp["Ctrl Tab"]                = "Delete all output and evaluate all cells from the top to the insertion point.";
             keyHelp["Ctrl Shift Tab"]          = "Delete all output, restart the kernel and evaluate all cells from the top to the insertion point.";
             keyHelp["Ctrl Shift \[UpArrow]"]   = "Evaluate all cells from the top of the notebook until the insertion point.";
             keyHelp["Ctrl ;"]                  =  (* Windows, Linux *)
-            keyHelp["Cmd Shift ;"]             = "Select all cells from the top of the notebook to the insertion point.";
+            keyHelp["Cmd Home"]                = "Select all cells from the top of the notebook to the insertion point.";
             keyHelp["Ctrl Shift \[DownArrow]"] = "Select all cells from the insertion point until the end of the notebook.";
             keyHelp["Ctrl Shift Tab"]          = "Delete all output, restart the kernel and ev,,aluate all cells from the top to the insertion point.";
             keyHelp["Ctrl Shift \[UpArrow]"]   =  (* Windows, Linux *)
@@ -227,15 +235,16 @@ Shortcuts[] :=
             keyHelp["Cmd Alt Delete"]          = "Quit the front end, saving named notebooks first.";
             keyHelp["Ctrl Shift Delete"]       = "Close all Untitled notebooks without confirmation.";
             keyHelp["F4"]                      = "Insert \[LeftDoubleBracket]\[RightDoubleBracket]";
-            keyHelp["F6"]                      = "Stack windows.";
+            keyHelp["F6"]                      =  (* Windows, Linux *)
+            keyHelp["Cmd PageUp"]              = "Stack windows.";
             keyHelp["Ctrl T"]                  =  (* Windows, Linux *)
             keyHelp["Ctrl D"]                  = "Evaluate the user defined code written in joker.m from " <> jokerdir;
             keyHelp["Ctrl Shift J"]            = "Open the user configurable file joker.m from " <> jokerdir;
-            keyHelp["Ctrl F2"]                 = (* Windows, Linux *)
-            keyHelp["Cmd PageUp"]              = "Open $UserBaseDirectory by SystemOpen[$UserBaseDirectory].";
+            keyHelp["Ctrl F2"]                 =  (* Windows, Linux *)
+            keyHelp["Cmd End"]                 = "Open $UserBaseDirectory by SystemOpen[$UserBaseDirectory].";
             keyHelp["Ctrl `"]                  = "Evaluate Notebook.";
             keyHelp["Ctrl Shift /"]            =  (* Windows *)
-            keyHelp["Cmd Alt I"]               = "Open the init.m file found by FindFile[\"init.m\"] in the front end."; (* Linux *)
+            keyHelp["Cmd Alt I"]               =  (* MacOSX, Linux *) "Open the init.m file found by FindFile[\"init.m\"] in the front end."; (* Linux *)
             keyHelp["Ctrl ["]  (*]*)           = "Insert [["; (* ]] *)
             (* [[[ *)
             keyHelp["Ctrl ]"]                  = "Insert ]]"; 
@@ -423,54 +432,65 @@ evaluated, potentially asking for another
 (* Restart that Mathematica front end which was started last *)
 	Item[	KeyEvent[\"r\", Modifiers -> {Control}],
 				KernelExecute[ Needs[\"Shortcuts`\"]; Shortcuts`Shortcut[\"RestartFrontEnd\"] ], MenuEvaluator -> Automatic
-],
+	],
 ";
             keyevent["QuitFrontEnd"] = keyevent[10] = 
-                If[ $OperatingSystem === "MacOSX",
-                    "",
-                    "
+            If[ $OperatingSystem === "MacOSX",
+                "",
+                "
 (* Quit the last Mathematica front end *)
-       Item[KeyEvent[\"Delete\", Modifiers -> {Command, Option}],
+	Item[KeyEvent[\"Delete\", Modifiers -> {Command, Option}],
             KernelExecute[ Needs[\"Shortcuts`\"]; Shortcuts`Shortcut[\"QuitFrontEnd\"] ], MenuEvaluator -> Automatic
-       ],"
-                ];
+	],
+"
+            ];
             keyevent["RestartKernel"] = keyevent[11] = 
             "
-(* Quit and restart the Kernel; using this by Kuba: *)
+(* Quit and restart the kernel; using this by Kuba: *)
 			(* http://mathematica.stackexchange.com/questions/82803/quit-the-kernel-and-start-new-session-automatically *)
-		Item[KeyEvent[\"q\",  Modifiers -> " <> 
+	Item[KeyEvent[\"q\",  Modifiers -> " <> 
                                       If[ $OperatingSystem === "Unix",
                                           "{Control, Shift}",
                                           "{Control}"
                                       ] <>
                     "],     
            KernelExecute[ Needs[\"Shortcuts`\"]; Shortcuts`Shortcut[\"RestartKernel\"] ], MenuEvaluator -> Automatic
-     	],";
+	],
+";
             keyevent["EvaluateFromTop"] = keyevent[12] = 
             "
 (* Select all Input and Code cells upwards from where the mouse is and evaluate those cells. *)
-		Item[KeyEvent[\"Up\", Modifiers -> {" <>
+	Item[KeyEvent[\"Up\", Modifiers -> {" <>
                                             If[ $OperatingSystem === "MacOSX",
                                                 "Command",
                                                 "Control"
                                             ] <> ", Shift}
          ],
          KernelExecute[Needs[\"Shortcuts`\"]; Shortcuts`Shortcut[\"EvaluateFromTop\"]], MenuEvaluator -> Automatic
-     	],";
+	],";
             keyevent["EvaluateNotebook"] = keyevent[13] = 
             "
-(* Evaluate Notebook *)
-		Item[KeyEvent[\"h\", Modifiers -> {Control}],\"EvaluateNotebook\"
-		],";
+(* Evaluate Notebook and move to the end *)
+	Item[KeyEvent[\"h\", Modifiers -> {Control}
+		 ], 
+         KernelExecute[Needs[\"Shortcuts`\"]; Shortcuts`Shortcut[\"EvaluateNotebook\"]], MenuEvaluator -> Automatic
+	],
+";
             keyevent["EvaluateNotebook2"] = keyevent[14] = 
             "
 (* Evaluate Notebook *)
-		Item[KeyEvent[\"`\", Modifiers -> {Control}],\"EvaluateNotebook\"
-		],";
+	Item[KeyEvent[\"`\", Modifiers -> {Control}, \"EvaluateNotebook\"
+		 ], 
+         KernelExecute[Needs[\"Shortcuts`\"]; Shortcuts`Shortcut[\"EvaluateNotebook\"]], MenuEvaluator -> Automatic
+	],
+";
             keyevent["SelectToTop"] = keyevent[15] = 
             "
-	(* Select all cells upwards from where the mouse is *)
-		Item[KeyEvent[\";\", Modifiers -> {" <>
+(* Select all cells upwards from where the mouse is *)
+	Item[KeyEvent[\"" <> If[ $OperatingSystem === "MacOSX",
+                             "Home",
+                             ";"
+                         ] <> "\", Modifiers -> {" <>
                                             If[ $OperatingSystem === "MacOSX",
                                                 "Command",
                                                 "Control"
@@ -480,7 +500,7 @@ evaluated, potentially asking for another
 	],";
             keyevent["SelectToBottom"] = keyevent[16] = 
                             "
-	(* Select all cells downwards from where the mouse is *)
+(* Select all cells downwards from where the mouse is *)
 	Item[KeyEvent[\"Down\", Modifiers -> {" <>
                                             If[ $OperatingSystem === "MacOSX",
                                                 "Command",
@@ -533,9 +553,16 @@ evaluated, potentially asking for another
 	],";
             keyevent["F6"] = keyevent[22] = 
                 "
-	(* on Linux and  Windows: Stack windows *)
-	Item[KeyEvent[\"F6\"],
-		KernelExecute[ Needs[\"Shortcuts`\"]; Shortcuts`Shortcut[\"F6\"] ] , MenuEvaluator -> Automatic
+	(* on Linux and  Windows: Stack windows  by F6, on MacOSX by Cmd PageUp*)
+	Item[KeyEvent[\""<> If[ $OperatingSystem === "MacOSX",
+                            "PageUp",
+                            "F6"
+                        ] <> "\"" <>
+            If[ $OperatingSystem === "MacOSX",
+                ", Modifiers -> {Command}",
+                ""
+            ] <> "],
+	    " <> "KernelExecute[ Needs[\"Shortcuts`\"]; Shortcuts`Shortcut[\"F6\"] ] , MenuEvaluator -> Automatic
 	],";
             keyevent["RunJoker"] = keyevent[23] = 
                 "
@@ -574,7 +601,7 @@ evaluated, potentially asking for another
             keyevent["OpenShortcutsHelp"] = keyevent[26] =
             If[ $OperatingSystem === "MacOSX",
                 "
-  Item[KeyEvent[\"O\", Modifiers -> {Command, Option}],
+  Item[KeyEvent[\"Escape\", Modifiers -> {Command}],
         KernelExecute[ Needs[\"Shortcuts`\"]; Shortcuts`Shortcut[\"OpenShortcutHelpPage\"]], MenuEvaluator -> Automatic
 	],",
                 "
@@ -604,11 +631,13 @@ evaluated, potentially asking for another
             keyevent["OpenUserBaseDirectory"] = keyevent[28] = 
                 "
 	(* open the $UserBaseDirectory file *)
-	Item[KeyEvent[\""<>If[$OperatingSystem === "MacOSX", "PageUp", "F2"
-	                     ]<>"\", Modifiers -> {" <> If[ $OperatingSystem === "MacOSX",
-                                                 "Command",
-                                                 "Control"
-                                             ] <>"}],
+	Item[KeyEvent[\""<>If[ $OperatingSystem === "MacOSX",
+                           "End",
+                           "F2"
+                       ]<>"\", Modifiers -> {" <> If[ $OperatingSystem === "MacOSX",
+                                                      "Command",
+                                                      "Control"
+                                                  ] <>"}],
         KernelExecute[ Needs[\"Shortcuts`\"]; Shortcuts`Shortcut[\"OpenUserBaseDirectory\"]], MenuEvaluator -> Automatic
 	],";
             mykeyevents = StringJoin @@ Array[keyevent, 28];
@@ -688,7 +717,10 @@ evaluated, potentially asking for another
                                             FileNameJoin[{
                                                  $UserBaseDirectory, "Applications", "Shortcuts", "Documentation", "English", "ReferencePages", "Symbols",
                                                  "Shortcuts.nb"}],
-                                                  WindowSize -> {Scaled[1/2], If[$OperatingSystem==="Unix", Scaled[.9], Scaled[1]]}, 
+                                                  WindowSize -> {Scaled[1/2], If[ $OperatingSystem==="Unix",
+                                                                                  Scaled[.9],
+                                                                                  Scaled[1]
+                                                                              ]}, 
                                                  WindowMargins -> 
                                                      If[ $OperatingSystem === "Unix",
                                                          {{8, Automatic}, {Automatic, 8}},

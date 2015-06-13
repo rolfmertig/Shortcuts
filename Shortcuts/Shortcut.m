@@ -14,6 +14,15 @@ Shortcut["Minimize"] :=
     ( "Info: this minimizes all windows ";
       FrontEndExecute[ {FrontEndToken[#1, "WindowMiniaturize"]}]& /@ Notebooks[] 
     );
+
+Shortcut["EvaluateNotebook"] :=
+    ( "Info: Evaluate Notebook and move to the end";
+      FrontEndExecute[ {FrontEndToken[SelectedNotebook[], "EvaluateNotebook"]}];
+      FrontEndExecute[{
+			FrontEnd`SelectionMove[FrontEnd`InputNotebook[], After, Notebook],
+			FrontEnd`FrontEndToken[FrontEnd`InputNotebook[], "ScrollNotebookEnd"]
+		}]
+    );
     
     
 Shortcut["DeleteOutputAndMessages"] :=
@@ -329,7 +338,9 @@ Shortcut["TestRun2"] :=
     NotebookDelete @ Cells[ CellStyle -> ("Output"|"Print"|"Message")]; (* usually this makes sense *)
     NotebookDelete @ Cells @ MessagesNotebook[]; (* and this too *)
     Shortcut["SelectToTop"];   (* select all cells from the cursor up to the beginning *)
+    If[$OperationgSystem =!= "Windows", Pause[.2]];
     Shortcut["RestartKernel"]; (* restart the kernel *)
+    If[$OperationgSystem =!= "Windows", Pause[.2]];
     SelectionEvaluate[EvaluationNotebook[]]; (* evaluate all selected *)
     );
 
