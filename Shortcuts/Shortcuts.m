@@ -652,7 +652,7 @@ evaluated, potentially asking for another
                   mykeyeventtrans = FileNameJoin[{$UserBaseDirectory, "SystemFiles", "FrontEnd", "TextResources", os, "KeyEventTranslations.tr"}],
                   myjokerfilename = FileNameJoin[{$UserBaseDirectory, "SystemFiles", "FrontEnd", "TextResources", os, "joker.m"}], 
                   keytext, mykeytext,
-                  myjokerdir
+                  myjokerdir, helpopen
                 },
                     myjokerdir = DirectoryName[myjokerfilename];
                     If[ FileExistsQ[mykeyeventtrans],
@@ -715,7 +715,7 @@ evaluated, potentially asking for another
                         Export[mykeyeventtrans, mykeytext, "Text", CharacterEncoding :> $CharacterEncoding],
                         Print["OH NO!, MT is not a string. Exiting.", Quit[]];
                     ];
-                    SetSelectedNotebook @ NotebookOpen[
+                    helpopen :=SetSelectedNotebook @ NotebookOpen[
                                             FileNameJoin[{
                                                  $UserBaseDirectory, "Applications", "Shortcuts", "Documentation", "English", "ReferencePages", "Symbols",
                                                  "Shortcuts.nb"}],
@@ -729,6 +729,11 @@ evaluated, potentially asking for another
                                                          {{0, Automatic}, {Automatic, 0}}
                                                      ]
                                       ];
+                     helpopen;                      
+                     If[$OperatingSystem === "Unix",
+                     	FrontEndTokenExecute@"StackWindows";
+                     	helpopen
+                     ];
                     (*
                     CellPrint[ExpressionCell[Column[{ "Two files have been generated:",
                       ( Button[StringReplace[#, $UserBaseDirectory -> "$UserBaseDirectory"],

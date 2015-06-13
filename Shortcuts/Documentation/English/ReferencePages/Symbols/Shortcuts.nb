@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     16935,        494]
-NotebookOptionsPosition[     14460,        403]
-NotebookOutlinePosition[     14912,        420]
-CellTagsIndexPosition[     14869,        417]
+NotebookDataLength[     16956,        494]
+NotebookOptionsPosition[     14481,        403]
+NotebookOutlinePosition[     14933,        420]
+CellTagsIndexPosition[     14890,        417]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -190,7 +190,7 @@ Cell[BoxData[{
   RowBox[{"Needs", "[", "\"\<Shortcuts`\>\"", "]"}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{"Shortcuts", "[", "]"}]}], "Input",
- CellLabel->"In[11]:=",
+ CellLabel->"In[13]:=",
  CellID->263767708],
 
 Cell[BoxData[
@@ -395,9 +395,9 @@ cell."; Shortcuts`Private`keyHelp["Cmd Alt M"] = "Minimize all notebooks.";
         Blank[Symbol]]}] := {Shortcuts`Private`a, Shortcuts`Private`b}; 
    Null)]], "Output",
  CellChangeTimes->{3.6431597901947813`*^9, 3.643160471353367*^9, 
-  3.643161665486539*^9},
- CellLabel->"Out[12]=",
- CellID->329013325]
+  3.643161665486539*^9, 3.64316200605676*^9},
+ CellLabel->"Out[14]=",
+ CellID->120506807]
 }, Open  ]]
 }, Open  ]]
 },
@@ -492,8 +492,8 @@ Cell[3649, 172, 356, 11, 68, "PrimaryExamplesSection",
 Cell[CellGroupData[{
 Cell[4030, 187, 200, 6, 48, "Input",
  CellID->263767708],
-Cell[4233, 195, 10199, 204, 1595, "Output",
- CellID->329013325]
+Cell[4233, 195, 10220, 204, 1595, "Output",
+ CellID->120506807]
 }, Open  ]]
 }, Open  ]]
 }
