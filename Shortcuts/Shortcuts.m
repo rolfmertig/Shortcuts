@@ -60,7 +60,7 @@ Shortcuts[] :=
                                            "In the following table the " <>
                                            keyStyle["Win"] <> 
                                              " key is meant to be the Windows key next to the "<>
-                                           keyStyle["Alt"] <> "key.\n",
+                                           keyStyle["Alt"] <> " key.\n",
                                            "Unix", 
                                            "In the following table the " <>
                                            keyStyle["Mod1"] <> 
