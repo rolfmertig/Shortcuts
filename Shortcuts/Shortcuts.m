@@ -129,10 +129,10 @@ Shortcuts[] :=
                 (*keyevent[16]*) "Ctrl Shift \[DownArrow]",
               (*keyevent[7] *) "Ctrl Cmd X", 
               (*keyevent[8] *) "Cmd Alt X", 
-                (*keyevent[11]*) "Ctrl Q", 
+                (*keyevent[11]*) "Ctrl Shift Q", 
                 (*keyevent[9] *) "Ctrl R", 
                 (*keyevent[13]*) "Ctrl H", 
-                (*keyevent[25]*) "Ctrl Shift ,", 
+                (*keyevent[25]*) "Cmd Alt C", 
                 (*keyevent[6] *) "Cmd Alt B", 
                 (*keyevent[3] *) "Cmd Alt M",
                 (*keyevent[4] *) "Cmd Alt U",
@@ -220,12 +220,14 @@ Shortcuts[] :=
             keyHelp["Cmd Shift X"]             =  (* Macintosh *) "Delete all generated cells, like Output, Message and Print cells, also in MessagesNotebook[].";
             keyHelp["Ctrl Alt X"]              =  (* Windows *)
             keyHelp["Cmd Alt X"]               = "Delete all non-Input and non-Code cells."; (* Linux *) (*  does not work on Macintosh *)
-            keyHelp["Ctrl Q"]                  = "Quit and restart the kernel.";
+            keyHelp["Ctrl Q"]                  =  (* Windows *)
+            keyHelp["Ctrl Shift Q"]            = "Quit and restart the kernel."; (* Linux *)
             keyHelp["Ctrl R"]                  = "Quit and restart the front end. All Untitled notebooks are closed without confirmation." <> 
                                                   " All others are saved." <>
                                                   " The selected notebook is saved and reopened, if possible.";
             keyHelp["Ctrl H"]                  = "Evaluate Notebook.";
-            keyHelp["Ctrl Shift ,"]            =  (* Windows, Linux *)
+            keyHelp["Ctrl Shift ,"]            =  (* Windows*)
+            keyHelp["Cmd Alt C"]               =  (* Linux *)
             keyHelp["Cmd PageDown"]            = "Copy, paste and evaluate the selected expression from the inside of a cell into a new notebook."; (*MacOSX*)
             keyHelp["Cmd Alt B"]               = "Select the current cell. The insertion point can be anywhere inside the cell.";
             keyHelp["Cmd Alt M"]               = "Minimize all notebooks.";

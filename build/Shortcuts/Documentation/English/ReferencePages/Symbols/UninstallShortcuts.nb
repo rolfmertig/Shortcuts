@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     10392,        318]
+NotebookDataLength[     10393,        318]
 NotebookOptionsPosition[      7642,        243]
-NotebookOutlinePosition[      9663,        293]
-CellTagsIndexPosition[      9620,        290]
+NotebookOutlinePosition[      9664,        293]
+CellTagsIndexPosition[      9621,        290]
 WindowTitle->UninstallShortcuts
 WindowFrame->Normal*)
 
@@ -256,7 +256,7 @@ TaggingRules->{
     Left], "HasOptions" -> False, "ExampleCounter" -> 1, 
   "ExamplePageLinks" -> {}, "NeedPlatMsgIn" -> None, "RootCaptions" -> "", 
   "Metadata" -> {
-   "built" -> "{2015, 6, 13, 0, 1, 58.4730928}", 
+   "built" -> "{2015, 6, 13, 0, 21, 49.7077592}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "Shortcuts`", 
     "keywords" -> {}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 

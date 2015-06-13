@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      8295,        251]
+NotebookDataLength[      8296,        251]
 NotebookOptionsPosition[      6071,        188]
-NotebookOutlinePosition[      7599,        227]
-CellTagsIndexPosition[      7556,        224]
+NotebookOutlinePosition[      7600,        227]
+CellTagsIndexPosition[      7557,        224]
 WindowTitle->ShortcutsGuide
 WindowFrame->Normal*)
 
@@ -201,7 +201,7 @@ TaggingRules->{
     Left], "ExampleCounter" -> 1, "ExamplePageLinks" -> {}, "NeedPlatMsgIn" -> 
   None, "RootCaptions" -> "", 
   "Metadata" -> {
-   "built" -> "{2015, 6, 13, 0, 1, 52.3012358}", 
+   "built" -> "{2015, 6, 13, 0, 21, 43.6293188}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "Shortcuts`", 
     "keywords" -> {"Shortcuts keyboard"}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 

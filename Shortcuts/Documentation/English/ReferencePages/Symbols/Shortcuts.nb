@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     16908,        493]
-NotebookOptionsPosition[     14433,        402]
-NotebookOutlinePosition[     14885,        419]
-CellTagsIndexPosition[     14842,        416]
+NotebookDataLength[     16935,        494]
+NotebookOptionsPosition[     14460,        403]
+NotebookOutlinePosition[     14912,        420]
+CellTagsIndexPosition[     14869,        417]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -190,7 +190,7 @@ Cell[BoxData[{
   RowBox[{"Needs", "[", "\"\<Shortcuts`\>\"", "]"}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{"Shortcuts", "[", "]"}]}], "Input",
- CellLabel->"In[3]:=",
+ CellLabel->"In[11]:=",
  CellID->263767708],
 
 Cell[BoxData[
@@ -394,14 +394,15 @@ cell."; Shortcuts`Private`keyHelp["Cmd Alt M"] = "Minimize all notebooks.";
        Pattern[Shortcuts`Private`b, 
         Blank[Symbol]]}] := {Shortcuts`Private`a, Shortcuts`Private`b}; 
    Null)]], "Output",
- CellChangeTimes->{3.6431597901947813`*^9, 3.643160471353367*^9},
- CellLabel->"Out[4]=",
- CellID->320075134]
+ CellChangeTimes->{3.6431597901947813`*^9, 3.643160471353367*^9, 
+  3.643161665486539*^9},
+ CellLabel->"Out[12]=",
+ CellID->329013325]
 }, Open  ]]
 }, Open  ]]
 },
 WindowSize->{700, 770},
-WindowMargins->{{Automatic, -1045}, {84, Automatic}},
+WindowMargins->{{Automatic, -1037}, {Automatic, 32}},
 CellContext->"Global`",
 FrontEndVersion->"10.1 for Microsoft Windows (64-bit) (March 23, 2015)",
 StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStyles.nb", 
@@ -489,10 +490,10 @@ Cell[CellGroupData[{
 Cell[3649, 172, 356, 11, 68, "PrimaryExamplesSection",
  CellID->880084151],
 Cell[CellGroupData[{
-Cell[4030, 187, 199, 6, 48, "Input",
+Cell[4030, 187, 200, 6, 48, "Input",
  CellID->263767708],
-Cell[4232, 195, 10173, 203, 1595, "Output",
- CellID->320075134]
+Cell[4233, 195, 10199, 204, 1595, "Output",
+ CellID->329013325]
 }, Open  ]]
 }, Open  ]]
 }
