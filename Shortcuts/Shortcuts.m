@@ -208,7 +208,7 @@ Shortcuts[] :=
             keyHelp["Ctrl ;"]                  =  (* Windows, Linux *)
             keyHelp["Cmd Home"]                = "Select all cells from the top of the notebook to the insertion point.";
             keyHelp["Ctrl Shift \[DownArrow]"] = "Select all cells from the insertion point until the end of the notebook.";
-            keyHelp["Ctrl Shift Tab"]          = "Delete all output, restart the kernel and ev,,aluate all cells from the top to the insertion point.";
+            keyHelp["Ctrl Shift Tab"]          = "Delete all output, restart the kernel and evaluate all cells from the top to the insertion point.";
             keyHelp["Ctrl Shift \[UpArrow]"]   =  (* Windows, Linux *)
             (* Macintosh *)
             keyHelp["Cmd Shift \[UpArrow]"]    =  "Evaluate all cells from the top of the notebook until the insertion point.";
