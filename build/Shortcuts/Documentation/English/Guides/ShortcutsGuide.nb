@@ -83,7 +83,7 @@ ShortcutsGuide.html"], StandardForm]], "Input", TextClipboardType ->
            URL[
             StringJoin[
              If[
-              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$1884], 
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$1880], 
               "http://reference.wolfram.com/system-modeler/", 
               "http://reference.wolfram.com/language/"], 
              "Shortcuts/guide/ShortcutsGuide", ".html"]], None}]}]},
@@ -201,7 +201,7 @@ TaggingRules->{
     Left], "ExampleCounter" -> 1, "ExamplePageLinks" -> {}, "NeedPlatMsgIn" -> 
   None, "RootCaptions" -> "", 
   "Metadata" -> {
-   "built" -> "{2015, 6, 12, 23, 28, 58.0673990}", 
+   "built" -> "{2015, 6, 12, 23, 50, 39.0244227}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "Shortcuts`", 
     "keywords" -> {"Shortcuts keyboard"}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 

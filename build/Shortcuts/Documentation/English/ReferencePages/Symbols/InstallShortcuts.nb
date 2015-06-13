@@ -100,7 +100,7 @@ InstallShortcuts.html"], StandardForm]], "Input", TextClipboardType ->
            URL[
             StringJoin[
              If[
-              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$2224], 
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$2220], 
               "http://reference.wolfram.com/system-modeler/", 
               "http://reference.wolfram.com/language/"], 
              "Shortcuts/ref/InstallShortcuts", ".html"]], None}]}]},
@@ -282,7 +282,7 @@ TaggingRules->{
     Left], "HasOptions" -> False, "ExampleCounter" -> 1, 
   "ExamplePageLinks" -> {}, "NeedPlatMsgIn" -> None, "RootCaptions" -> "", 
   "Metadata" -> {
-   "built" -> "{2015, 6, 12, 23, 28, 59.7237351}", 
+   "built" -> "{2015, 6, 12, 23, 50, 40.5870061}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "Shortcuts`", 
     "keywords" -> {}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 

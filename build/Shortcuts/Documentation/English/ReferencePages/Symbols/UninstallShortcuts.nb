@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     10393,        318]
+NotebookDataLength[     10394,        318]
 NotebookOptionsPosition[      7642,        243]
-NotebookOutlinePosition[      9664,        293]
-CellTagsIndexPosition[      9621,        290]
+NotebookOutlinePosition[      9665,        293]
+CellTagsIndexPosition[      9622,        290]
 WindowTitle->UninstallShortcuts
 WindowFrame->Normal*)
 
@@ -100,7 +100,7 @@ UninstallShortcuts.html"], StandardForm]], "Input", TextClipboardType ->
            URL[
             StringJoin[
              If[
-              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$2624], 
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$2941], 
               "http://reference.wolfram.com/system-modeler/", 
               "http://reference.wolfram.com/language/"], 
              "Shortcuts/ref/UninstallShortcuts", ".html"]], None}]}]},
@@ -256,7 +256,7 @@ TaggingRules->{
     Left], "HasOptions" -> False, "ExampleCounter" -> 1, 
   "ExamplePageLinks" -> {}, "NeedPlatMsgIn" -> None, "RootCaptions" -> "", 
   "Metadata" -> {
-   "built" -> "{2015, 6, 12, 23, 29, 1.3388288}", 
+   "built" -> "{2015, 6, 12, 23, 50, 44.9153564}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "Shortcuts`", 
     "keywords" -> {}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
