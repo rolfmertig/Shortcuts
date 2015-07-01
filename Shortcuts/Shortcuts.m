@@ -127,7 +127,7 @@ Shortcuts[] :=
                 (*keyevent[12]*) "Ctrl Shift \[UpArrow]",
                 (*keyevent[15]*) "Ctrl ;", 
                 (*keyevent[16]*) "Ctrl Shift \[DownArrow]",
-              (*keyevent[7] *) "Ctrl Cmd X", 
+              (*keyevent[7] *) "Ctrl Alt X", 
               (*keyevent[8] *) "Cmd Alt X", 
                 (*keyevent[11]*) "Ctrl Shift Q", 
                 (*keyevent[9] *) "Ctrl R", 
