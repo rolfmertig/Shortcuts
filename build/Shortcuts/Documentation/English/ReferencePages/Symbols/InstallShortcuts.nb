@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     11524,        348]
+NotebookDataLength[     11541,        348]
 NotebookOptionsPosition[      8549,        269]
-NotebookOutlinePosition[     10794,        323]
-CellTagsIndexPosition[     10751,        320]
+NotebookOutlinePosition[     10811,        323]
+CellTagsIndexPosition[     10768,        320]
 WindowTitle->InstallShortcuts
 WindowFrame->Normal*)
 
@@ -100,7 +100,7 @@ InstallShortcuts.html"], StandardForm]], "Input", TextClipboardType ->
            URL[
             StringJoin[
              If[
-              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$2166], 
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$2218], 
               "http://reference.wolfram.com/system-modeler/", 
               "http://reference.wolfram.com/language/"], 
              "Shortcuts/ref/InstallShortcuts", ".html"]], None}]}]},
@@ -282,7 +282,7 @@ TaggingRules->{
     Left], "HasOptions" -> False, "ExampleCounter" -> 1, 
   "ExamplePageLinks" -> {}, "NeedPlatMsgIn" -> None, "RootCaptions" -> "", 
   "Metadata" -> {
-   "built" -> "{2015, 7, 1, 23, 17, 42.699414}", 
+   "built" -> "{2015, 7, 3, 10, 26, 11.2284010}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "Shortcuts`", 
     "keywords" -> {}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
@@ -299,7 +299,7 @@ Needs[\"Shortcuts`\"].", "synonyms" -> {}, "title" -> "InstallShortcuts",
     "titlemodifier" -> "", "windowtitle" -> "InstallShortcuts", "type" -> 
     "Symbol", "uri" -> "Shortcuts/ref/InstallShortcuts"}},
 CellContext->"Global`",
-FrontEndVersion->"10.1 for Linux x86 (64-bit) (March 23, 2015)",
+FrontEndVersion->"10.1 for Microsoft Windows (64-bit) (March 23, 2015)",
 StyleDefinitions->Notebook[{
    Cell[
     StyleData[
@@ -308,7 +308,7 @@ StyleDefinitions->Notebook[{
     StyleData["Input"], CellContext -> "Global`"], 
    Cell[
     StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
-  FrontEndVersion -> "10.1 for Linux x86 (64-bit) (March 23, 2015)", 
+  FrontEndVersion -> "10.1 for Microsoft Windows (64-bit) (March 23, 2015)", 
   StyleDefinitions -> "Default.nb"]
 ]
 (* End of Notebook Content *)

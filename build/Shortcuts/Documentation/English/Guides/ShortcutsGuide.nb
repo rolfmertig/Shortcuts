@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      8281,        251]
+NotebookDataLength[      8295,        251]
 NotebookOptionsPosition[      6071,        188]
-NotebookOutlinePosition[      7585,        227]
-CellTagsIndexPosition[      7542,        224]
+NotebookOutlinePosition[      7599,        227]
+CellTagsIndexPosition[      7556,        224]
 WindowTitle->ShortcutsGuide
 WindowFrame->Normal*)
 
@@ -83,7 +83,7 @@ ShortcutsGuide.html"], StandardForm]], "Input", TextClipboardType ->
            URL[
             StringJoin[
              If[
-              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$1826], 
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$1878], 
               "http://reference.wolfram.com/system-modeler/", 
               "http://reference.wolfram.com/language/"], 
              "Shortcuts/guide/ShortcutsGuide", ".html"]], None}]}]},
@@ -201,7 +201,7 @@ TaggingRules->{
     Left], "ExampleCounter" -> 1, "ExamplePageLinks" -> {}, "NeedPlatMsgIn" -> 
   None, "RootCaptions" -> "", 
   "Metadata" -> {
-   "built" -> "{2015, 7, 1, 23, 17, 41.465149}", 
+   "built" -> "{2015, 7, 3, 10, 26, 9.6501997}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "Shortcuts`", 
     "keywords" -> {"Shortcuts keyboard"}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
@@ -211,9 +211,9 @@ TaggingRules->{
     "synonyms" -> {}, "title" -> "ShortcutsGuide", "titlemodifier" -> "", 
     "windowtitle" -> "ShortcutsGuide", "type" -> "Guide", "uri" -> 
     "Shortcuts/guide/ShortcutsGuide"}},
-FrontEndVersion->"10.1 for Linux x86 (64-bit) (March 23, 2015)",
+FrontEndVersion->"10.1 for Microsoft Windows (64-bit) (March 23, 2015)",
 StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
-  CharacterEncoding -> "UTF-8"]
+  CharacterEncoding -> "WindowsANSI"]
 ]
 (* End of Notebook Content *)
 
