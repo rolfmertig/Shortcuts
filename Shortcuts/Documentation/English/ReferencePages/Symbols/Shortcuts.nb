@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     17108,        498]
-NotebookOptionsPosition[     14645,        407]
-NotebookOutlinePosition[     15084,        424]
-CellTagsIndexPosition[     15041,        421]
+NotebookDataLength[     17139,        498]
+NotebookOptionsPosition[     14666,        407]
+NotebookOutlinePosition[     15116,        424]
+CellTagsIndexPosition[     15073,        421]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -264,7 +264,7 @@ layouts:", "Text"], Background -> LightGray, FrameStyle -> None, FrameMargins ->
 layouts:", "Text"], FrameStyle -> None, FrameMargins -> 10], "Ctrl `", 
              "Ctrl [", "Ctrl ]"}]], Shortcuts`Private`gridOptions]]]}], 
      "Text"], StandardForm],
-   ImageSizeCache->{528., {869.5, 876.5}}],
+   ImageSizeCache->{528., {788., 795.}}],
   DynamicModuleValues:>{{
     DownValues[Shortcuts`Private`keyStyle$$] = {HoldPattern[
          Shortcuts`Private`keyStyle$$[
@@ -399,18 +399,18 @@ cell."; Shortcuts`Private`keyHelp["Cmd Alt M"] = "Minimize all notebooks.";
    Null)]], "Output",
  CellChangeTimes->{3.6431597901947813`*^9, 3.643160471353367*^9, 
   3.643161665486539*^9, 3.64316200605676*^9, 3.6431624219858212`*^9, 
-  3.644774205112707*^9},
+  3.644774205112707*^9, 3.6451767475272865`*^9},
  CellLabel->"Out[11]=",
- CellID->1611763510]
+ CellID->773833130]
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{1053, 1121},
-WindowMargins->{{Automatic, 1366}, {78, Automatic}},
+WindowSize->{1920, 997},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
 CellContext->"Global`",
-FrontEndVersion->"10.1 for Linux x86 (64-bit) (March 23, 2015)",
+FrontEndVersion->"10.1 for Microsoft Windows (64-bit) (March 23, 2015)",
 StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStyles.nb", 
-  CharacterEncoding -> "UTF-8"]
+  CharacterEncoding -> "WindowsANSI"]
 ]
 (* End of Notebook Content *)
 
@@ -423,10 +423,10 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 325, 14, 25, "History",
+Cell[558, 20, 325, 14, 22, "History",
  CellID->1247902091],
 Cell[CellGroupData[{
-Cell[908, 38, 68, 1, 30, "CategorizationSection",
+Cell[908, 38, 68, 1, 27, "CategorizationSection",
  CellID->1122911449],
 Cell[979, 41, 79, 2, 70, "Categorization",
  CellID->686433507],
@@ -437,13 +437,13 @@ Cell[1146, 49, 79, 2, 70, "Categorization",
 Cell[1228, 53, 68, 1, 70, "Categorization"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[1333, 59, 55, 1, 20, "KeywordsSection",
+Cell[1333, 59, 55, 1, 17, "KeywordsSection",
  CellID->477174294],
 Cell[1391, 62, 45, 1, 70, "Keywords",
  CellID->1164421360]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[1473, 68, 65, 1, 20, "TemplatesSection",
+Cell[1473, 68, 65, 1, 17, "TemplatesSection",
  CellID->1872225408],
 Cell[1541, 71, 94, 2, 70, "Template",
  CellID->1562036412],
@@ -455,7 +455,7 @@ Cell[1807, 83, 82, 2, 70, "Template",
  CellID->793782254]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[1926, 90, 53, 1, 20, "DetailsSection",
+Cell[1926, 90, 53, 1, 17, "DetailsSection",
  CellID->307771771],
 Cell[1982, 93, 63, 2, 70, "Details",
  CellID->670882175],
@@ -477,27 +477,27 @@ Cell[2534, 125, 67, 2, 70, "Details",
  CellID->240026365]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[2638, 132, 52, 1, 66, "ObjectName",
+Cell[2638, 132, 52, 1, 62, "ObjectName",
  CellID->1224892054],
-Cell[2693, 135, 271, 8, 75, "Usage",
+Cell[2693, 135, 271, 8, 71, "Usage",
  CellID->982511436],
-Cell[2967, 145, 158, 2, 26, "Notes",
+Cell[2967, 145, 158, 2, 23, "Notes",
  CellID->1067943069]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3162, 152, 55, 1, 32, "SeeAlsoSection",
+Cell[3162, 152, 55, 1, 30, "SeeAlsoSection",
  CellID->1255426704],
 Cell[3220, 155, 392, 12, 19, "SeeAlso",
  CellID->929782353]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3649, 172, 356, 11, 69, "PrimaryExamplesSection",
+Cell[3649, 172, 356, 11, 68, "PrimaryExamplesSection",
  CellID->880084151],
 Cell[CellGroupData[{
-Cell[4030, 187, 200, 6, 46, "Input",
+Cell[4030, 187, 200, 6, 48, "Input",
  CellID->263767708],
-Cell[4233, 195, 10384, 208, 1791, "Output",
- CellID->1611763510]
+Cell[4233, 195, 10405, 208, 1595, "Output",
+ CellID->773833130]
 }, Open  ]]
 }, Open  ]]
 }
