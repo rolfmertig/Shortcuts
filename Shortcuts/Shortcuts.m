@@ -110,6 +110,8 @@ Shortcuts[] :=
                 (*keyevent[12]*) "Ctrl ["(*]*), 
                 (*[*)
                                  "Ctrl ]", 
+                                 "Cmd Shift ,", 
+                                 "Cmd Shift .",
                 (*keyevent[12]*) (*[*)"Ctrl Alt ]"
                 }),
                 gridOptions
@@ -151,6 +153,8 @@ Shortcuts[] :=
                 (*keyevent[12]*) "Ctrl ["(*]*), 
                                          (*[*)
                                  "Ctrl ]", 
+                                 "Cmd Shift ,", 
+                                 "Cmd Shift .",
                 (*keyevent[12]*) (*[*)"Ctrl Alt ]"
                 }),
                 gridOptions               
@@ -182,11 +186,14 @@ Shortcuts[] :=
                 (*keyevent[17]*) "Ctrl Shift Delete",
                 (*keyevent[12]*) "Ctrl D",
                 (*keyevent[12]*) "Ctrl Shift J", 
-                (*keyevent[12]*) Framed[ Style["The following shortcuts do only work on english keyboard layouts:", "Text"], FrameStyle -> None, FrameMargins -> 10], 
+                (*keyevent[12]*) Framed[ Style["The following shortcuts may only work on english keyboard layouts:", "Text"], FrameStyle -> None, FrameMargins -> 10], 
                 (*keyevent[14]*) "Ctrl `", 
                 (*keyevent[12]*) "Ctrl ["(*]*), 
                                          (*[*)
-                                 "Ctrl ]"
+                                 "Ctrl ]",
+                                 "Cmd Shift ,",
+                                 ,
+                                 "Cmd Shift ."
                 } ),
                 gridOptions
                 ]
@@ -247,10 +254,11 @@ Shortcuts[] :=
             keyHelp["Ctrl `"]                  = "Evaluate Notebook.";
             keyHelp["Ctrl Shift /"]            =  (* Windows *)
             keyHelp["Cmd Alt I"]               =  (* MacOSX, Linux *) "Open the init.m file found by FindFile[\"init.m\"] in the front end."; (* Linux *)
-            keyHelp["Ctrl ["]  (*]*)           = "Insert [["; (* ]] *)
-            (* [[[ *)
+            keyHelp["Ctrl ["]  (*]*)           = "Insert [["; 
             keyHelp["Ctrl ]"]                  = "Insert ]]"; 
-            (*[*)
+            keyHelp["Cmd Shift ,"]             = "Insert <|"; 
+            keyHelp["Cmd Shift ."]             = "Insert |>"; 
+            keyHelp["Ctrl ]"]                  = "Insert ]]"; 
             keyHelp["Ctrl Alt ]"]              = "Insert [[]]";
             keyStyle[s_] :=
                 ToString[ Framed[ Style[s, FontFamily -> "Courier", FontColor -> GrayLevel[0.365], 
@@ -519,19 +527,37 @@ evaluated, potentially asking for another
          KernelExecute[ Needs[\"Shortcuts`\"]; Shortcuts`Shortcut[\"CloseUntitledNotebooks\"] ]
          , MenuEvaluator -> Automatic
 	],";
+	(*Next two shortcuts for [[ and ]] modified by Jess Riedel to remove the 
+	extra space that was mistakenly being inserted. *)
             keyevent["[["] = keyevent[18] = 
                 "
 	(* by rm-rf: http://mathematica.stackexchange.com/questions/5212/automating-esc-esc-formatting/5215#5215*)
 	Item[KeyEvent[\"[\"(*]*), Modifiers -> {Control}],
         FrontEndExecute[
-            FrontEnd`NotebookWrite[FrontEnd`InputNotebook[], \" " <> "\\" <> "[LeftDoubleBracket]\", After]
+            FrontEnd`NotebookWrite[FrontEnd`InputNotebook[], \"" <> "\\" <> "[LeftDoubleBracket]\", After]
         ]
 	],";
             keyevent["]]"] = keyevent[19] = 
                 "
 	Item[KeyEvent[(*[*)\"]\", Modifiers -> {Control}],
         FrontEndExecute[
-            FrontEnd`NotebookWrite[FrontEnd`InputNotebook[], \" " <> "\\" <> "[RightDoubleBracket]\", After] 
+            FrontEnd`NotebookWrite[FrontEnd`InputNotebook[], \"" <> "\\" <> "[RightDoubleBracket]\", After] 
+        ]
+	],";
+(*Next two shortcuts for <| and |> added by Jess Riedel, modeled off [[ and ]] above.  
+They are Cmd-Shft-, and Cmd-Shft-., since both Ctrl-, and Ctrl-Shft-, were used. *)
+            keyevent["<|"] = keyevent[29] = 
+                "
+	Item[KeyEvent[\",\", Modifiers -> {Command, Shift}],
+        FrontEndExecute[
+            FrontEnd`NotebookWrite[FrontEnd`InputNotebook[], \"" <> "\\" <> "[LeftAssociation]\", After]
+        ]
+	],";
+	         keyevent["|>"] = keyevent[30] = 
+                "
+	Item[KeyEvent[\".\", Modifiers -> {Command, Shift}],
+        FrontEndExecute[
+            FrontEnd`NotebookWrite[FrontEnd`InputNotebook[], \"" <> "\\" <> "[RightAssociation]\", After]
         ]
 	],";
             keyevent["[[]]"] = keyevent[20] = 
@@ -642,7 +668,7 @@ evaluated, potentially asking for another
                                                   ] <>"}],
         KernelExecute[ Needs[\"Shortcuts`\"]; Shortcuts`Shortcut[\"OpenUserBaseDirectory\"]], MenuEvaluator -> Automatic
 	],";
-            mykeyevents = StringJoin @@ Array[keyevent, 28];
+            mykeyevents = StringJoin @@ Array[keyevent, (*28*)30];(*Added key events 29 and 30 above -Jess Riedel*)
 
             (* *************************************************************************************************** *)
             (* myjokerfilename: a keyboard shortcut configurable shortcut *)
